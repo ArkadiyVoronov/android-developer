@@ -1,0 +1,646 @@
+
+<!DOCTYPE HTML>
+<html lang="fr" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. Variables, Types, Constantes et Opérateurs · Le développeur Android 2018</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Gaëtan HERFRAY">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="chapter1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Tapez pour rechercher" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    1. Premier programme Kotlin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    2. Variables, Types, Constantes et Opérateurs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Publié avec GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2. Variables, Types, Constantes et Opérateurs</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapitre-2variables-types-constantes-et-op&#xE9;rateurs">Chapitre 2<br>Variables, Types, Constantes et Op&#xE9;rateurs</h1>
+<h2 id="d&#xE9;finition-dune-variable">D&#xE9;finition d&#x2019;une variable</h2>
+<p>Une variable, c&#x2019;est un symbole qui associe un nom &#xE0; une valeur. Les variables, vous les utilisez d&#xE9;j&#xE0; en math&#xE9;matiques. Lorsqu&#x2019;on vous demande la formule de la circonf&#xE9;rence d&#x2019;un cercle, vous r&#xE9;pondez &#x3C0; multipli&#xE9; par le diam&#xE8;tre. Or, lorsque vous dites cela, vous associez le mot <em>diam&#xE8;tre</em> &#xE0; une valeur.</p>
+<h3 id="type-de-variable">Type de variable</h3>
+<p>En informatique, une valeur correspond &#xE0; un emplacement de m&#xE9;moire. Cependant, pour optimiser les performances d&#x2019;une application, il va falloir faire en sorte d&#x2019;utiliser au mieux l&#x2019;espace m&#xE9;moire.</p>
+<p>Imaginons que vous souhaitiez faire un quizz ayant plus ou moins pour but de faire deviner un nombre entre 1 et 100. Ce nombre peut tr&#xE8;s bien &#xEA;tre stock&#xE9; sur un octet (2<sup>8</sup>, soit 256 valeurs possibles). Vous allez donc affecter &#xE0; ce nombre une valeur pouvant &#xEA;tre stock&#xE9;e sur un octet, afin d&#x2019;optimiser la m&#xE9;moire consomm&#xE9;e par votre application.</p>
+<p>Si maintenant, vous souhaitez associer &#xE0; chaque participant d&#x2019;une convention un num&#xE9;ro, sachant que cette convention rassemble entre 2 500 et 3 000 personnes. Vous vous apercevez tr&#xE8;s vite qu&#x2019;il n&#x2019;est pas possible de stocker le num&#xE9;ro de chaque personne sur un octet. Tr&#xE8;s vite, vous serez d&#xE9;pass&#xE9;. Vous aurez besoin de les stocker dans un type pouvant englober plus de donn&#xE9;es.</p>
+<h4 id="nombres">Nombres</h4>
+<p>C&#x2019;est pourquoi, en Kotlin, nous avons 8 types de variables possibles pour stocker des nombres :</p>
+<ul>
+<li><code>Byte</code> : une valeur allant de -128 &#xE0; +127, stock&#xE9;e sur un octet,</li>
+<li><code>Short</code> : une valeur allant de -32 768 &#xE0; 32 767, stock&#xE9;e sur deux octets,</li>
+<li><code>Int</code> : une valeur allant de -231 &#xE0; 231-1, stock&#xE9;e sur quatre octets,</li>
+<li><code>Long</code> : une valeur allant de -263 &#xE0; 263-1, stock&#xE9;e sur huit octets,</li>
+<li><code>Float</code> : utilis&#xE9;e pour stocker des valeurs d&#xE9;cimales avec une pr&#xE9;cision relative, stock&#xE9;e sur seize octets,</li>
+<li><code>Double</code> : utilis&#xE9;e pour stocker des valeurs d&#xE9;cimales avec une plus grande pr&#xE9;cision, stock&#xE9;e sur trente-deux octets.</li>
+</ul>
+<p>Attention, <code>Float</code> et <code>Double</code> doivent toujours &#xEA;tre consid&#xE9;r&#xE9;es comme des valeurs approximatives (<code>Double</code> &#xE9;tant plus pr&#xE9;cis), et jamais comme des valeurs exactes.</p>
+<h4 id="caract&#xE8;res">Caract&#xE8;res</h4>
+<p>Certes, nous pouvons stocker des nombres dans une variable, mais &#xE9;galement des caract&#xE8;res. Ce qu&#x2019;on appelle un caract&#xE8;re, c&#x2019;est grosso modo un signe qui peut &#xEA;tre affich&#xE9; &#xE0; l&#x2019;&#xE9;cran, comme par exemple une lettre, une tabulation, un retour &#xE0; la ligne ou encore un signe de ponctuation.</p>
+<ul>
+<li><code>Char</code> : valeur utilis&#xE9;e pour stocker des caract&#xE8;res, stock&#xE9;e sur deux octets.</li>
+</ul>
+<h4 id="bool&#xE9;en">Bool&#xE9;en</h4>
+<p>Enfin, le type bool&#xE9;en ne peut prendre que deux valeurs, soit true (vrai) soit false (faux).</p>
+<ul>
+<li><code>Boolean</code> : valeur utilis&#xE9;e pour stocker une valeur binaire, stock&#xE9;e sur un emplacement tr&#xE8;s faible en m&#xE9;moire (inf&#xE9;rieur ou &#xE9;gal &#xE0; un octet), mais de taille variable.</li>
+</ul>
+<h4 id="objet">Objet</h4>
+<p>Enfin, en plus de ces dix types primitifs, les variables peuvent &#xE9;galement stocker des instances d&#x2019;objets. Mais la notion d&#x2019;objet est un concept que nous verrons plus loin dans ce livre.</p>
+<h3 id="notation">Notation</h3>
+<p>Pour d&#xE9;finir une variable, en Kotlin, on utilise le mot cl&#xE9; <code>var</code>, suivi du nom de la variable, de deux points, et de son type, suivi du signe <code>=</code> et de sa valeur.</p>
+<p>Ainsi, pour d&#xE9;clarer une variable de type <code>Double</code>, qui a pour nom <code>diameter</code>, nous l&#x2019;&#xE9;crirons ainsi :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> diameter</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.78</span>
+</code></pre>
+<h2 id="d&#xE9;finition-dune-valeur-invariante">D&#xE9;finition d&#x2019;une valeur invariante</h2>
+<p>Une valeur invariante, c&#x2019;est une variable qui ne change pas de valeur. Vous initialisez sa valeur, et vous ne pouvez plus la modifier. Si vous la modifiez, le compilateur refusera de compiler votre programme.</p>
+<p class="pageBreakAfter">En dehors du fait que vous ne pouvez pas modifier sa valeur, tout ce qui a &#xE9;t&#xE9; dit &#xE0; propos des variables est &#xE9;galement valable pour une valeur invariante.</p>
+
+<h3 id="notation">Notation</h3>
+<p>Pour d&#xE9;finir une valeur invariante, en Kotlin, on utilise la m&#xEA;me notation que pour une variable, &#xE0; l&#x2019;exception du mot <code>var</code> qui devient <code>val</code>.</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> pi</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span>
+</code></pre>
+<h2 id="d&#xE9;finition-dune-constante">D&#xE9;finition d&#x2019;une constante</h2>
+<p>Une constante, c&#x2019;est un identifiant qui va &#xEA;tre remplac&#xE9; par le pr&#xE9;processeur du compilateur avant la compilation.</p>
+<p>Nous avons vu les diff&#xE9;rentes &#xE9;tapes pour passer d&#x2019;un code source au r&#xE9;sultat final, et parmi elle, la compilation.</p>
+<p>Juste avant la compilation, il y a un pr&#xE9;processeur qui va passer pour modifier votre code source. Et ce pr&#xE9;processeur va remplacer tous les appels &#xE0; une constante par leur valeur.</p>
+<p>Cette contrainte implique que vous ne pouvez sp&#xE9;cifier qu&#x2019;une valeur brute &#xE0; une constante. Vous ne pouvez pas, par exemple, affecter &#xE0; une constante la valeur de retour d&#x2019;une fonction (notion que nous verrons dans la suite de ce chapitre), mais simplement un nombre ou une chaine de caract&#xE8;re&#x2026;</p>
+<p>Afin de produire un code plus clair, il est d&#x2019;usage d&#x2019;utiliser pour une valeur :</p>
+<ul>
+<li>Une constante,</li>
+<li>S&#x2019;il n&#x2019;est pas possible d&#x2019;utiliser une constante, alors une valeur invariante,</li>
+<li>S&#x2019;il n&#x2019;est pas possible d&#x2019;utiliser une valeur invariante, alors une variable.</li>
+</ul>
+<h3 id="notation">Notation</h3>
+<p>Pour d&#xE9;finir une constante en Kotlin, la notation est la m&#xEA;me que pour une valeur invariante, sauf que l&#x2019;on fait pr&#xE9;c&#xE9;der le mot cl&#xE9; val par le mot cl&#xE9; const.</p>
+<pre class="pageBreakAfter"><code class="lang-kotlin">const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span></code></pre>
+
+<h2 id="d&#xE9;finition-dun-argument">D&#xE9;finition d&#x2019;un argument</h2>
+<p>Un argument, c&#x2019;est une variable que l&#x2019;on passe &#xE0; une fonction pour que cette derni&#xE8;re interagisse avec. Par exemple, si l&#x2019;on &#xE9;crit une fonction pour calculer la circonf&#xE9;rence d&#x2019;un cercle, alors nous aurons besoin de connaitre le diam&#xE8;tre du cercle. Ce dernier pourra &#xEA;tre pass&#xE9; en argument &#xE0; la fonction.</p>
+<h3 id="notation">Notation</h3>
+<p>Un argument s&#x2019;&#xE9;crit entre deux parenth&#xE8;ses dans la d&#xE9;finition d&#x2019;une fonction. Tout comme une variable, on &#xE9;crit le nom de l&#x2019;argument, suivi de deux points, suivi de son type. Pour une fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, cela s&#x2019;&#xE9;crira :</p>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+
+}
+</code></pre>
+<p>Nous avons vu ici comment &#xE9;crire une fonction avec un argument. Mais une fonction peut prendre plusieurs arguments. Dans ce cas, les arguments sont s&#xE9;par&#xE9;s par une virgule. Ainsi, si nous voulons &#xE9;crire une fonction qui calcule le p&#xE9;rim&#xE8;tre d&#x2019;un rectangle, nous aurons besoin de la longueur et de la largeur de ce dernier. La fonction s&#x2019;&#xE9;crira donc ainsi :</p>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">rectanglePerimeter</span><span class="hljs-params">(width: <span class="hljs-type">Double, height: Double</span>)</span>{</span>
+
+}
+</code></pre>
+<h2 id="valeur-de-retour-dune-fonction">Valeur de retour d&#x2019;une fonction</h2>
+<p>Une fonction peut retourner une valeur. Certes, dans notre premier exemple Hello World, la fonction <code>main</code> ne retournait aucune valeur. Mais dans le cas d&#x2019;une fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, nous pourrions souhaiter que la fonction retourne la valeur de ladite circonf&#xE9;rence. Pour indiquer une valeur de retour, apr&#xE8;s la parenth&#xE8;se fermante, nous ajoutons deux points, suivi du type de la valeur de retour. Ainsi, pour la fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, cela donne :</p>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+
+}
+</code></pre>
+<p>Une fonction ne peut avoir qu&#x2019;une seule valeur de retour, et cette derni&#xE8;re ne peut &#xEA;tre que d&#x2019;un type donn&#xE9;.</p>
+<p>Maintenant, vous pouvez tout &#xE0; fait choisir d&#x2019;affecter &#xE0; une variable, la valeur de retour d&#x2019;une fonction. Cela se note ainsi :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> diameter</span> : <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.78</span>
+<span class="hljs-variable"><span class="hljs-keyword">var</span> circumference</span> : <span class="hljs-keyword">Double</span> = circumference(diameter)
+</code></pre>
+<h2 id="types-implicites-et-litt&#xE9;raux">Types implicites et litt&#xE9;raux</h2>
+<p>Nous avons vu comment d&#xE9;clarer une variable :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> someValue</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">4</span>
+</code></pre>
+<p>Dans ce cas pr&#xE9;cis, nous ne sommes pas oblig&#xE9;s de d&#xE9;clarer le type <code>Int</code>, nous pouvons nous contenter d&#x2019;&#xE9;crire :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> someValue</span> = <span class="hljs-number">4</span>
+</code></pre>
+<p>Cette notation est tout &#xE0; fait correcte, et est &#xE9;quivalente &#xE0; la premi&#xE8;re. Attention toutefois, si le type n&#x2019;est pas explicitement indiqu&#xE9;, il n&#x2019;en demeure pas moins que 4 est un nombre entier. Pour vous en convaincre, vous pouvez &#xE9;crire le programme suivant :</p>
+<div class="fileTitle">TypeError.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">var</span> someValue</span> = <span class="hljs-number">4</span>
+   someValue = <span class="hljs-number">5.56</span>
+   println(someValue)
+}
+</code></pre>
+<p>En essayant de compiler ce programme, vous obtiendrez l&#x2019;erreur suivante :</p>
+<pre class="terminal"><code class="terminal">TypeError.kt:3:17: error: the floating-point literal does not conform to the expected type Int
+    someValue = 5.56
+                ^</code></pre>
+
+<p>Kotlin vous indique de mani&#xE8;re sp&#xE9;cifique qu&#x2019;il ne peut pas affecter une valeur d&#xE9;cimale &#xE0; une variable de type <code>Int</code>.</p>
+<p>Mais du coup, quel type par d&#xE9;faut est donn&#xE9; &#xE0; une variable quand on ne sp&#xE9;cifie pas son type ?</p>
+<p>On peut le savoir en &#xE9;crivant un petit programme en Kotlin :</p>
+<div class="fileTitle">VarTpes.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue</span> = <span class="hljs-number">4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue2</span> = <span class="hljs-number">4.56</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue3</span> = &apos;c&apos;
+
+   println(someValue.javaClass.kotlin.qualifiedName)
+   println(someValue2.javaClass.kotlin.qualifiedName)
+   println(someValue3.javaClass.kotlin.qualifiedName)
+}
+</code></pre>
+<p style="text-align:center;"><i>Ce programme fait appel &#xE0; des notions que nous verrons plus loin dans ce livre. Contentez-vous de le recopier tel qu&#x2019;il est, ce n&#x2019;est pas important si vous ne comprenez pas tout maintenant.</i></p>
+
+<p>En compilant puis en ex&#xE9;cutant ce programme, on obtient le r&#xE9;sultat suivant :</p>
+<pre class="terminal"><code class="terminal">kotlin.Int
+kotlin.Double
+kotlin.Char</code></pre>
+
+<p>Ainsi, on peut savoir que, implicitement, lorsqu&#x2019;on &#xE9;crit un nombre entier, c&#x2019;est le type <code>Int</code> par d&#xE9;faut qui lui est assign&#xE9;, pour un nombre avec une d&#xE9;cimale, le type <code>Double</code>, et pour un caract&#xE8;re &#xE9;crit entre guillemets simples, le type <code>Char</code>.</p>
+<p>Mais comment faire alors pour assigner &#xE0; une variable le type <code>Float</code> ou bien <code>Long</code> sans avoir &#xE0; sp&#xE9;cifier son type ?</p>
+<p>On peut utiliser un caract&#xE8;re, &#xE0; la fin de la valeur, pour sp&#xE9;cifier le type de cette valeur :</p>
+<div class="fileTitle">VarTpesFull.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue</span> = <span class="hljs-number">4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue2</span> = <span class="hljs-number">4</span>L
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue3</span> = <span class="hljs-number">4.56</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue4</span> = <span class="hljs-number">4.56</span>F
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue5</span> = &apos;c&apos;
+
+   println(someValue.javaClass.kotlin.qualifiedName)
+   println(someValue2.javaClass.kotlin.qualifiedName)
+   println(someValue3.javaClass.kotlin.qualifiedName)
+   println(someValue4.javaClass.kotlin.qualifiedName)
+   println(someValue5.javaClass.kotlin.qualifiedName)
+}
+</code></pre>
+<p class="pageBreakAfter">En compilant puis en ex&#xE9;cutant ce programme, on obtient le r&#xE9;sultat suivant :</p>
+
+<pre class="terminal"><code class="terminal">kotlin.Int
+kotlin.Long
+kotlin.Double
+kotlin.Float
+kotlin.Char</code></pre>
+
+<p>On voit qu&#x2019;en ajoutant <code>L</code> &#xE0; la fin d&#x2019;un nombre entier, cela passe son type &#xE0; <code>Long</code>, et qu&#x2019;en ajoutant <code>F</code> &#xE0; la fin d&#x2019;un nombre d&#xE9;cimal, cela passe son type &#xE0; <code>Float</code>. Ce sont les deux seuls types pour lesquels on peut utiliser ce raccourci.</p>
+<p>Pour d&#xE9;clarer une variable de type <code>Short</code> ou <code>Byte</code>, vous devrez utiliser la d&#xE9;claration compl&#xE8;te.</p>
+<h2 id="notations-des-entiers">Notations des entiers</h2>
+<p>Pour rendre le code plus lisible et/ou plus compr&#xE9;hensible, il est possible d&#x2019;utiliser des notations diff&#xE9;rentes pour les entiers.</p>
+<h3 id="underscore">Underscore</h3>
+<p>Pour les tr&#xE8;s grands nombres, il est possible d&#x2019;utiliser le caract&#xE8;re underscore afin de s&#xE9;parer les chiffres par groupe, dans le but de rendre cela plus lisible :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> complexGigaByte</span> = <span class="hljs-number">1073741824</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> readableGigaByte</span> = <span class="hljs-number">1</span>_073_741_824
+</code></pre>
+<p>Ces deux d&#xE9;clarations sont identiques, et l&#x2019;on peut ais&#xE9;ment voir que la seconde est bien plus lisible.</p>
+<h3 id="notation-binaire">Notation Binaire</h3>
+<p>Parfois, on peut souhaiter &#xE9;crire un nombre dans sa notation binaire. C&#x2019;est possible en pr&#xE9;fixant ce nombre de <code>0b</code>. L&#xE0; encore, les underscores sont utilisables :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> readableGigaByte</span> = <span class="hljs-number">1</span>_073_741_824
+<span class="hljs-variable"><span class="hljs-keyword">val</span> binaryGigaByte</span> = <span class="hljs-number">0</span>b1000_0000_0000_0000_0000_0000_0000_000&#x202C;
+</code></pre>
+<p>Ces deux d&#xE9;clarations sont &#xE9;quivalentes.</p>
+<h3 id="notation-hexad&#xE9;cimale">Notation Hexad&#xE9;cimale</h3>
+<p class="pageBreakAfter">De la m&#xEA;me fa&#xE7;on qu&#x2019;il est possible d&#x2019;&#xE9;crire un nombre en notation binaire en le pr&#xE9;fixant de `0b`, il est possible d&#x2019;&#xE9;crire un nombre dans sa notation hexad&#xE9;cimale en le pr&#xE9;fixant de `0x` :</p>
+
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> readableGigaByte</span> = <span class="hljs-number">1</span>_073_741_824
+<span class="hljs-variable"><span class="hljs-keyword">val</span> hexadecimalGigaByte</span> = <span class="hljs-number">0x4000</span>_0000&#x202C;
+</code></pre>
+<h2 id="op&#xE9;rateurs">Op&#xE9;rateurs</h2>
+<h3 id="affectation">Affectation</h3>
+<p>C&#x2019;est le seul op&#xE9;rateur que nous ayons d&#xE9;j&#xE0; utilis&#xE9;. Il s&#x2019;agit du signe `=`` pour affecter une valeur &#xE0; une variable :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> three</span> = <span class="hljs-number">3</span>
+</code></pre>
+<h3 id="op&#xE9;rateurs-math&#xE9;matiques-classiques">Op&#xE9;rateurs math&#xE9;matiques classiques</h3>
+<p>Il est possible d&#x2019;effectuer des op&#xE9;rations math&#xE9;matiques entre deux variables num&#xE9;riques :</p>
+<div class="fileTitle">Operators.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> add</span> = <span class="hljs-number">2</span>_000_000_000+<span class="hljs-number">2</span>_000_000_000
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> multiply</span> = <span class="hljs-number">3</span>*<span class="hljs-number">7</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> substract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> divide</span> = <span class="hljs-number">7</span>/<span class="hljs-number">3</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> modulo</span> = <span class="hljs-number">7</span>%<span class="hljs-number">3</span>
+
+   println(add)
+   println(multiply)
+   println(substract)
+   println(divide)
+   println(modulo)
+}
+</code></pre>
+<p style="text-align:center"><i>L&#x2019;op&#xE9;ration modulo retourne le reste de la division euclidienne.</i></p>
+
+<p>En compilant puis en ex&#xE9;cutant le programme, on obtient le r&#xE9;sultat suivant :</p>
+<pre class="terminal"><code class="terminal">-294967296
+21
+3
+2
+1</code></pre>
+
+<p>On peut voir ici que la somme de 2 milliards + 2 milliards produit un r&#xE9;sultat n&#xE9;gatif. De m&#xEA;me, on peut voir que la division de 7 par 3 donne comme r&#xE9;sultat 2. C&#x2019;est simplement parce qu&#x2019;une op&#xE9;ration entre deux variables de m&#xEA;me type renvoie une variable de m&#xEA;me type. Ici, une addition de deux <code>Int</code>, ou une division de deux <code>Int</code>, produit un <code>Int</code>.</p>
+<p>Tr&#xE8;s bien, cela explique pourquoi la division de 7 par 3 renvoie 2, mais pas pourquoi notre somme renvoie un nombre n&#xE9;gatif. On a d&#xE9;j&#xE0; dit que le type <code>Int</code> &#xE9;tait limit&#xE9; &#xE0; 2<sup>31</sup>-1, soit 2 147 483 648. Si l&#x2019;on d&#xE9;passe cette valeur, alors plus rien de fiable n&#x2019;est &#xE0; attendre d&#x2019;une variable <code>Int</code>.</p>
+<p>Mais qu&#x2019;en est-il alors d&#x2019;une op&#xE9;ration entre deux types diff&#xE9;rents ? C&#x2019;est le type qui est cod&#xE9; sur le plus d&#x2019;octets qui est gard&#xE9;. La seule exception concerne le type <code>Char</code>, qui restera un <code>Char</code> m&#xEA;me si l&#x2019;on y ajoute une valeur cod&#xE9;e sur plus d&#x2019;octets. Ainsi, pour obtenir le r&#xE9;sultat attendu, on peut &#xE9;crire le programme suivant :</p>
+<div class="fileTitle">OperatorsCorrect.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> byte</span>:<span class="hljs-keyword">Byte</span> = <span class="hljs-number">7</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> short</span>:<span class="hljs-keyword">Short</span> = <span class="hljs-number">5</span>
+
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> add</span> = <span class="hljs-number">2</span>_000_000_000+<span class="hljs-number">2</span>_000_000_000L
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> multiply</span> = <span class="hljs-number">3</span>*<span class="hljs-number">7</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> substract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> divide</span> = <span class="hljs-number">7</span>/<span class="hljs-number">3.0</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> modulo</span> = <span class="hljs-number">7</span>%<span class="hljs-number">3</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> add2</span> = byte+<span class="hljs-number">2</span>_000_000_000
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> add3</span> = short+<span class="hljs-number">2</span>_000_000_000
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> add4</span> = &apos;c&apos;+<span class="hljs-number">3</span>
+
+   println(add)
+   println(multiply)
+   println(substract)
+   println(divide)
+   println(modulo)
+   println(add2)
+   println(add3)
+   println(add4)
+}
+</code></pre>
+<p>En compilant puis en ex&#xE9;cutant le programme, on obtient le r&#xE9;sultat suivant :</p>
+<pre class="terminal pageBreakAfter"><code class="terminal">4000000000
+21
+3
+2.3333333333333335
+1
+2000000007
+2000000005
+f</code></pre>
+
+<h3 id="affectations-avanc&#xE9;es">Affectations avanc&#xE9;es</h3>
+<p>Parfois, vous pourrez avoir besoin d&#x2019;&#xE9;crire le code suivant :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> value</span> = <span class="hljs-number">3</span>
+value = value + <span class="hljs-number">10</span>
+value = value - <span class="hljs-number">1</span>
+value = value / <span class="hljs-number">3</span>
+value = value * <span class="hljs-number">4</span>
+value = value % <span class="hljs-number">5</span>
+</code></pre>
+<p>Quand votre variable est &#xE0; la fois la valeur affect&#xE9;e, et le premier &#xE9;l&#xE9;ment d&#x2019;une op&#xE9;ration math&#xE9;matique, alors, vous pouvez l&#x2019;&#xE9;crire comme suit :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> value</span> = <span class="hljs-number">3</span>
+value += <span class="hljs-number">10</span>
+value -= <span class="hljs-number">1</span>
+value /= <span class="hljs-number">3</span>
+value *= <span class="hljs-number">4</span>
+value %= <span class="hljs-number">5</span>
+</code></pre>
+<p>Les deux extraits de code sont &#xE9;quivalents.</p>
+<h3 id="cas-particulier-des-chaines-de-caract&#xE8;res">Cas particulier des chaines de caract&#xE8;res</h3>
+<p>Vous pouvez utiliser le signe <code>+</code> dans une chaine de caract&#xE8;re pour concat&#xE9;ner le r&#xE9;sultat :</p>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> HelloWorld100</span> = <span class="hljs-string">&quot;Hello &quot;</span>+<span class="hljs-string">&quot;World! &quot;</span>+<span class="hljs-number">100</span>;
+</code></pre>
+<p>La variable <code>HelloWorld100</code> vaut d&#xE9;sormais <code>&quot;Hello World! 100&quot;</code>.</p>
+<h2 id="place-&#xE0;-la-pratique">Place &#xE0; la pratique</h2>
+<p class="pageBreakAfter">Dans votre &#xE9;diteur de texte, ouvrez un nouveau fichier que vous nommerez Circumference.kt.</p>
+
+<div class="fileTitle">Circumference.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   <span class="hljs-variable"><span class="hljs-keyword">var</span> diameter</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.78</span>
+   <span class="hljs-variable"><span class="hljs-keyword">var</span> circumference</span> = circumference(diameter)
+   println(circumference)
+   diameter = <span class="hljs-number">1.72</span>
+   circumference = circumference(diameter)
+   println(circumference)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> <span class="hljs-number">3.14</span>*diameter
+}
+</code></pre>
+<p>Ce programme retourne la circonf&#xE9;rence d&#x2019;un cercle en fonction de son diam&#xE8;tre. Si vous compilez puis ex&#xE9;cutez ce programme, cela donnera le r&#xE9;sultat suivant :</p>
+<pre class="terminal"><code class="terminal">47.4768
+22.2312</code></pre>
+
+<p>Nous pourrions nous satisfaire de cela, mais il manque une derni&#xE8;re petite chose.</p>
+<h2 id="nettoyage-du-code">Nettoyage du code</h2>
+<p>Le contenu de notre fonction <code>main</code> est difficile &#xE0; appr&#xE9;hender. Il faut la lire ligne par ligne pour bien comprendre ce que fait cette fonction. Mais nous pourrions rendre les choses plus claires.</p>
+<h3 id="commentaires">Commentaires</h3>
+<p>Dans le code, nous pouvons ajouter des commentaires. Ce sont des parties du code que le compilateur va tout simplement ignorer, mais qui peuvent aider &#xE0; la lecture.</p>
+<h4 id="commentaire-sur-une-ligne">Commentaire sur une ligne</h4>
+<p>Pour &#xE9;crire un commentaire sur une ligne, il suffit d&#x2019;ajouter <code>//</code>. Tout ce qui suit sera ignor&#xE9; par le compilateur, &#xE0; l&#x2019;exception des <code>//</code> dans une chaine de caract&#xE8;re :</p>
+<pre class="pageBreakAfter"><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> diameter</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.78</span> <span class="hljs-comment">// diameter vaut 3.78</span>
+println(<span class="hljs-string">&quot;Je suis affich&#xE9; // et moi aussi&quot;</span>) <span class="hljs-comment">// mais pas moi</span></code></pre>
+
+<h4 id="bloc-de-commentaires">Bloc de commentaires</h4>
+<p>Nous avons &#xE9;galement la possibilit&#xE9; d&#x2019;&#xE9;crire un commentaire sur plusieurs lignes. Le commentaire doit commencer par <code>/*</code> et se terminer par <code>*/</code> :</p>
+<pre><code class="lang-kotlin"><span class="hljs-comment">/*Calcule la circonf&#xE9;rence d&apos;un cercle.
+La formule utilis&#xE9;e et pi*diam&#xE8;tre
+C&apos;est quand m&#xEA;me beaucoup plus clair*/</span>
+circumference = circumference(diameter)
+</code></pre>
+<h4 id="kdoc">KDoc</h4>
+<p>KDoc est une forme particuli&#xE8;re de commentaire, que l&#x2019;on dispose avant un bloc, et qui permet d&#x2019;expliquer ce bloc. L&#x2019;avantage de KDoc est qu&#x2019;&#xE9;tant donn&#xE9; qu&#x2019;il est connu et utilis&#xE9; par tous, sa lecture, son acc&#xE8;s, et m&#xEA;me la g&#xE9;n&#xE9;ration de documentation sont simplifi&#xE9;s.</p>
+<p>On pourrait consacrer un chapitre entier &#xE0; KDoc, mais je pr&#xE9;f&#xE8;re simplement vous en montrer un exemple, et que vous vous impr&#xE9;gniez de son usage au fur et &#xE0; mesure de la lecture de ce livre.</p>
+<pre><code>/**
+* Retourne la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter].
+* @param diameter le diam&#xE8;tre du cercle
+* @return la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter]
+*/
+fun circumference(diameter: Double): Double{
+   return 3.14*diameter
+}
+</code></pre><p>Le bloc KDoc ici permet d&#x2019;indiquer clairement ce que fait la fonction, et comment sont utilis&#xE9;s les param&#xE8;tres.</p>
+<p><div class="kdoc"><image src="images/kdoc.png"></image></div></p>
+
+<p style="text-align:center"><i>Exemple d&#x2019;affichage d&#x2019;une bo&#xEE;te d&#x2019;aide sur le r&#xF4;le d&#x2019;une fonction pour laquelle une documentation au format KDoc a &#xE9;t&#xE9; r&#xE9;dig&#xE9;e dans Android Studio.</i></p>
+
+<h3 id="langue-anglaise">Langue anglaise</h3>
+<p>Comme vous pouvez le remarquer, tous les codes jusqu&#x2019;ici ont &#xE9;t&#xE9; &#xE9;crits en anglais. Non, il ne s&#x2019;agit pas d&#x2019;une traduction incompl&#xE8;te de ce livre, puisque ce dernier a d&#x2019;abord &#xE9;t&#xE9; &#xE9;crit en fran&#xE7;ais, avant d&#x2019;&#xEA;tre traduit en anglais.</p>
+<p>Mais l&#x2019;immense majorit&#xE9; des d&#xE9;veloppeurs s&#x2019;accordent &#xE0; tout &#xE9;crire en anglais pour plusieurs raisons :</p>
+<ul>
+<li>Toutes les m&#xE9;thodes &#x201C;syst&#xE8;me&#x201D; sont en anglais, comme par exemple la m&#xE9;thode <code>println</code> que l&#x2019;on a utilis&#xE9;e. &#xC9;crire son code en anglais permet donc de ne pas m&#xE9;langer deux langues diff&#xE9;rentes dans son code, et par cons&#xE9;quent de garder une certaine homog&#xE9;n&#xE9;it&#xE9; qui facilite la compr&#xE9;hension.</li>
+<li>De la m&#xEA;me fa&#xE7;on, vous vous servirez de nombreux sites anglophones &#xE0; la fois pour poster des questions avec des extraits de votre code, mais aussi pour copier/coller du code disponible. L&#xE0; encore, garder tout en anglais permet de conserver l&#x2019;homog&#xE9;n&#xE9;it&#xE9;, et de mieux se faire comprendre de ceux qui vont nous aider.</li>
+<li>Enfin, la derni&#xE8;re raison, c&#x2019;est que les identifiants de variables et de fonctions n&#x2019;aiment pas les caract&#xE8;res sp&#xE9;ciaux. Vous ne pouvez pas utiliser de &#x201C;&#xE9;&#x201D;, de &#x201C;&#xE8;&#x201D; ou de &#x201C;&#xE7;&#x201D; dans les noms de fonctions. Plut&#xF4;t que d&#x2019;&#xE9;crire avec des erreurs, autant tout &#xE9;crire correctement.</li>
+</ul>
+<h3 id="factorisation">Factorisation</h3>
+<p class="pageBreakAfter">Vous l&#x2019;avez vu, dans notre code, nous r&#xE9;p&#xE9;tons &#xE0; deux reprises la s&#xE9;quence suivante :</p>
+
+<ul>
+<li>diameter = valeur</li>
+<li>circumference = retourDeFonction</li>
+<li>affichage de circonf&#xE9;rence</li>
+</ul>
+<p>Le probl&#xE8;me avec le code qui se r&#xE9;p&#xE8;te, c&#x2019;est que si l&#x2019;on souhaite le modifier, pour corriger des bugs ou le faire &#xE9;voluer, cela implique de devoir modifier son code deux fois.</p>
+<h3 id="constantes">Constantes</h3>
+<p>Afin de rendre le code plus lisible, il est recommand&#xE9; de sortir toutes les variables brutes du code des fonctions pour les mettre dans des constantes.</p>
+<p>En effet, si vous faites une faute de frappe avec un nombre ou une chaine de caract&#xE8;re dans votre code, cela peut avoir pour cons&#xE9;quence de rendre le code tr&#xE8;s complexe &#xE0; corriger (dans des projets de grand volume).</p>
+<p>Passer par des constantes simplifiera la chose, puisque si vous faites une faute de frappe dans l&#x2019;&#xE9;criture du nom d&#x2019;une constante, le compilateur refusera de compiler, en vous indiquant pr&#xE9;cis&#xE9;ment o&#xF9; se situe votre erreur.</p>
+<p>Pour distinguer les constantes des variables, il est fr&#xE9;quent d&#x2019;&#xE9;crire le nom des constantes en majuscules.</p>
+<h2 id="place-&#xE0;-la-pratique-encore">Place &#xE0; la pratique&#x2026; encore</h2>
+<p class="pageBreakAfter">Du coup, en appliquant les conseils ci-dessus, on obtient le code suivant :</p>
+
+<div class="fileTitle">Circumference.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/** The value of &#x3C0; for calculating the circumference */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span>
+
+<span class="hljs-comment">/**
+ * Main method, displaying the circumference of two circles
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   printCircumference(<span class="hljs-number">3.78</span>)
+   printCircumference(<span class="hljs-number">1.72</span>)
+}
+
+<span class="hljs-comment">/**
+ * Prints the circumference of circle when diameter is [diameter]
+ * <span class="hljs-doctag">@param</span> diameter the diameter of circle
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(circumference(diameter))
+}
+
+<span class="hljs-comment">/**
+ * Returns the circumference of circle when diameter is [diameter]
+ * <span class="hljs-doctag">@param</span> diameter the diameter of circle
+ * <span class="hljs-doctag">@return</span> the circumference of a circle when diameter is [diameter]
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> PI*diameter
+}
+</code></pre>
+<p>Cela rend le code beaucoup plus facile &#xE0; lire et &#xE0; maintenir. Imaginons maintenant que vous souhaitiez afficher <code>&quot;circumference(&quot;+diameter+&quot;)=&quot;+circumference(diameter)</code>, vous n&#x2019;aurez &#xE0; effectuer cette modification qu&#x2019;&#xE0; un seul endroit :</p>
+<div class="fileTitle">Circumference.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Prints the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
+}
+</code></pre>
+<p class="pageBreakAfter">La factorisation vous a permis de ne modifier qu&#x2019;un seul endroit pour rectifier les deux affichages.</p>
+
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1---facile">Exercice 1 - Facile</h3>
+<p>D&#xE9;veloppez un programme similaire au pr&#xE9;c&#xE9;dent, mais qui calcule le p&#xE9;rim&#xE8;tre d&#x2019;un carr&#xE9; en fonction de la mesure de ses c&#xF4;t&#xE9;s.</p>
+<h3 id="exercice-2---facile">Exercice 2 - Facile</h3>
+<p>D&#xE9;veloppez un programme, qui, &#xE0; partir des valeurs 13 et 5, renvoie <code>&quot;13/5 = 2 et il reste 3&quot;</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1. Premier programme Kotlin">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-10-27T20:18:07.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-27T20:36:21.780Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
