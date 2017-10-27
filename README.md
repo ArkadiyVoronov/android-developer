@@ -31,6 +31,10 @@ For sure, proofreaders and translators are welcome. Feel free to tweet me (&#64;
 
 Feel free to fork this project and send your pull requests.
 
+## In case you're interested in
+
+Pre-alpha version are available read only here : https://drive.google.com/drive/u/0/folders/0B29Ri5GmcNLBSGxvT1JTU3Nja3c
+
 # Français
 
 ## Qu'est ce que ce projet ?
@@ -61,3 +65,7 @@ Version actuelle : Alpha
 Bien sûr, relecteurs, correcteurs et traducteurs sont les bienvenus. N'hésitez pas à m'interpeler sur Twitter (&#64;gahfy) ou par email g.herfray&#64;gahfy.net.
 
 N'hésitez pas à faire un fork de ce projet et à proposer des pull requests si vous vous sentez l'âme d'un correcteur ou d'un relecteur.
+
+## Au cas où ça vous intéresse
+
+Les versions pré-alpha des chapitres dont disponibles ici en consultation uniquement : https://drive.google.com/drive/u/0/folders/0B29Ri5GmcNLBSGxvT1JTU3Nja3c
