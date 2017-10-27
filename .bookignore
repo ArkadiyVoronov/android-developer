@@ -2,3 +2,6 @@ _book/*
 book.pdf
 book.epub
 book.mobi
+README.md
+.gitignore
+.bookignore
