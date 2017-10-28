@@ -34,7 +34,7 @@ Une fois que vous aurez téléchargé le fichier .zip, extrayez-le dans un empla
 
 Un programme Hello World! est un programme basique, ce qui se fait de plus élémentaire dans chaque langage de programmation. Il s’agit simplement d’afficher à l’écran la chaine de caractères `Hello World!`. Son objectif est de fournir une première approche minimaliste du langage étudié.
 
-Ouvrez un éditeur de texte, et écrivez le contenu suivant, que vous sauvegarderez dans un fichier nommé `HelloWorld.kt`.
+Ouvrez un éditeur de texte (comme l'excellent [Atom](https://atom.io/) par exemple), et écrivez le contenu suivant, que vous sauvegarderez dans un fichier nommé `HelloWorld.kt`.
 
 <div class="fileTitle">HelloWorld.kt</div>
 
