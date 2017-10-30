@@ -61,9 +61,24 @@
     font-weight:bold !important;
 }
 
+.highlightDefinition{
+    background-color:#f2ba00;
+}
+
+.color-theme-1 .highlightDefinition{
+    background-color:#f2ba00;
+}
+
+.color-theme-2 .highlightDefinition{
+    background-color:#001882;
+}
+
+/********* IMAGES **********************/
+
 .kdoc{
     width:725px;
     height:355px;
+    margin:0 auto;
     background:transparent url(../images/kdoc.png);
 }
 
@@ -73,4 +88,19 @@
 
 .color-theme-2 .kdoc{
     background:transparent url(../images/kdoc_night.png)
+}
+
+.package_folders{
+    width:458px;
+    height:567px;
+    margin:0 auto;
+    background:transparent url(../images/package_folders.png);
+}
+
+.package_folders img{
+    display:none;
+}
+
+.color-theme-2 .package_folders{
+    background:transparent url(../images/package_folders_night.png)
 }

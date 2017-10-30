@@ -59,6 +59,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="chapter3.html" />
+    
     
     <link rel="prev" href="chapter1.html" />
     
@@ -121,6 +123,19 @@
             
                     
                     2. Variables, Types, Constantes et Opérateurs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    3. Sources multiples, paquets et imports
             
                 </a>
             
@@ -491,9 +506,9 @@ fun circumference(diameter: Double): Double{
    return 3.14*diameter
 }
 </code></pre><p>Le bloc KDoc ici permet d&#x2019;indiquer clairement ce que fait la fonction, et comment sont utilis&#xE9;s les param&#xE8;tres.</p>
-<p><div class="kdoc"><image src="images/kdoc.png"></image></div></p>
+<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"></div></p>
 
-<p style="text-align:center"><i>Exemple d&#x2019;affichage d&#x2019;une bo&#xEE;te d&#x2019;aide sur le r&#xF4;le d&#x2019;une fonction pour laquelle une documentation au format KDoc a &#xE9;t&#xE9; r&#xE9;dig&#xE9;e dans Android Studio.</i></p>
+<p class="pageBreakAfter" style="text-align:center"><i>Exemple d&#x2019;affichage d&#x2019;une bo&#xEE;te d&#x2019;aide sur le r&#xF4;le d&#x2019;une fonction pour laquelle une documentation au format KDoc a &#xE9;t&#xE9; r&#xE9;dig&#xE9;e dans Android Studio.</i></p>
 
 <h3 id="langue-anglaise">Langue anglaise</h3>
 <p>Comme vous pouvez le remarquer, tous les codes jusqu&#x2019;ici ont &#xE9;t&#xE9; &#xE9;crits en anglais. Non, il ne s&#x2019;agit pas d&#x2019;une traduction incompl&#xE8;te de ce livre, puisque ce dernier a d&#x2019;abord &#xE9;t&#xE9; &#xE9;crit en fran&#xE7;ais, avant d&#x2019;&#xEA;tre traduit en anglais.</p>
@@ -504,8 +519,7 @@ fun circumference(diameter: Double): Double{
 <li>Enfin, la derni&#xE8;re raison, c&#x2019;est que les identifiants de variables et de fonctions n&#x2019;aiment pas les caract&#xE8;res sp&#xE9;ciaux. Vous ne pouvez pas utiliser de &#x201C;&#xE9;&#x201D;, de &#x201C;&#xE8;&#x201D; ou de &#x201C;&#xE7;&#x201D; dans les noms de fonctions. Plut&#xF4;t que d&#x2019;&#xE9;crire avec des erreurs, autant tout &#xE9;crire correctement.</li>
 </ul>
 <h3 id="factorisation">Factorisation</h3>
-<p class="pageBreakAfter">Vous l&#x2019;avez vu, dans notre code, nous r&#xE9;p&#xE9;tons &#xE0; deux reprises la s&#xE9;quence suivante :</p>
-
+<p>Vous l&#x2019;avez vu, dans notre code, nous r&#xE9;p&#xE9;tons &#xE0; deux reprises la s&#xE9;quence suivante :</p>
 <ul>
 <li>diameter = valeur</li>
 <li>circumference = retourDeFonction</li>
@@ -518,8 +532,7 @@ fun circumference(diameter: Double): Double{
 <p>Passer par des constantes simplifiera la chose, puisque si vous faites une faute de frappe dans l&#x2019;&#xE9;criture du nom d&#x2019;une constante, le compilateur refusera de compiler, en vous indiquant pr&#xE9;cis&#xE9;ment o&#xF9; se situe votre erreur.</p>
 <p>Pour distinguer les constantes des variables, il est fr&#xE9;quent d&#x2019;&#xE9;crire le nom des constantes en majuscules.</p>
 <h2 id="place-&#xE0;-la-pratique-encore">Place &#xE0; la pratique&#x2026; encore</h2>
-<p class="pageBreakAfter">Du coup, en appliquant les conseils ci-dessus, on obtient le code suivant :</p>
-
+<p>Du coup, en appliquant les conseils ci-dessus, on obtient le code suivant :</p>
 <div class="fileTitle">Circumference.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/** The value of &#x3C0; for calculating the circumference */</span>
@@ -550,7 +563,8 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
    <span class="hljs-keyword">return</span> PI*diameter
 }
 </code></pre>
-<p>Cela rend le code beaucoup plus facile &#xE0; lire et &#xE0; maintenir. Imaginons maintenant que vous souhaitiez afficher <code>&quot;circumference(&quot;+diameter+&quot;)=&quot;+circumference(diameter)</code>, vous n&#x2019;aurez &#xE0; effectuer cette modification qu&#x2019;&#xE0; un seul endroit :</p>
+<p class="pageBreakAfter">Cela rend le code beaucoup plus facile &#xE0; lire et &#xE0; maintenir. Imaginons maintenant que vous souhaitiez afficher `&quot;circumference(&quot;+diameter+&quot;)=&quot;+circumference(diameter)`, vous n&#x2019;aurez &#xE0; effectuer cette modification qu&#x2019;&#xE0; un seul endroit :</p>
+
 <div class="fileTitle">Circumference.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
@@ -561,8 +575,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
    println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
 }
 </code></pre>
-<p class="pageBreakAfter">La factorisation vous a permis de ne modifier qu&#x2019;un seul endroit pour rectifier les deux affichages.</p>
-
+<p>La factorisation vous a permis de ne modifier qu&#x2019;un seul endroit pour rectifier les deux affichages.</p>
 <h2 id="exercices">Exercices</h2>
 <h3 id="exercice-1---facile">Exercice 1 - Facile</h3>
 <p>D&#xE9;veloppez un programme similaire au pr&#xE9;c&#xE9;dent, mais qui calcule le p&#xE9;rim&#xE8;tre d&#x2019;un carr&#xE9; en fonction de la mesure de ses c&#xF4;t&#xE9;s.</p>
@@ -595,10 +608,14 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
 
             
                 
-                <a href="chapter1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1. Premier programme Kotlin">
+                <a href="chapter1.html" class="navigation navigation-prev " aria-label="Previous page: 1. Premier programme Kotlin">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="chapter3.html" class="navigation navigation-next " aria-label="Next page: 3. Sources multiples, paquets et imports">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -607,7 +624,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-10-27T20:18:07.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-28T14:00:33.127Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"next":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-10-30T20:56:06.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-30T21:29:40.127Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

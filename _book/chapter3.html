@@ -1,0 +1,659 @@
+
+<!DOCTYPE HTML>
+<html lang="fr" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. Sources multiples, paquets et imports · Le développeur Android 2018</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Gaëtan HERFRAY">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="chapter2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Tapez pour rechercher" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    1. Premier programme Kotlin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    2. Variables, Types, Constantes et Opérateurs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    3. Sources multiples, paquets et imports
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Publié avec GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >3. Sources multiples, paquets et imports</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapitre-3sources-multiples-paquets-et-imports">Chapitre 3<br>Sources multiples, paquets et imports</h1>
+<p><em>Dans ce chapitre, certaines d&#xE9;finitions seront <span class="highlightDefinition">surlign&#xE9;es</span>, &#xE9;tant incompl&#xE8;tes ou trop impr&#xE9;cises quant &#xE0; la notion de programmation orient&#xE9;e objets, abord&#xE9;e dans le chapitre suivant.</em></p>
+<p>Jusque-l&#xE0;, nous avons vu comment d&#xE9;velopper des fonctions, avec des variables. D&#xE8;s lors, vous pourriez avoir envie de d&#xE9;velopper de gros programmes. Rien ne vous emp&#xEA;che par exemple de d&#xE9;velopper un projet qui calcule la circonf&#xE9;rence et l&#x2019;aire de toutes les formes g&#xE9;om&#xE9;triques possibles.</p>
+<p>Imaginez un peu, les quadrilat&#xE8;res, les cercles, les triangles, pourquoi pas les pentagones et les hexagones tant qu&#x2019;on y est, jusqu&#x2019;au dod&#xE9;cagone. Bref, le code source de votre programme deviendrait tr&#xE8;s volumineux, et aurait donc deux inconv&#xE9;nients principaux :</p>
+<ul>
+<li>Le premier, il serait complexe de maintenir un code source d&#x2019;un &#xE9;norme volume dans un seul fichier source ;</li>
+<li>Le second, si votre programme commence &#xE0; devenir tr&#xE8;s important, cela pourrait occasionner des probl&#xE8;mes de chargement, le temps que l&#x2019;ordinateur soit capable de charger l&#x2019;int&#xE9;gralit&#xE9; des fonctions que vous avez d&#xE9;velopp&#xE9;es.</li>
+</ul>
+<p>C&#x2019;est pour r&#xE9;soudre cette probl&#xE9;matique que Kotlin offre l&#x2019;avantage d&#x2019;avoir un syst&#xE8;me de paquets et d&#x2019;imports tr&#xE8;s pratique.</p>
+<h2 id="sources-multiples">Sources multiples</h2>
+<p>Nous allons &#xE9;crire un programme, semblable &#xE0; celui d&#xE9;velopp&#xE9; dans le projet pr&#xE9;c&#xE9;dent, mais s&#xE9;par&#xE9; en deux fichiers :</p>
+<ul>
+<li>L&#x2019;un contiendra les fonctions d&#x2019;affichage du programme ;</li>
+<li>L&#x2019;autre contiendra les fonctions relatives au calcul sur un cercle.</li>
+</ul>
+<p class="pageBreakAfter">C&#x2019;est parti :</p>
+
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Main method, displaying the circumference of two circles
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   printCircumference(<span class="hljs-number">3.78</span>)
+   printCircumference(<span class="hljs-number">1.72</span>)
+}
+
+<span class="hljs-comment">/**
+* Prints the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
+}
+</code></pre>
+<div class="fileTitle">Circle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/** The value of &#x3C0; for calculating the circumference of a circle */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span>
+
+<span class="hljs-comment">/**
+* Returns the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the diameter of the circle
+* <span class="hljs-doctag">@return</span> the circumference of a circle when the diameter is [diameter]
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> PI*diameter
+}
+</code></pre>
+<p>Maintenant ex&#xE9;cutez la commande suivante :</p>
+<pre class="terminal"><code class="terminal">kotlinc Geometry.kt Circle.kt -d ./build</code></pre>
+
+<p>L&#x2019;argument <code>-d</code> que vous connaissez surement, si vous avez r&#xE9;solu les exercices du chapitre&#xE0103;&#xE018F;&#x2005;1, permet de cr&#xE9;er un r&#xE9;pertoire dans lequel seront stock&#xE9;s les fichiers ex&#xE9;cutables.
+Cela permet de ne pas m&#xE9;langer les fichiers sources et les fichiers ex&#xE9;cutables, ce qui devient tr&#xE8;s important lorsque l&#x2019;on travaille avec des projets sur plusieurs fichiers.</p>
+<p>Pour ex&#xE9;cuter le programme, il suffit d&#x2019;ex&#xE9;cuter la commande suivante :</p>
+<pre class="terminal"><code class="terminal">kotlin -cp ./build GeometryKt</code></pre>
+
+<p><span class="highlightDefinition">L&#x2019;argument <code>-cp</code> permet d&#x2019;indiquer au l&#x2019;ex&#xE9;cuteur kotlin dans quel r&#xE9;pertoire chercher nos fichiers ex&#xE9;cutables.</span></p>
+<p>Vous pourrez observer dans le dossier build, que deux fichiers ex&#xE9;cutables .class ont &#xE9;t&#xE9; cr&#xE9;&#xE9;s. <span class="highlightDefinition">Ainsi, nous pouvons en d&#xE9;duire que le compilateur Kotlin a bien s&#xE9;par&#xE9; nos fichiers source.</span></p>
+<h2 id="paquets">Paquets</h2>
+<p>Nous avons vu comment compiler un programme dans lequel les sources sont dans des fichiers s&#xE9;par&#xE9;s. Mais nous pourrions aller plus loin.</p>
+<p>Ici, la constante <code>PI</code> a &#xE9;t&#xE9; ajout&#xE9;e dans le fichier calculant la circonf&#xE9;rence d&#x2019;un cercle. Imaginons maintenant que nous souhaitions ajouter &#xE0; notre programme la possibilit&#xE9; pour des angles exprim&#xE9;s en degr&#xE9;s de les convertir en radians, et vice versa. Nous aurons &#xE9;galement besoin de cette valeur pour les angles.</p>
+<p>Cela nous obligera &#xE0; avoir quatre fichiers, afin de ne pas dupliquer de codes comme vu dans le chapitre pr&#xE9;c&#xE9;dent :</p>
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Main method, displaying the circumference of two circles
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   printCircumference(<span class="hljs-number">3.78</span>)
+   printAngleDeg(PI)
+}
+
+<span class="hljs-comment">/**
+* Prints the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
+}
+
+<span class="hljs-comment">/**
+* Prints the conversion of an angle measured in radian to
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printAngleDeg</span><span class="hljs-params">(angRad: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;toDegrees(&quot;</span>+angRad+<span class="hljs-string">&quot;)=&quot;</span>+toDegrees(angRad))
+}
+</code></pre>
+<div class="fileTitle pageBreakBefore">Circle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Returns the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the diameter of the circle
+* <span class="hljs-doctag">@return</span> the circumference of a circle when the diameter is [diameter]
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> PI*diameter
+}
+</code></pre>
+<div class="fileTitle">Angle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/** Flat angle measured in degrees */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> DEGREES_FLAT_ANGLE</span> = <span class="hljs-number">180</span>
+<span class="hljs-comment">/** Flat angle measured in radians */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_FLAT_ANGLE</span> = PI
+
+<span class="hljs-comment">/**
+* Converts an angle measured in radians to an equivalent angle measured in degrees.
+* <span class="hljs-doctag">@param</span> angrad an angle, in radians
+* <span class="hljs-doctag">@return</span> the measurement of the angle [angrad] in degrees
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toDegrees</span><span class="hljs-params">(angrad: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> angrad/RADIANS_FLAT_ANGLE*DEGREES_FLAT_ANGLE
+}
+
+<span class="hljs-comment">/**
+* Converts an angle measured in degrees to an equivalent angle measured in radians.
+* <span class="hljs-doctag">@param</span> angdeg an angle, in degrees
+* <span class="hljs-doctag">@return</span> the measurement of the angle [angdeg] in radians
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toRadians</span><span class="hljs-params">(angdeg: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> angdeg/DEGREES_FLAT_ANGLE*RADIANS_FLAT_ANGLE
+}
+</code></pre>
+<div class="fileTitle">Constants.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/** The value of &#x3C0; for calculating the circumference of a circle */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span>
+</code></pre>
+<p>L&#xE0;, nous n&#x2019;avons pris que l&#x2019;exemple de 4 fichiers, mais parfois, un projet peut contenir des centaines, voire des milliers de fichiers. Du coup, on ne va pas s&#x2019;amuser &#xE0; ajouter chacun de nos fichiers dans la commande de compilation :</p>
+<pre class="terminal"><code class="terminal">kotlinc ./* -d build</code></pre>
+
+<p>Le programme compile ; on peut l&#x2019;ex&#xE9;cuter, tout va pour le mieux.</p>
+<p>Maintenant, imaginons que nous ajoutions encore deux fichiers &#xE0; notre projet, l&#x2019;un pour calculer le p&#xE9;rim&#xE8;tre d&#x2019;un carr&#xE9;, l&#x2019;autre pour calculer celui d&#x2019;un triangle &#xE9;quilat&#xE9;ral :</p>
+<div class="fileTitle">Square.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Returns the perimeter of a square when the length of a side is [sideLength]
+* <span class="hljs-doctag">@param</span> sideLength the length of a side of the square
+* <span class="hljs-doctag">@return</span> the perimeter of a square when the length of a side is [sideLength]
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">perimeter</span><span class="hljs-params">(sideLength: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> <span class="hljs-number">4</span>*sideLength
+}
+</code></pre>
+<div class="fileTitle">EquilateralTriangle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+* Returns the perimeter of an equilateral triangle when the length of a side is [sideLength]
+* <span class="hljs-doctag">@param</span> sideLength the length of a side of the equilateral triangle
+* <span class="hljs-doctag">@return</span> the perimeter of an equilateral triangle when the length of a side is [sideLength]
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">perimeter</span><span class="hljs-params">(sideLength: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>*sideLength
+}
+</code></pre>
+<p>Encore une fois, nous allons compiler notre programme :</p>
+<p><em>macOS et Linux :</em></p>
+<pre class="terminal"><code class="terminal">rm -rf ./build/* &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<p><em>Windows :</em></p>
+<pre class="terminal"><code class="terminal">del /S/Q build &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<p class="pageBreakAfter">Et l&#xE0; nous obtenons une erreur :</p>
+
+<pre class="terminal"><code class="terminal">EquilateralTriangle.kt:6:1: error: conflicting overloads: public fun perimeter(sideLength: Double): Double defined in root package in file EquilateralTriangle.kt, public fun perimeter(sideLength: Double): Double defined in root package in file Square.kt
+fun perimeter(sideLength: Double): Double{
+^
+Square.kt:6:1: error: conflicting overloads: public fun perimeter(sideLength: Double): Double defined in root package in file EquilateralTriangle.kt, public fun perimeter(sideLength: Double): Double defined in root package in file Square.kt
+fun perimeter(sideLength: Double): Double{
+^</code></pre>
+
+<p>En fait, cette erreur nous indique que la fonction <code>perimeter(Double)</code> est d&#xE9;finie deux fois. Et ce serait une erreur que de vouloir appeler nos m&#xE9;thodes diff&#xE9;remment, elles comportent un nom clair.</p>
+<p>Pour r&#xE9;soudre cette probl&#xE9;matique, Kotlin nous permet de s&#xE9;parer nos diff&#xE9;rents fichiers sources en paquets. Et si une m&#xEA;me fonction est d&#xE9;finie dans deux paquets diff&#xE9;rents, Kotlin va les consid&#xE9;rer comme deux fonctions diff&#xE9;rentes.</p>
+<p>Pour d&#xE9;finir un fichier source comme appartenant &#xE0; un paquet, il suffit d&#x2019;indiquer le nom du paquet que l&#x2019;on souhaite affecter pr&#xE9;fix&#xE9; par le mot cl&#xE9; <code>package</code> sur la premi&#xE8;re ligne du fichier.</p>
+<p>De plus, pour permettre de hi&#xE9;rarchiser les paquets, chaque paquet peut &#xEA;tre d&#xE9;fini dans un sous-paquet, il suffit juste de les s&#xE9;parer par un point. Ainsi, <code>geometry.angles</code> et <code>geometry.circle</code> seront deux paquets, <code>angles</code> et <code>circle</code>, appartenant chacun au paquet <code>geometry</code>.</p>
+<p>Ainsi, les premi&#xE8;res lignes de nos fichiers deviennent donc :</p>
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
+</code></pre>
+<div class="fileTitle">Circle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.circle
+</code></pre>
+<div class="fileTitle">Angle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.angles
+</code></pre>
+<div class="fileTitle">Constants.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.constants
+</code></pre>
+<div class="fileTitle pageBreakBefore">Square.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.quadrilateral.square
+</code></pre>
+<div class="fileTitle">EquilateralTriangle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle.equilateral
+</code></pre>
+<p>Maintenant, il ne nous reste plus qu&#x2019;&#xE0; compiler notre programme. Essayons pour voir :</p>
+<p><em>macOS et Linux</em> :</p>
+<pre class="terminal"><code class="terminal">rm -rf ./build/* &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<p><em>Windows :</em></p>
+<pre class="terminal"><code class="terminal">del /S/Q build &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<p>Nous obtenons plusieurs erreurs. En fait le souci, c&#x2019;est que le compilateur Kotlin ne sait plus trouver la fonction <code>circumference</code>, ni m&#xEA;me toutes les autres r&#xE9;f&#xE9;rences. Mais pourquoi ne les trouve-t-il plus ?</p>
+<p>En fait, si nous ne pr&#xE9;cisons pas de paquet, Kotlin va automatiquement ajouter nos fichiers dans un m&#xEA;me paquet, un paquet racine. Ainsi, avant que l&#x2019;on sp&#xE9;cifie nos diff&#xE9;rents paquets, Kotlin a consid&#xE9;r&#xE9; que tous nos fichiers faisaient partie du m&#xEA;me paquet. Or, lorsqu&#x2019;on fait appel &#xE0; une fonction, Kotlin va automatiquement la rechercher dans le paquet du fichier qui effectue l&#x2019;appel.</p>
+<p>Ainsi, dans <code>Geometry.kt</code>, lorsqu&#x2019;on appelle <code>printAngleDeg(PI)</code>, il va non plus le chercher dans le paquet racine, mais bien dans le paquet <code>geometry</code> que nous avons sp&#xE9;cifi&#xE9; pour ce fichier. Or, la d&#xE9;finition de la constante <code>PI</code> se trouve dans un paquet diff&#xE9;rent. Kotlin ne sait donc pas trouver la d&#xE9;finition de cette constante.</p>
+<p>Pour que Kotlin trouve notre constante <code>PI</code>, nous devons lui indiquer dans quel paquet trouver cette constante. Pour ce faire, nous devons faire pr&#xE9;c&#xE9;der <code>PI</code> par le nom du paquet dans lequel il se trouve suivi d&#x2019;un point. Ainsi, <code>PI</code> devient <code>geometry.constants.PI</code>.</p>
+<p class="pageBreakAfter">De ce fait, le code de nos diff&#xE9;rents fichiers devient :</p>
+
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
+
+<span class="hljs-comment">/**
+* Main method, displaying the circumference of two circles
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   printCircumference(<span class="hljs-number">3.78</span>)
+   printAngleDeg(geometry.constants.PI)
+}
+
+<span class="hljs-comment">/**
+* Prints the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+geometry.circle.circumference(diameter))
+}
+
+<span class="hljs-comment">/**
+* Prints the conversion of an angle measured in radian to
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printAngleDeg</span><span class="hljs-params">(angRad: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;toDegrees(&quot;</span>+angRad+<span class="hljs-string">&quot;)=&quot;</span>+geometry.angles.toDegrees(angRad))
+}
+</code></pre>
+<div class="fileTitle pageBreakBefore">Angles.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.angles
+
+<span class="hljs-comment">/** Flat angle measured in degrees */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> DEGREES_FLAT_ANGLE</span> = <span class="hljs-number">180</span>
+<span class="hljs-comment">/** Flat angle measured in radians */</span>
+const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_FLAT_ANGLE</span> = geometry.constants.PI
+
+<span class="hljs-comment">/**
+* Converts an angle measured in radians to an equivalent angle measured in degrees.
+* <span class="hljs-doctag">@param</span> angrad an angle, in radians
+* <span class="hljs-doctag">@return</span> the measurement of the angle [angrad] in degrees
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toDegrees</span><span class="hljs-params">(angrad: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> angrad/RADIANS_FLAT_ANGLE*DEGREES_FLAT_ANGLE
+}
+
+<span class="hljs-comment">/**
+* Converts an angle measured in degrees to an equivalent angle measured in radians.
+* <span class="hljs-doctag">@param</span> angdeg an angle, in degrees
+* <span class="hljs-doctag">@return</span> the measurement of the angle [angdeg] in radians
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toRadians</span><span class="hljs-params">(angdeg: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> angdeg/DEGREES_FLAT_ANGLE*RADIANS_FLAT_ANGLE
+}
+</code></pre>
+<div class="fileTitle">Circle.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.circle
+
+<span class="hljs-comment">/**
+* Returns the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the diameter of the circle
+* <span class="hljs-doctag">@return</span> the circumference of a circle when the diameter is [diameter]
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> geometry.constants.PI*diameter
+}
+</code></pre>
+<p>Nous pouvons d&#xE9;sormais compiler notre programme (je vous &#xE9;pargne le suspens puisque cela fonctionne), et l&#x2019;ex&#xE9;cuter :</p>
+<pre class="terminal"><code class="terminal">kotlin -cp build GeometryKt</code></pre>
+
+<p>Cette fois, c&#x2019;est l&#x2019;ex&#xE9;cution qui provoque une erreur :</p>
+<pre class="terminal"><code class="terminal">error: could not find or load main class GeometryKt</code></pre>
+
+<p>En fait, comme c&#x2019;&#xE9;tait le cas dans nos fichiers sources, lorsque nous appelons <code>GeometryKt</code>, Kotlin cherche le fichier ex&#xE9;cutable <code>GeometryKt</code> situ&#xE9; dans le paquet racine. Or, nous avons sp&#xE9;cifi&#xE9; un paquet pour notre fichier : <code>geometry</code>. Il suffit simplement d&#x2019;indiquer &#xE0; Kotlin le paquet dans lequel se trouve l&#x2019;ex&#xE9;cutable <code>GeometryKt</code> pour que cela fonctionne :</p>
+<pre class="terminal"><code class="terminal">kotlin -cp build geometry.GeometryKt</code></pre>
+
+<p class="pageBreakAfter">Il ne nous reste plus qu&#x2019;&#xE0; modifier notre fichier `Geometry.kt` pour int&#xE9;grer les deux fonctions que nous avons d&#xE9;velopp&#xE9;es :</p>
+
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
+
+<span class="hljs-comment">/**
+* Main method, displaying the circumference of two circles
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+   printCircumference(<span class="hljs-number">3.78</span>)
+   printAngleDeg(geometry.constants.PI)
+   printEquilateralTrianglePerimeter(<span class="hljs-number">3.0</span>)
+   printSquarePerimeter(<span class="hljs-number">3.0</span>)
+}
+
+<span class="hljs-comment">/**
+* Prints the circumference of a circle when the diameter is [diameter]
+* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+geometry.circle.circumference(diameter))
+}
+
+<span class="hljs-comment">/**
+* Prints the conversion of an angle measured in radian to
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printAngleDeg</span><span class="hljs-params">(angRad: <span class="hljs-type">Double</span>)</span> {</span>
+   println(<span class="hljs-string">&quot;toDegrees(&quot;</span> + angRad + <span class="hljs-string">&quot;)=&quot;</span> + geometry.angles.toDegrees(angRad))
+}
+
+<span class="hljs-comment">/**
+* Prints the perimeter of an equilateral triangle when the length of a side is [sideLength]
+* <span class="hljs-doctag">@param</span> sideLength the length of a side of the equilateral triangle
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printEquilateralTrianglePerimeter</span><span class="hljs-params">(sideLength: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;Equilateral triangle perimeter(&quot;</span> + sideLength + <span class="hljs-string">&quot;)=&quot;</span> + geometry.triangle.equilateral.perimeter(sideLength))
+}
+
+<span class="hljs-comment">/**
+* Prints the perimeter of an square when the length of a side is [sideLength]
+* <span class="hljs-doctag">@param</span> sideLength the length of a side of the square
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printSquarePerimeter</span><span class="hljs-params">(sideLength: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;Square perimeter(&quot;</span> + sideLength + <span class="hljs-string">&quot;)=&quot;</span> + geometry.quadrilateral.square.perimeter(sideLength))
+}
+</code></pre>
+<h3 id="convention-darborescence">Convention d&#x2019;arborescence</h3>
+<p>Avec tous nos fichiers dans un m&#xEA;me r&#xE9;pertoire, il est difficile de savoir quel fichier appartient &#xE0; quel package d&#x2019;un simple coup d&#x2019;&#x153;il.</p>
+<p>De plus, on peut facilement &#xE9;tablir un parall&#xE8;le entre les paquets qui peuvent s&#x2019;imbriquer les uns dans les autres, et les dossiers avec lesquels on peut faire de m&#xEA;me.</p>
+<p>Du coup, la convention tr&#xE8;s r&#xE9;pandue et appliqu&#xE9;e par tous les d&#xE9;veloppeurs est d&#x2019;organiser les fichiers sources d&#x2019;un projet, de sorte qu&#x2019;&#xE0; chaque paquet corresponde un dossier, et que chaque fichier source soit dans le dossier correspondant &#xE0; son paquet.</p>
+<p>Ce qui donne pour nos fichiers sources l&#x2019;arborescence suivante :</p>
+<p><div class="package_folders"><img src="images/package_folders.png" style="width:229px;height:283px;display:block;margin:0 auto;"></div></p>
+
+<p>La commande reste la m&#xEA;me pour compiler le projet :</p>
+<p><em>macOS et Linux :</em></p>
+<pre class="terminal"><code class="terminal">rm -rf ./build/* &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<p><em>Windows :</em></p>
+<pre class="terminal"><code class="terminal">del /S/Q build &amp;&amp; kotlinc ./* -d build</code></pre>
+
+<h2 id="imports">Imports</h2>
+<p>Nous l&#x2019;avons vu dans le fichier <code>Geometry.kt</code>, d&#xE9;sormais, pour calculer la circonf&#xE9;rence d&#x2019;un cercle, nous devons appeler la fonction <code>geometry.circle.circumference()</code>.</p>
+<p>D&#x2019;une mani&#xE8;re g&#xE9;n&#xE9;rale, on essaie de garder le code aussi simple et concis que possible. Imaginez qu&#x2019;&#xE0; plusieurs endroits, vous ayez besoin d&#x2019;appeler cette fonction, &#xE9;crire <code>geometry.circle.circumference()</code> &#xE0; chaque fois n&#x2019;est ni simple, ni concis.</p>
+<p>Pour palier ce probl&#xE8;me, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de sp&#xE9;cifier le chemin complet d&#x2019;une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.</p>
+<div class="fileTitle">Geometry.kt</div>
+
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
+
+<span class="hljs-keyword">import</span> geometry.circle.circumference
+
+
+<span class="hljs-comment">// ...</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
+   println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
+}
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p class="text-align:center;"><i>La notation `// ...` indique ici qu&#x2019;il y a des extraits de code que l&#x2019;on omet. Cela permet de se focaliser uniquement sur une partie du code. Ici, seul ce qui change dans Geometry.kt a &#xE9;t&#xE9; affich&#xE9;, le reste demeurant identique a &#xE9;t&#xE9; simplifi&#xE9; avec la notation `// ...`</i></p>
+
+<p>On voit bien ici comment l&#x2019;import nous simplifie les choses.</p>
+<h3 id="&#xE9;toile">&#xC9;toile</h3>
+<p>Maintenant, prenons l&#x2019;exemple des angles, et des deux fonctions qui y sont associ&#xE9;es. On pourrait, avec les imports, &#xE9;crire ceci :</p>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> geometry.angles.toDegrees
+<span class="hljs-keyword">import</span> geometry.angles.toRadians
+</code></pre>
+<p>Mais il existe en Kotlin un moyen pour importer la totalit&#xE9; d&#x2019;un paquet, il s&#x2019;agit de la notation&#x2005;<code>*</code>. Ainsi, pour importer la totalit&#xE9; des fonctions contenues dans le paquet&#x2005;<code>geometry.angles</code>, on peut noter :</p>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> geometry.angles.*
+</code></pre>
+<p>Ainsi, les deux m&#xE9;thodes pourront &#xEA;tre appel&#xE9;es sous leur forme courte dans le code.</p>
+<p>Bien que cela soit possible, nous vous d&#xE9;conseillons fortement d&#x2019;utiliser cette notation, pour deux raisons principales :</p>
+<p>M&#xEA;me si vous vous servez de l&#x2019;int&#xE9;gralit&#xE9; du paquet aujourd&#x2019;hui, il se peut que vous ajoutiez des fonctions au paquet par la suite. Cela impliquerait donc un import inutile, donc une perte en termes de performances.</p>
+<p>Il est tr&#xE8;s compliqu&#xE9; de savoir tout de suite la liste de ce qui est import&#xE9; et pourquoi, ce qui rend le code moins lisible.</p>
+<p>Ainsi, dans la majorit&#xE9; des cas, il est pr&#xE9;f&#xE9;rable d&#x2019;utiliser un import par utilisation et d&#x2019;&#xE9;viter les imports avec &#xE9;toile.</p>
+<h3 id="limitations">Limitations</h3>
+<p>Toutefois, il n&#x2019;est pas possible d&#x2019;importer deux paquets contenant une m&#xE9;thode ayant le m&#xEA;me nom. Ainsi, il ne sera pas permis d&#x2019;effectuer les deux imports suivants :</p>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> geometry.quadrilateral.square
+<span class="hljs-keyword">import</span> geometry.triangle.equilateral
+</code></pre>
+<p>Et ce, pour la m&#xEA;me raison que celle qui nous a pouss&#xE9;e &#xE0; nous int&#xE9;resser aux paquets. En utilisant ces deux imports, lorsque vous utiliserez la fonction <code>perimeter</code>, le compilateur ne saura pas d&#xE9;terminer laquelle des deux fonctions il doit utiliser.</p>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1---facile">Exercice 1 - Facile</h3>
+<p>Simplifiez tous les appels aux fonctions de l&#x2019;ensemble des fichiers, de sorte que toutes les fonctions soient appel&#xE9;es uniquement par leur nom au lieu de leur chemin complet. Comme vu, seules les fonctions <code>perimeter</code> ne pourront &#xEA;tre simplifi&#xE9;es.</p>
+<h3 id="exercice-2---moyen">Exercice 2 - Moyen</h3>
+<p>En relisant bien ce qui a &#xE9;t&#xE9; dit sur cette partie, il est possible de simplifier quelque peu un appel &#xE0; <code>perimeter</code>. Simplifiez donc un appel &#xE0; cette fonction.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2. Variables, Types, Constantes et Opérateurs">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"previous":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter3.md","mtime":"2017-10-30T21:28:24.600Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-30T21:29:40.127Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

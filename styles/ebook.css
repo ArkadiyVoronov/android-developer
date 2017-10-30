@@ -28,3 +28,7 @@ pre.terminal code.terminal{
     color:#f3f3f3;
     font-weight:bold;
 }
+
+.highlightDefinition{
+    background-color:#f2ba00;
+}

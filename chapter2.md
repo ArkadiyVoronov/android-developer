@@ -250,7 +250,7 @@ Ces deux déclarations sont équivalentes.
 
 ### Notation Hexadécimale
 
-<p class="pageBreakAfter">De la même façon qu’il est possible d’écrire un nombre en notation binaire en le préfixant de `0b`, il est possible d’écrire un nombre dans sa notation hexadécimale en le préfixant de `0x` :</p>
+<p class="pageBreakAfter">De la même façon qu’il est possible d’écrire un nombre en notation binaire en le préfixant de <pre>0b</pre>, il est possible d’écrire un nombre dans sa notation hexadécimale en le préfixant de <pre>0x</pre> :</p>
 
 ```kotlin
 val readableGigaByte = 1_073_741_824
@@ -261,7 +261,7 @@ val hexadecimalGigaByte = 0x4000_0000‬
 
 ### Affectation
 
-C’est le seul opérateur que nous ayons déjà utilisé. Il s’agit du signe `=`` pour affecter une valeur à une variable :
+C’est le seul opérateur que nous ayons déjà utilisé. Il s’agit du signe `=` pour affecter une valeur à une variable :
 
 ```kotlin
 val three = 3
@@ -438,12 +438,12 @@ KDoc est une forme particulière de commentaire, que l’on dispose avant un blo
 
 On pourrait consacrer un chapitre entier à KDoc, mais je préfère simplement vous en montrer un exemple, et que vous vous imprégniez de son usage au fur et à mesure de la lecture de ce livre.
 
-```
+```kotlin
 /**
-* Retourne la circonférence d'un cercle de diamètre [diameter].
-* @param diameter le diamètre du cercle
-* @return la circonférence d'un cercle de diamètre [diameter]
-*/
+ * Retourne la circonférence d'un cercle de diamètre [diameter].
+ * @param diameter le diamètre du cercle
+ * @return la circonférence d'un cercle de diamètre [diameter]
+ */
 fun circumference(diameter: Double): Double{
    return 3.14*diameter
 }
@@ -451,9 +451,9 @@ fun circumference(diameter: Double): Double{
 
 Le bloc KDoc ici permet d’indiquer clairement ce que fait la fonction, et comment sont utilisés les paramètres.
 
-<p><div class="kdoc"><image src="images/kdoc.png" /></div></p>
+<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
 
-<p style="text-align:center"><i>Exemple d’affichage d’une boîte d’aide sur le rôle d’une fonction pour laquelle une documentation au format KDoc a été rédigée dans Android Studio.</i></p>
+<p class="pageBreakAfter" style="text-align:center"><i>Exemple d’affichage d’une boîte d’aide sur le rôle d’une fonction pour laquelle une documentation au format KDoc a été rédigée dans Android Studio.</i></p>
 
 ### Langue anglaise
 
@@ -467,7 +467,7 @@ Mais l’immense majorité des développeurs s’accordent à tout écrire en an
 
 ### Factorisation
 
-<p class="pageBreakAfter">Vous l’avez vu, dans notre code, nous répétons à deux reprises la séquence suivante :</p>
+Vous l’avez vu, dans notre code, nous répétons à deux reprises la séquence suivante :
 
 * diameter = valeur
 * circumference = retourDeFonction
@@ -487,7 +487,7 @@ Pour distinguer les constantes des variables, il est fréquent d’écrire le no
 
 ## Place à la pratique… encore
 
-<p class="pageBreakAfter">Du coup, en appliquant les conseils ci-dessus, on obtient le code suivant :</p>
+Du coup, en appliquant les conseils ci-dessus, on obtient le code suivant :
 
 <div class="fileTitle">Circumference.kt</div>
 
@@ -521,21 +521,21 @@ fun circumference(diameter: Double): Double{
 }
 ```
 
-Cela rend le code beaucoup plus facile à lire et à maintenir. Imaginons maintenant que vous souhaitiez afficher `"circumference("+diameter+")="+circumference(diameter)`, vous n’aurez à effectuer cette modification qu’à un seul endroit :
+<p class="pageBreakAfter">Cela rend le code beaucoup plus facile à lire et à maintenir. Imaginons maintenant que vous souhaitiez afficher <pre>"circumference("+diameter+")="+circumference(diameter)</pre>, vous n’aurez à effectuer cette modification qu’à un seul endroit :</p>
 
 <div class="fileTitle">Circumference.kt</div>
 
 ```kotlin
 /**
-* Prints the circumference of a circle when the diameter is [diameter]
-* @param diameter the circumference of the circle
-*/
+ * Prints the circumference of a circle when the diameter is [diameter]
+ * @param diameter the circumference of the circle
+ */
 fun printCircumference(diameter: Double){
    println("circumference("+diameter+")="+circumference(diameter))
 }
 ```
 
-<p class="pageBreakAfter">La factorisation vous a permis de ne modifier qu’un seul endroit pour rectifier les deux affichages.</p>
+La factorisation vous a permis de ne modifier qu’un seul endroit pour rectifier les deux affichages.
 
 ## Exercices
 
