@@ -9,7 +9,7 @@ Imaginez un peu, les quadrilatères, les cercles, les triangles, pourquoi pas le
 * Le premier, il serait complexe de maintenir un code source d’un énorme volume dans un seul fichier source ;
 * Le second, si votre programme commence à devenir très important, cela pourrait occasionner des problèmes de chargement, le temps que l’ordinateur soit capable de charger l’intégralité des fonctions que vous avez développées.
 
-C’est pour résoudre cette problématique que Kotlin offre l’avantage d’avoir un système de paquets et d’imports très pratique.
+<p><span class="highlightDefinition">C’est pour résoudre cette problématique que Kotlin offre l’avantage d’avoir un système de paquets et d’imports très pratique.</span></p>
 
 ## Sources multiples
 
@@ -350,7 +350,7 @@ Cette fois, c’est l’exécution qui provoque une erreur :
 
 <pre class="terminal"><code class="terminal">error: could not find or load main class GeometryKt</code></pre>
 
-En fait, comme c’était le cas dans nos fichiers sources, lorsque nous appelons `GeometryKt`, Kotlin cherche le fichier exécutable `GeometryKt` situé dans le paquet racine. Or, nous avons spécifié un paquet pour notre fichier : `geometry`. Il suffit simplement d’indiquer à Kotlin le paquet dans lequel se trouve l’exécutable `GeometryKt` pour que cela fonctionne :
+En fait, comme c’était le cas dans nos fichiers sources, lorsque nous appelons `GeometryKt`, <span class="highlightDefinition">Kotlin cherche le fichier exécutable `GeometryKt`</span> situé dans le paquet racine. Or, nous avons spécifié un paquet pour notre fichier : `geometry`. Il suffit simplement d’indiquer à Kotlin le paquet dans lequel se trouve l’exécutable `GeometryKt` pour que cela fonctionne :
 
 <pre class="terminal"><code class="terminal">kotlin -cp build geometry.GeometryKt</code></pre>
 

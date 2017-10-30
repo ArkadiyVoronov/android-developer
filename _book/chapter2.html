@@ -357,14 +357,14 @@ kotlin.Char</code></pre>
 </code></pre>
 <p>Ces deux d&#xE9;clarations sont &#xE9;quivalentes.</p>
 <h3 id="notation-hexad&#xE9;cimale">Notation Hexad&#xE9;cimale</h3>
-<p class="pageBreakAfter">De la m&#xEA;me fa&#xE7;on qu&#x2019;il est possible d&#x2019;&#xE9;crire un nombre en notation binaire en le pr&#xE9;fixant de `0b`, il est possible d&#x2019;&#xE9;crire un nombre dans sa notation hexad&#xE9;cimale en le pr&#xE9;fixant de `0x` :</p>
+<p class="pageBreakAfter">De la m&#xEA;me fa&#xE7;on qu&#x2019;il est possible d&#x2019;&#xE9;crire un nombre en notation binaire en le pr&#xE9;fixant de <pre>0b</pre>, il est possible d&#x2019;&#xE9;crire un nombre dans sa notation hexad&#xE9;cimale en le pr&#xE9;fixant de <pre>0x</pre> :</p>
 
 <pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> readableGigaByte</span> = <span class="hljs-number">1</span>_073_741_824
 <span class="hljs-variable"><span class="hljs-keyword">val</span> hexadecimalGigaByte</span> = <span class="hljs-number">0x4000</span>_0000&#x202C;
 </code></pre>
 <h2 id="op&#xE9;rateurs">Op&#xE9;rateurs</h2>
 <h3 id="affectation">Affectation</h3>
-<p>C&#x2019;est le seul op&#xE9;rateur que nous ayons d&#xE9;j&#xE0; utilis&#xE9;. Il s&#x2019;agit du signe `=`` pour affecter une valeur &#xE0; une variable :</p>
+<p>C&#x2019;est le seul op&#xE9;rateur que nous ayons d&#xE9;j&#xE0; utilis&#xE9;. Il s&#x2019;agit du signe <code>=</code> pour affecter une valeur &#xE0; une variable :</p>
 <pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> three</span> = <span class="hljs-number">3</span>
 </code></pre>
 <h3 id="op&#xE9;rateurs-math&#xE9;matiques-classiques">Op&#xE9;rateurs math&#xE9;matiques classiques</h3>
@@ -497,15 +497,16 @@ circumference = circumference(diameter)
 <h4 id="kdoc">KDoc</h4>
 <p>KDoc est une forme particuli&#xE8;re de commentaire, que l&#x2019;on dispose avant un bloc, et qui permet d&#x2019;expliquer ce bloc. L&#x2019;avantage de KDoc est qu&#x2019;&#xE9;tant donn&#xE9; qu&#x2019;il est connu et utilis&#xE9; par tous, sa lecture, son acc&#xE8;s, et m&#xEA;me la g&#xE9;n&#xE9;ration de documentation sont simplifi&#xE9;s.</p>
 <p>On pourrait consacrer un chapitre entier &#xE0; KDoc, mais je pr&#xE9;f&#xE8;re simplement vous en montrer un exemple, et que vous vous impr&#xE9;gniez de son usage au fur et &#xE0; mesure de la lecture de ce livre.</p>
-<pre><code>/**
-* Retourne la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter].
-* @param diameter le diam&#xE8;tre du cercle
-* @return la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter]
-*/
-fun circumference(diameter: Double): Double{
-   return 3.14*diameter
+<pre><code class="lang-kotlin"><span class="hljs-comment">/**
+ * Retourne la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter].
+ * <span class="hljs-doctag">@param</span> diameter le diam&#xE8;tre du cercle
+ * <span class="hljs-doctag">@return</span> la circonf&#xE9;rence d&apos;un cercle de diam&#xE8;tre [diameter]
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
+   <span class="hljs-keyword">return</span> <span class="hljs-number">3.14</span>*diameter
 }
-</code></pre><p>Le bloc KDoc ici permet d&#x2019;indiquer clairement ce que fait la fonction, et comment sont utilis&#xE9;s les param&#xE8;tres.</p>
+</code></pre>
+<p>Le bloc KDoc ici permet d&#x2019;indiquer clairement ce que fait la fonction, et comment sont utilis&#xE9;s les param&#xE8;tres.</p>
 <p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"></div></p>
 
 <p class="pageBreakAfter" style="text-align:center"><i>Exemple d&#x2019;affichage d&#x2019;une bo&#xEE;te d&#x2019;aide sur le r&#xF4;le d&#x2019;une fonction pour laquelle une documentation au format KDoc a &#xE9;t&#xE9; r&#xE9;dig&#xE9;e dans Android Studio.</i></p>
@@ -563,14 +564,14 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
    <span class="hljs-keyword">return</span> PI*diameter
 }
 </code></pre>
-<p class="pageBreakAfter">Cela rend le code beaucoup plus facile &#xE0; lire et &#xE0; maintenir. Imaginons maintenant que vous souhaitiez afficher `&quot;circumference(&quot;+diameter+&quot;)=&quot;+circumference(diameter)`, vous n&#x2019;aurez &#xE0; effectuer cette modification qu&#x2019;&#xE0; un seul endroit :</p>
+<p class="pageBreakAfter">Cela rend le code beaucoup plus facile &#xE0; lire et &#xE0; maintenir. Imaginons maintenant que vous souhaitiez afficher <pre>&quot;circumference(&quot;+diameter+&quot;)=&quot;+circumference(diameter)</pre>, vous n&#x2019;aurez &#xE0; effectuer cette modification qu&#x2019;&#xE0; un seul endroit :</p>
 
 <div class="fileTitle">Circumference.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
-* Prints the circumference of a circle when the diameter is [diameter]
-* <span class="hljs-doctag">@param</span> diameter the circumference of the circle
-*/</span>
+ * Prints the circumference of a circle when the diameter is [diameter]
+ * <span class="hljs-doctag">@param</span> diameter the circumference of the circle
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printCircumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>{</span>
    println(<span class="hljs-string">&quot;circumference(&quot;</span>+diameter+<span class="hljs-string">&quot;)=&quot;</span>+circumference(diameter))
 }
@@ -624,7 +625,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"next":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-10-30T20:56:06.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-30T21:29:40.127Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"next":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-10-30T21:38:03.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-30T21:44:30.675Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
