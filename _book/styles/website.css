@@ -83,7 +83,7 @@
 }
 
 .kdoc img{
-    display:none;
+    display:none !important;
 }
 
 .color-theme-2 .kdoc{
@@ -98,7 +98,7 @@
 }
 
 .package_folders img{
-    display:none;
+    display:none !important;
 }
 
 .color-theme-2 .package_folders{
