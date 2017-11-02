@@ -28,11 +28,11 @@ Une fois que vous aurez téléchargé le fichier .zip, extrayez-le dans un empla
 
 <p class="pageBreakAfter">La procédure dépend de votre distribution. Mais si vous êtes sous Linux, je suppose que vous savez modifier la variable d’environnement <code>PATH</code> vous-même.</p>
 
-## Hello World!
+## Hello, World!
 
 ### Code source
 
-Un programme Hello World! est un programme basique, ce qui se fait de plus élémentaire dans chaque langage de programmation. Il s’agit simplement d’afficher à l’écran la chaine de caractères `Hello World!`. Son objectif est de fournir une première approche minimaliste du langage étudié.
+Un programme **Hello, World!** est un programme basique, ce qui se fait de plus élémentaire dans chaque langage de programmation. Il s’agit simplement d’afficher à l’écran la chaine de caractères `Hello, World!`. Son objectif est de fournir une première approche minimaliste du langage étudié.
 
 Ouvrez un éditeur de texte (comme l'excellent [Atom](https://atom.io/) par exemple), et écrivez le contenu suivant, que vous sauvegarderez dans un fichier nommé `HelloWorld.kt`.
 
@@ -40,7 +40,7 @@ Ouvrez un éditeur de texte (comme l'excellent [Atom](https://atom.io/) par exem
 
 ```kotlin
 fun main(args: Array<String>) {
-   println("Hello world!")
+   println("Hello, World!")
 }
 ```
 
@@ -67,7 +67,7 @@ Il s’agit d’une étape qui vise à transformer votre code source en un fichi
 6C 6C 6F 20 57 6F 72 6C 64 21 24
 ```
 
-Regardez le programme ci-dessus : il y a très peu de chances pour que vous compreniez quoi que ce soit. C’est la retranscription en hexadécimal d’un `Hello World!` pour les systèmes DOS 32 bits. Vous voyez aisément que si l’on écrit dans la «langue naturelle» pour le système, il devient très difficile de comprendre ou de modifier ce message.
+Regardez le programme ci-dessus : il y a très peu de chances pour que vous compreniez quoi que ce soit. C’est la retranscription en hexadécimal d’un `Hello, World!` pour les systèmes DOS 32 bits. Vous voyez aisément que si l’on écrit dans la *«langue naturelle»* pour le système, il devient très difficile de comprendre ou de modifier ce message.
 
 Le rôle du compilateur va donc être de générer un fichier plus facilement compréhensible par votre système, à partir d’un ou plusieurs fichiers facilement compréhensibles par un être humain.
 
@@ -101,7 +101,7 @@ Pour exécuter votre programme Kotlin désormais compilé, il suffit d’exécut
 
 Le résultat produit sera le suivant :
 
-<pre class="terminal"><code class="terminal">Hello world!</code></pre>
+<pre class="terminal"><code class="terminal">Hello, World!</code></pre>
 
 Félicitations, vous venez d’écrire le code source, de compiler, et d’exécuter votre première application Kotlin.
 
@@ -113,7 +113,7 @@ Revenons un peu sur notre code source, et nous allons chercher à savoir ce qu�
 
 ```kotlin
 fun main(args: Array<String>) {
-   println("Hello world!")
+   println("Hello, World!")
 }
 ```
 
@@ -131,7 +131,7 @@ Ensuite, nous retrouvons une accolade ouvrante et une accolade fermante à la fi
 
 ### Println
 
-Ensuite, nous avons un appel à la fonction `println`. Cette fonction sert à afficher un texte (`print`) sur une nouvelle ligne (`ln`). Cette fonction prend en argument la chaine de caractères `"Hello world!"`. On voit bien ici l’utilité de l’argument d’une fonction. Ici, l’argument représente les données que va afficher la fonction `println`.
+Ensuite, nous avons un appel à la fonction `println`. Cette fonction sert à afficher un texte (`print`) sur une nouvelle ligne (`ln`). Cette fonction prend en argument la chaine de caractères `"Hello, World!"`. On voit bien ici l’utilité de l’argument d’une fonction. Ici, l’argument représente les données que va afficher la fonction `println`.
 
 ## Conclusion
 
@@ -154,11 +154,12 @@ Chaque chapitre se terminera par un ou plusieurs exercices, avec une mention à 
 Bien sûr, j’aurais pu écrire un livre exhaustif dont le contenu puisse directement vous permettre de compléter les exercices. Mais c’est une volonté que de vous mettre face à de telles épreuves. Encore une fois, le but de ce livre est de faire de vous des développeurs débutants. Or, un développeur passe ses journées à essayer à tâtons, à aider ses collègues et à se faire aider par ses collègues, et à chercher sur Internet des solutions aux problèmes qu’il rencontre. Autant vous y habituer tout de suite…
 
 ### Exercice 1 - Moyen
+
 Reprenez le programme `HelloWorld.kt`, et modifiez-le de sorte que :
 * Il contienne deux fonctions, `main` et `displayHelloWorld`.
-  * `displayHelloWorld`, sans argument, sera une fonction qui affiche `Hello world!`,
+  * `displayHelloWorld`, sans argument, sera une fonction qui affiche `Hello, World!`,
   * `main` se contentera d’appeler displayHelloWorld.
 
 ### Exercice 2 - Difficile
-Nous l’avons vu, lorsque nous compilons notre programme, cela nous produit un fichier `HelloWorldKt.class` dans le répertoire actuel. Faites en sorte que le fichier `HelloWorldKt.class` soit généré dans un dossier `exercice`, en utilisant uniquement la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>
- (donc sans créer le dossier `exercice` autrement qu’en utilisant la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>).
+
+Nous l’avons vu, lorsque nous compilons notre programme, cela nous produit un fichier `HelloWorldKt.class` dans le répertoire actuel. Faites en sorte que le fichier `HelloWorldKt.class` soit généré dans un dossier `exercice`, en utilisant uniquement la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code> (donc sans créer le dossier `exercice` autrement qu’en utilisant la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>).

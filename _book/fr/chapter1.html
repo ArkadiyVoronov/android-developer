@@ -12,20 +12,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -33,8 +33,6 @@
     
 
     
-        
-        <link rel="stylesheet" href="styles/website.css">
         
     
         
@@ -55,8 +53,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="chapter2.html" />
@@ -213,14 +211,14 @@
 <h3 id="linux">Linux</h3>
 <p class="pageBreakAfter">La proc&#xE9;dure d&#xE9;pend de votre distribution. Mais si vous &#xEA;tes sous Linux, je suppose que vous savez modifier la variable d&#x2019;environnement <code>PATH</code> vous-m&#xEA;me.</p>
 
-<h2 id="hello-world">Hello World!</h2>
+<h2 id="hello-world">Hello, World!</h2>
 <h3 id="code-source">Code source</h3>
-<p>Un programme Hello World! est un programme basique, ce qui se fait de plus &#xE9;l&#xE9;mentaire dans chaque langage de programmation. Il s&#x2019;agit simplement d&#x2019;afficher &#xE0; l&#x2019;&#xE9;cran la chaine de caract&#xE8;res <code>Hello World!</code>. Son objectif est de fournir une premi&#xE8;re approche minimaliste du langage &#xE9;tudi&#xE9;.</p>
+<p>Un programme <strong>Hello, World!</strong> est un programme basique, ce qui se fait de plus &#xE9;l&#xE9;mentaire dans chaque langage de programmation. Il s&#x2019;agit simplement d&#x2019;afficher &#xE0; l&#x2019;&#xE9;cran la chaine de caract&#xE8;res <code>Hello, World!</code>. Son objectif est de fournir une premi&#xE8;re approche minimaliste du langage &#xE9;tudi&#xE9;.</p>
 <p>Ouvrez un &#xE9;diteur de texte (comme l&apos;excellent <a href="https://atom.io/" target="_blank">Atom</a> par exemple), et &#xE9;crivez le contenu suivant, que vous sauvegarderez dans un fichier nomm&#xE9; <code>HelloWorld.kt</code>.</p>
 <div class="fileTitle">HelloWorld.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-   println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
+   println(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
 }
 </code></pre>
 <h3 id="du-code-source-&#xE0;-lex&#xE9;cution">Du code source &#xE0; l&#x2019;ex&#xE9;cution</h3>
@@ -237,7 +235,7 @@
 00 10 00 00 00 00 00 00 1C 00 00 00 00 00 00 00
 0E 1F B4 09 BA 0E 00 CD 21 B8 00 4C CD 21 48 65
 6C 6C 6F 20 57 6F 72 6C 64 21 24
-</code></pre><p>Regardez le programme ci-dessus : il y a tr&#xE8;s peu de chances pour que vous compreniez quoi que ce soit. C&#x2019;est la retranscription en hexad&#xE9;cimal d&#x2019;un <code>Hello World!</code> pour les syst&#xE8;mes DOS 32 bits. Vous voyez ais&#xE9;ment que si l&#x2019;on &#xE9;crit dans la &#xAB;langue naturelle&#xBB; pour le syst&#xE8;me, il devient tr&#xE8;s difficile de comprendre ou de modifier ce message.</p>
+</code></pre><p>Regardez le programme ci-dessus : il y a tr&#xE8;s peu de chances pour que vous compreniez quoi que ce soit. C&#x2019;est la retranscription en hexad&#xE9;cimal d&#x2019;un <code>Hello, World!</code> pour les syst&#xE8;mes DOS 32 bits. Vous voyez ais&#xE9;ment que si l&#x2019;on &#xE9;crit dans la <em>&#xAB;langue naturelle&#xBB;</em> pour le syst&#xE8;me, il devient tr&#xE8;s difficile de comprendre ou de modifier ce message.</p>
 <p>Le r&#xF4;le du compilateur va donc &#xEA;tre de g&#xE9;n&#xE9;rer un fichier plus facilement compr&#xE9;hensible par votre syst&#xE8;me, &#xE0; partir d&#x2019;un ou plusieurs fichiers facilement compr&#xE9;hensibles par un &#xEA;tre humain.</p>
 <h5 id="syst&#xE8;me-et-environnement-dex&#xE9;cution">Syst&#xE8;me et environnement d&#x2019;ex&#xE9;cution</h5>
 <p>Je viens de parler de codes plus facilement compr&#xE9;hensibles par le syst&#xE8;me. En fait, le syst&#xE8;me d&#xE9;crit l&#x2019;environnement dans lequel s&#x2019;ex&#xE9;cute le programme. Il peut s&#x2019;agir par exemple de votre syst&#xE8;me d&#x2019;exploitation, ou bien encore, comme c&#x2019;est le cas en Java (et donc en Kotlin qui se base sur Java), d&#x2019;un environnement d&#x2019;ex&#xE9;cution d&#xE9;di&#xE9;.</p>
@@ -256,7 +254,7 @@
 <pre class="terminal"><code class="terminal">kotlin HelloWorldKt</code></pre>
 
 <p>Le r&#xE9;sultat produit sera le suivant :</p>
-<pre class="terminal"><code class="terminal">Hello world!</code></pre>
+<pre class="terminal"><code class="terminal">Hello, World!</code></pre>
 
 <p>F&#xE9;licitations, vous venez d&#x2019;&#xE9;crire le code source, de compiler, et d&#x2019;ex&#xE9;cuter votre premi&#xE8;re application Kotlin.</p>
 <h2 id="explications-du-code-source">Explications du code source</h2>
@@ -264,7 +262,7 @@
 <div class="fileTitle">HelloWorld.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-   println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
+   println(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
 }
 </code></pre>
 <h3 id="fonctions-instructions">Fonctions, instructions</h3>
@@ -274,7 +272,7 @@
 <p>Entre parenth&#xE8;ses, nous retrouvons les arguments de notre fonction, ici <code>args: Array&lt;String&gt;</code>. Les arguments, ce sont les donn&#xE9;es avec lesquelles notre fonction va interagir. Ici, ces donn&#xE9;es ne servent pas, donc nous n&#x2019;allons pas entrer plus en d&#xE9;tails sur l&#x2019;argument de cette fonction <code>main</code>, mais cet argument est obligatoire. Si nous avions &#xE9;crit notre fonction <code>main</code> comme ceci : <code>fun main()</code>, cela aurait provoqu&#xE9; un bug lors de l&#x2019;ex&#xE9;cution, m&#xEA;me si la notation &#xE9;crite ici correspond &#xE0; une fonction <code>main</code> sans argument, ce qui est tout &#xE0; fait valide. Il s&#x2019;agit plus d&#x2019;un bug d&#xFB; &#xE0; la sp&#xE9;cificit&#xE9; de la fonction <code>main</code>, qui est celle appel&#xE9;e lors de l&#x2019;ex&#xE9;cution d&#x2019;un programme.</p>
 <p>Ensuite, nous retrouvons une accolade ouvrante et une accolade fermante &#xE0; la fin du fichier. Ces accolades servent &#xE0; d&#xE9;limiter les instructions d&#x2019;une fonction. Ainsi, toutes les instructions comprises entre ces accolades sont les instructions de la fonction main.</p>
 <h3 id="println">Println</h3>
-<p>Ensuite, nous avons un appel &#xE0; la fonction <code>println</code>. Cette fonction sert &#xE0; afficher un texte (<code>print</code>) sur une nouvelle ligne (<code>ln</code>). Cette fonction prend en argument la chaine de caract&#xE8;res <code>&quot;Hello world!&quot;</code>. On voit bien ici l&#x2019;utilit&#xE9; de l&#x2019;argument d&#x2019;une fonction. Ici, l&#x2019;argument repr&#xE9;sente les donn&#xE9;es que va afficher la fonction <code>println</code>.</p>
+<p>Ensuite, nous avons un appel &#xE0; la fonction <code>println</code>. Cette fonction sert &#xE0; afficher un texte (<code>print</code>) sur une nouvelle ligne (<code>ln</code>). Cette fonction prend en argument la chaine de caract&#xE8;res <code>&quot;Hello, World!&quot;</code>. On voit bien ici l&#x2019;utilit&#xE9; de l&#x2019;argument d&#x2019;une fonction. Ici, l&#x2019;argument repr&#xE9;sente les donn&#xE9;es que va afficher la fonction <code>println</code>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Et voil&#xE0;, nous avons vu comment &#xE9;crire un code source en Kotlin, comment le compiler et l&#x2019;ex&#xE9;cuter. Nous en avons profit&#xE9; pour voir ce que sont que les fonctions, les instructions et les arguments.</p>
 <p>Juste une petite note pour vous rassurer : le d&#xE9;but de cet livre contient beaucoup de d&#xE9;finitions, qui peuvent vous paraitre abstraites, et que vous pouvez avoir du mal &#xE0; comprendre. Cela est tout &#xE0; fait normal, et ne doit pas vous d&#xE9;courager.</p>
@@ -293,14 +291,13 @@
 <p>Reprenez le programme <code>HelloWorld.kt</code>, et modifiez-le de sorte que :</p>
 <ul>
 <li>Il contienne deux fonctions, <code>main</code> et <code>displayHelloWorld</code>.<ul>
-<li><code>displayHelloWorld</code>, sans argument, sera une fonction qui affiche <code>Hello world!</code>,</li>
+<li><code>displayHelloWorld</code>, sans argument, sera une fonction qui affiche <code>Hello, World!</code>,</li>
 <li><code>main</code> se contentera d&#x2019;appeler displayHelloWorld.</li>
 </ul>
 </li>
 </ul>
 <h3 id="exercice-2---difficile">Exercice 2 - Difficile</h3>
-<p>Nous l&#x2019;avons vu, lorsque nous compilons notre programme, cela nous produit un fichier <code>HelloWorldKt.class</code> dans le r&#xE9;pertoire actuel. Faites en sorte que le fichier <code>HelloWorldKt.class</code> soit g&#xE9;n&#xE9;r&#xE9; dans un dossier <code>exercice</code>, en utilisant uniquement la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>
- (donc sans cr&#xE9;er le dossier <code>exercice</code> autrement qu&#x2019;en utilisant la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>).</p>
+<p>Nous l&#x2019;avons vu, lorsque nous compilons notre programme, cela nous produit un fichier <code>HelloWorldKt.class</code> dans le r&#xE9;pertoire actuel. Faites en sorte que le fichier <code>HelloWorldKt.class</code> soit g&#xE9;n&#xE9;r&#xE9; dans un dossier <code>exercice</code>, en utilisant uniquement la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code> (donc sans cr&#xE9;er le dossier <code>exercice</code> autrement qu&#x2019;en utilisant la commande <code class="terminal" style="background-color:#434343;color:#f3f3f3;">kotlinc</code>).</p>
 
                                 
                                 </section>
@@ -344,37 +341,37 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"next":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"preface.md","ref":"preface.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter1.md","mtime":"2017-10-30T21:39:07.202Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-30T21:46:20.119Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"next":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"preface.md","ref":"preface.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter1.md","mtime":"2017-11-02T14:08:13.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T15:48:31.751Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
 
         
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

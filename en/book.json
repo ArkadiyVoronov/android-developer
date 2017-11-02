@@ -1,0 +1,11 @@
+{
+    "title": "The Android Developer 2018",
+    "language":"en",
+    "author":"Gaëtan HERFRAY",
+    "structure": {
+        "readme":"preface.md"
+    },
+    "pdf": {
+        "fontSize":14
+    }
+}

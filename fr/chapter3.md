@@ -413,7 +413,7 @@ Du coup, la convention très répandue et appliquée par tous les développeurs 
 
 Ce qui donne pour nos fichiers sources l’arborescence suivante :
 
-<p><div class="package_folders"><img src="images/package_folders.png" style="width:229px;height:283px;display:block;margin:0 auto;" /></div></p>
+<p><div class="package_folders"><img src="../images/package_folders.png" style="width:229px;height:283px;display:block;margin:0 auto;" /></div></p>
 
 La commande reste la même pour compiler le projet :
 

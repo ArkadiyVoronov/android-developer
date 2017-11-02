@@ -4,7 +4,7 @@
 
 Une variable, c’est un symbole qui associe un nom à une valeur. Les variables, vous les utilisez déjà en mathématiques. Lorsqu’on vous demande la formule de la circonférence d’un cercle, vous répondez π multiplié par le diamètre. Or, lorsque vous dites cela, vous associez le mot *diamètre* à une valeur.
 
-### Type de variable
+### Types de variable
 
 En informatique, une valeur correspond à un emplacement de mémoire. Cependant, pour optimiser les performances d’une application, il va falloir faire en sorte d’utiliser au mieux l’espace mémoire.
 
@@ -32,7 +32,7 @@ Certes, nous pouvons stocker des nombres dans une variable, mais également des 
 
 #### Booléen
 
-Enfin, le type booléen ne peut prendre que deux valeurs, soit true (vrai) soit false (faux).
+Enfin, le type booléen ne peut prendre que deux valeurs, soit `true` (vrai) soit `false` (faux).
 
 * `Boolean` : valeur utilisée pour stocker une valeur binaire, stockée sur un emplacement très faible en mémoire (inférieur ou égal à un octet), mais de taille variable.
 
@@ -44,7 +44,7 @@ Enfin, en plus de ces dix types primitifs, les variables peuvent également stoc
 
 Pour définir une variable, en Kotlin, on utilise le mot clé `var`, suivi du nom de la variable, de deux points, et de son type, suivi du signe `=` et de sa valeur.
 
-Ainsi, pour déclarer une variable de type `Double`, qui a pour nom `diameter`, nous l’écrirons ainsi :
+Ainsi, pour définir une variable de type `Double`, qui a pour nom `diameter`, nous l’écrirons ainsi :
 
 ```kotlin
 var diameter: Double = 3.78
@@ -66,7 +66,7 @@ val pi: Double = 3.14
 
 ## Définition d’une constante
 
-Une constante, c’est un identifiant qui va être remplacé par le préprocesseur du compilateur avant la compilation.
+Une constante, c’est un identifiant qui va être remplacé par sa valeur par le préprocesseur du compilateur avant la compilation.
 
 Nous avons vu les différentes étapes pour passer d’un code source au résultat final, et parmi elle, la compilation.
 
@@ -122,22 +122,22 @@ Une fonction ne peut avoir qu’une seule valeur de retour, et cette dernière n
 Maintenant, vous pouvez tout à fait choisir d’affecter à une variable, la valeur de retour d’une fonction. Cela se note ainsi :
 
 ```kotlin
-var diameter : Double = 3.78
-var circumference : Double = circumference(diameter)
+val diameter : Double = 3.78
+val circumference : Double = circumference(diameter)
 ```
 
 ## Types implicites et littéraux
 
-Nous avons vu comment déclarer une variable :
+Nous avons vu comment définir une variable :
 
 ```kotlin
-var someValue: Int = 4
+val someValue: Int = 4
 ```
 
 Dans ce cas précis, nous ne sommes pas obligés de déclarer le type `Int`, nous pouvons nous contenter d’écrire :
 
 ```kotlin
-var someValue = 4
+val someValue = 4
 ```
 
 Cette notation est tout à fait correcte, et est équivalente à la première. Attention toutefois, si le type n’est pas explicitement indiqué, il n’en demeure pas moins que 4 est un nombre entier. Pour vous en convaincre, vous pouvez écrire le programme suivant :
@@ -269,7 +269,7 @@ val three = 3
 
 ### Opérateurs mathématiques classiques
 
-Il est possible d’effectuer des opérations mathématiques entre deux variables numériques :
+Il est possible d’effectuer des opérations mathématiques entre deux valeurs ou variables numériques :
 
 <div class="fileTitle">Operators.kt</div>
 
@@ -299,9 +299,9 @@ En compilant puis en exécutant le programme, on obtient le résultat suivant :
 2
 1</code></pre>
 
-On peut voir ici que la somme de 2 milliards + 2 milliards produit un résultat négatif. De même, on peut voir que la division de 7 par 3 donne comme résultat 2. C’est simplement parce qu’une opération entre deux variables de même type renvoie une variable de même type. Ici, une addition de deux `Int`, ou une division de deux `Int`, produit un `Int`.
+On peut voir ici que la somme de 2 milliards + 2 milliards produit un résultat négatif. De même, on peut voir que la division de 7 par 3 donne comme résultat 2. C’est simplement parce qu’une opération entre deux variables de même type renvoie un résultat de même type. Ici, une addition de deux `Int`, ou une division de deux `Int`, produit un `Int`.
 
-Très bien, cela explique pourquoi la division de 7 par 3 renvoie 2, mais pas pourquoi notre somme renvoie un nombre négatif. On a déjà dit que le type `Int` était limité à 2<sup>31</sup>-1, soit 2 147 483 648. Si l’on dépasse cette valeur, alors plus rien de fiable n’est à attendre d’une variable `Int`.
+Très bien, cela explique pourquoi la division de 7 par 3 renvoie 2, mais pas pourquoi notre somme renvoie un nombre négatif. On a déjà dit que le type `Int` était limité à 2<sup>31</sup>-1, soit 2 147 483 647. Si l’on dépasse cette valeur, alors plus rien de fiable n’est à attendre d’une variable `Int`.
 
 Mais qu’en est-il alors d’une opération entre deux types différents ? C’est le type qui est codé sur le plus d’octets qui est gardé. La seule exception concerne le type `Char`, qui restera un `Char` même si l’on y ajoute une valeur codée sur plus d’octets. Ainsi, pour obtenir le résultat attendu, on peut écrire le programme suivant :
 
@@ -449,9 +449,9 @@ fun circumference(diameter: Double): Double{
 }
 ```
 
-Le bloc KDoc ici permet d’indiquer clairement ce que fait la fonction, et comment sont utilisés les paramètres.
+Le bloc KDoc ici permet d’indiquer clairement ce que fait la fonction, et comment sont utilisés les arguments.
 
-<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
+<p><div class="kdoc"><img src="../images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
 
 <p class="pageBreakAfter" style="text-align:center"><i>Exemple d’affichage d’une boîte d’aide sur le rôle d’une fonction pour laquelle une documentation au format KDoc a été rédigée dans Android Studio.</i></p>
 
@@ -461,7 +461,7 @@ Comme vous pouvez le remarquer, tous les codes jusqu’ici ont été écrits en 
 
 Mais l’immense majorité des développeurs s’accordent à tout écrire en anglais pour plusieurs raisons :
 
-* Toutes les méthodes “système” sont en anglais, comme par exemple la méthode `println` que l’on a utilisée. Écrire son code en anglais permet donc de ne pas mélanger deux langues différentes dans son code, et par conséquent de garder une certaine homogénéité qui facilite la compréhension.
+* Toutes les fonctions Kotlin sont en anglais, comme par exemple la fonction `println` que l’on a utilisée. Écrire son code en anglais permet donc de ne pas mélanger deux langues différentes dans son code, et par conséquent de garder une certaine homogénéité qui facilite la compréhension.
 * De la même façon, vous vous servirez de nombreux sites anglophones à la fois pour poster des questions avec des extraits de votre code, mais aussi pour copier/coller du code disponible. Là encore, garder tout en anglais permet de conserver l’homogénéité, et de mieux se faire comprendre de ceux qui vont nous aider.
 * Enfin, la dernière raison, c’est que les identifiants de variables et de fonctions n’aiment pas les caractères spéciaux. Vous ne pouvez pas utiliser de “é”, de “è” ou de “ç” dans les noms de fonctions. Plutôt que d’écrire avec des erreurs, autant tout écrire correctement.
 
