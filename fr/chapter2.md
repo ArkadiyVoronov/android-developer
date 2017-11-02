@@ -451,7 +451,7 @@ fun circumference(diameter: Double): Double{
 
 Le bloc KDoc ici permet d’indiquer clairement ce que fait la fonction, et comment sont utilisés les arguments.
 
-<p><div class="kdoc"><img src="../images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
+<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
 
 <p class="pageBreakAfter" style="text-align:center"><i>Exemple d’affichage d’une boîte d’aide sur le rôle d’une fonction pour laquelle une documentation au format KDoc a été rédigée dans Android Studio.</i></p>
 
@@ -463,7 +463,7 @@ Mais l’immense majorité des développeurs s’accordent à tout écrire en an
 
 * Toutes les fonctions Kotlin sont en anglais, comme par exemple la fonction `println` que l’on a utilisée. Écrire son code en anglais permet donc de ne pas mélanger deux langues différentes dans son code, et par conséquent de garder une certaine homogénéité qui facilite la compréhension.
 * De la même façon, vous vous servirez de nombreux sites anglophones à la fois pour poster des questions avec des extraits de votre code, mais aussi pour copier/coller du code disponible. Là encore, garder tout en anglais permet de conserver l’homogénéité, et de mieux se faire comprendre de ceux qui vont nous aider.
-* Enfin, la dernière raison, c’est que les identifiants de variables et de fonctions n’aiment pas les caractères spéciaux. Vous ne pouvez pas utiliser de “é”, de “è” ou de “ç” dans les noms de fonctions. Plutôt que d’écrire avec des erreurs, autant tout écrire correctement.
+* Enfin, la dernière raison, c’est que les identifiants de variables et de fonctions n’aiment pas les caractères spéciaux. Vous ne pouvez pas utiliser de «é», de «è» ou de «ç» dans les noms de fonctions. Plutôt que d’écrire avec des erreurs, autant tout écrire correctement.
 
 ### Factorisation
 

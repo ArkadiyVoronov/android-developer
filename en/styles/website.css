@@ -104,3 +104,25 @@
 .color-theme-2 .package_folders{
     background:transparent url(../images/package_folders_night.png)
 }
+
+.google_search_error{
+    width:655px;
+    height:786px;
+    margin:0 auto;
+    background:transparent url(../images/google_search_error.png);
+}
+
+.google_search_error img{
+    display:none !important;
+}
+
+.stack_overflow_answer{
+    width:763px;
+    height:591px;
+    margin:0 auto;
+    background:transparent url(../images/stack_overflow_answer.png);
+}
+
+.stack_overflow_answer img{
+    display:none !important;
+}
