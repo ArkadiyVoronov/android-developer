@@ -354,7 +354,7 @@ En fait, comme c’était le cas dans nos fichiers sources, lorsque nous appelon
 
 <pre class="terminal"><code class="terminal">kotlin -cp build geometry.GeometryKt</code></pre>
 
-<p class="pageBreakAfter">Il ne nous reste plus qu’à modifier notre fichier <pre>Geometry.kt</pre> pour intégrer les deux fonctions que nous avons développées :</p>
+<p class="pageBreakAfter">Il ne nous reste plus qu’à modifier notre fichier <code>Geometry.kt</code> pour intégrer les deux fonctions que nous avons développées :</p>
 
 <div class="fileTitle">Geometry.kt</div>
 
@@ -446,7 +446,7 @@ fun printCircumference(diameter: Double){
 // ...
 ```
 
-<p class="text-align:center;"><i>La notation <pre>// ...</pre> indique ici qu’il y a des extraits de code que l’on omet. Cela permet de se focaliser uniquement sur une partie du code. Ici, seul ce qui change dans Geometry.kt a été affiché, le reste demeurant identique a été simplifié avec la notation <pre>// ...</pre></i></p>
+<p class="text-align:center;"><i>La notation <code>// ...</code> indique ici qu’il y a des extraits de code que l’on omet. Cela permet de se focaliser uniquement sur une partie du code. Ici, seul ce qui change dans Geometry.kt a été affiché, le reste demeurant identique a été simplifié avec la notation <code>// ...</code></i></p>
 
 On voit bien ici comment l’import nous simplifie les choses.
 

@@ -250,7 +250,7 @@ Ces deux déclarations sont équivalentes.
 
 ### Notation Hexadécimale
 
-<p class="pageBreakAfter">De la même façon qu’il est possible d’écrire un nombre en notation binaire en le préfixant de <pre>0b</pre>, il est possible d’écrire un nombre dans sa notation hexadécimale en le préfixant de <pre>0x</pre> :</p>
+<p class="pageBreakAfter">De la même façon qu’il est possible d’écrire un nombre en notation binaire en le préfixant de <code>0b</code>, il est possible d’écrire un nombre dans sa notation hexadécimale en le préfixant de <code>0x</code> :</p>
 
 ```kotlin
 val readableGigaByte = 1_073_741_824
@@ -521,7 +521,7 @@ fun circumference(diameter: Double): Double{
 }
 ```
 
-<p class="pageBreakAfter">Cela rend le code beaucoup plus facile à lire et à maintenir. Imaginons maintenant que vous souhaitiez afficher <pre>"circumference("+diameter+")="+circumference(diameter)</pre>, vous n’aurez à effectuer cette modification qu’à un seul endroit :</p>
+<p class="pageBreakAfter">Cela rend le code beaucoup plus facile à lire et à maintenir. Imaginons maintenant que vous souhaitiez afficher <code>"circumference("+diameter+")="+circumference(diameter)</code>, vous n’aurez à effectuer cette modification qu’à un seul endroit :</p>
 
 <div class="fileTitle">Circumference.kt</div>
 

@@ -1,8 +1,11 @@
 _book/*
 source-code/*
-book.pdf
-book.epub
-book.mobi
+book_en.pdf
+book_fr.pdf
+book_en.epub
+book_fr.epub
+book_en.mobi
+book_fr.mobi
 README.md
 .gitignore
 .bookignore
