@@ -156,6 +156,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    5. Hello Android !
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -256,7 +269,7 @@
 <li>S&#x2019;il n&#x2019;est pas possible d&#x2019;utiliser une valeur invariante, alors une variable.</li>
 </ul>
 <h3 id="notation">Notation</h3>
-<p>Pour d&#xE9;finir une constante en Kotlin, la notation est la m&#xEA;me que pour une valeur invariante, sauf que l&#x2019;on fait pr&#xE9;c&#xE9;der le mot cl&#xE9; val par le mot cl&#xE9; const.</p>
+<p>Pour d&#xE9;finir une constante en Kotlin, la notation est la m&#xEA;me que pour une valeur invariante, sauf que l&#x2019;on fait pr&#xE9;c&#xE9;der le mot cl&#xE9; <code>val</code> par le mot cl&#xE9; <code>const</code>.</p>
 <pre class="pageBreakAfter"><code class="lang-kotlin">const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span>: <span class="hljs-keyword">Double</span> = <span class="hljs-number">3.14</span></code></pre>
 
 <h2 id="d&#xE9;finition-dun-argument">D&#xE9;finition d&#x2019;un argument</h2>
@@ -273,7 +286,7 @@
 }
 </code></pre>
 <h2 id="valeur-de-retour-dune-fonction">Valeur de retour d&#x2019;une fonction</h2>
-<p>Une fonction peut retourner une valeur. Certes, dans notre premier exemple Hello World, la fonction <code>main</code> ne retournait aucune valeur. Mais dans le cas d&#x2019;une fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, nous pourrions souhaiter que la fonction retourne la valeur de ladite circonf&#xE9;rence. Pour indiquer une valeur de retour, apr&#xE8;s la parenth&#xE8;se fermante, nous ajoutons deux points, suivi du type de la valeur de retour. Ainsi, pour la fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, cela donne :</p>
+<p>Une fonction peut retourner une valeur. Certes, dans notre premier exemple <strong>Hello, World!</strong>, la fonction <code>main</code> ne retournait aucune valeur. Mais dans le cas d&#x2019;une fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, nous pourrions souhaiter que la fonction retourne la valeur de ladite circonf&#xE9;rence. Pour indiquer une valeur de retour, apr&#xE8;s la parenth&#xE8;se fermante, nous ajoutons deux points, suivi du type de la valeur de retour. Ainsi, pour la fonction calculant la circonf&#xE9;rence d&#x2019;un cercle, cela donne :</p>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">circumference</span><span class="hljs-params">(diameter: <span class="hljs-type">Double</span>)</span>: <span class="hljs-keyword">Double</span>{</span>
 
 }
@@ -307,7 +320,7 @@
 <p>Kotlin vous indique de mani&#xE8;re sp&#xE9;cifique qu&#x2019;il ne peut pas affecter une valeur d&#xE9;cimale &#xE0; une variable de type <code>Int</code>.</p>
 <p>Mais du coup, quel type par d&#xE9;faut est donn&#xE9; &#xE0; une variable quand on ne sp&#xE9;cifie pas son type ?</p>
 <p>On peut le savoir en &#xE9;crivant un petit programme en Kotlin :</p>
-<div class="fileTitle">VarTpes.kt</div>
+<div class="fileTitle">VarTypes.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue</span> = <span class="hljs-number">4</span>
@@ -329,7 +342,7 @@ kotlin.Char</code></pre>
 <p>Ainsi, on peut savoir que, implicitement, lorsqu&#x2019;on &#xE9;crit un nombre entier, c&#x2019;est le type <code>Int</code> par d&#xE9;faut qui lui est assign&#xE9;, pour un nombre avec une d&#xE9;cimale, le type <code>Double</code>, et pour un caract&#xE8;re &#xE9;crit entre guillemets simples, le type <code>Char</code>.</p>
 <p>Mais comment faire alors pour assigner &#xE0; une variable le type <code>Float</code> ou bien <code>Long</code> sans avoir &#xE0; sp&#xE9;cifier son type ?</p>
 <p>On peut utiliser un caract&#xE8;re, &#xE0; la fin de la valeur, pour sp&#xE9;cifier le type de cette valeur :</p>
-<div class="fileTitle">VarTpesFull.kt</div>
+<div class="fileTitle">VarTypesFull.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> someValue</span> = <span class="hljs-number">4</span>
@@ -387,13 +400,13 @@ kotlin.Char</code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> add</span> = <span class="hljs-number">2</span>_000_000_000+<span class="hljs-number">2</span>_000_000_000
    <span class="hljs-variable"><span class="hljs-keyword">val</span> multiply</span> = <span class="hljs-number">3</span>*<span class="hljs-number">7</span>
-   <span class="hljs-variable"><span class="hljs-keyword">val</span> substract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> subtract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> divide</span> = <span class="hljs-number">7</span>/<span class="hljs-number">3</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> modulo</span> = <span class="hljs-number">7</span>%<span class="hljs-number">3</span>
 
    println(add)
    println(multiply)
-   println(substract)
+   println(subtract)
    println(divide)
    println(modulo)
 }
@@ -418,7 +431,7 @@ kotlin.Char</code></pre>
 
    <span class="hljs-variable"><span class="hljs-keyword">val</span> add</span> = <span class="hljs-number">2</span>_000_000_000+<span class="hljs-number">2</span>_000_000_000L
    <span class="hljs-variable"><span class="hljs-keyword">val</span> multiply</span> = <span class="hljs-number">3</span>*<span class="hljs-number">7</span>
-   <span class="hljs-variable"><span class="hljs-keyword">val</span> substract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
+   <span class="hljs-variable"><span class="hljs-keyword">val</span> subtract</span> = <span class="hljs-number">7</span><span class="hljs-number">-4</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> divide</span> = <span class="hljs-number">7</span>/<span class="hljs-number">3.0</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> modulo</span> = <span class="hljs-number">7</span>%<span class="hljs-number">3</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> add2</span> = byte+<span class="hljs-number">2</span>_000_000_000
@@ -427,7 +440,7 @@ kotlin.Char</code></pre>
 
    println(add)
    println(multiply)
-   println(substract)
+   println(subtract)
    println(divide)
    println(modulo)
    println(add2)
@@ -436,7 +449,7 @@ kotlin.Char</code></pre>
 }
 </code></pre>
 <p>En compilant puis en ex&#xE9;cutant le programme, on obtient le r&#xE9;sultat suivant :</p>
-<pre class="terminal pageBreakAfter"><code class="terminal">4000000000
+<pre class="terminal pageBreakBefore"><code class="terminal">4000000000
 21
 3
 2.3333333333333335
@@ -520,7 +533,7 @@ circumference = circumference(diameter)
 }
 </code></pre>
 <p>Le bloc KDoc ici permet d&#x2019;indiquer clairement ce que fait la fonction, et comment sont utilis&#xE9;s les arguments.</p>
-<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"></div></p>
+<p><img class="ebook_only" src="../images/kdoc.png" style="width:362px;height:177px;margin:0 auto;display:block;"><img class="web_light_only" src="../images/kdoc.png" style="margin:0 auto;display:none;"><img class="web_dark_only" src="../images/kdoc_night.png" style="margin:0 auto;display:none;"></p>
 
 <p class="pageBreakAfter" style="text-align:center"><i>Exemple d&#x2019;affichage d&#x2019;une bo&#xEE;te d&#x2019;aide sur le r&#xF4;le d&#x2019;une fonction pour laquelle une documentation au format KDoc a &#xE9;t&#xE9; r&#xE9;dig&#xE9;e dans Android Studio.</i></p>
 
@@ -638,7 +651,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> PI</span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"next":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-11-02T19:17:58.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T19:18:07.943Z"},"basePath":".","book":{"language":"fr"}});
+            gitbook.page.hasChanged({"page":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"next":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter2.md","mtime":"2017-11-09T15:55:13.539Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T16:02:38.104Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>

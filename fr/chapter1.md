@@ -11,11 +11,11 @@ Une fois que vous aurez téléchargé le fichier .zip, extrayez-le dans un empla
 * Dans le panneau de configuration, choisissez *Afficher par : Petites icônes* en haut à droite ;
 * Cliquez sur *Système* ;
 * À gauche, cliquez sur *Paramètres Systèmes Avancés* ;
-* Dans la boîte de dialogue, cliquez sur le bouton `Variables d’environnement…` ;
+* Dans la boite de dialogue, cliquez sur le bouton `Variables d’environnement…` ;
 * Dans le cadre du bas, cliquez sur la ligne dont la valeur pour la colonne Variable vaut `Path` ;
 * Cliquez sur le bouton `Modifier…` ;
 * Ajoutez le chemin vers le dossier `bin` dans une nouvelle ligne ;
-* Cliquez sur `OK` afin de fermer chacune des trois boîtes de dialogue.
+* Cliquez sur `OK` afin de fermer chacune des trois boites de dialogue.
 
 ### macOS
 
@@ -50,13 +50,13 @@ Pour exécuter un programme en Kotlin, nous devons passer par trois étapes.
 
 #### L’écriture du code source
 
-C’est ce que nous venons de faire. Il s’agit d’écrire un programme dans un langage lisible par un développeur. Ce que vous avez écrit, n’importe quel développeur est capable de le lire et de le modifier assez facilement pour modifier le comportement du programme.
+C’est ce que nous venons de faire. Il s’agit d’écrire un programme dans un langage lisible par un développeur. Ce que vous avez écrit, n’importe quel développeur est capable de le lire et de l’éditer assez facilement pour modifier le comportement du programme.
 
 #### La compilation
 
 Il s’agit d’une étape qui vise à transformer votre code source en un fichier compréhensible par la machine. Pour certains langages, comme le PHP ou le JavaScript, il n’est pas nécessaire de compiler le code source. Le système va être capable de lire et d’interpréter directement votre programme. Toutefois, l’inconvénient de ce système est qu’il présente des lacunes en termes de performances.
 
-<p class="pageBreakAfter">En effet, en tant qu’humains, nous sommes capables d’écrire du code directement compréhensible par l’ordinateur. Le désagrément d’écrire un tel programme est qu’il va être très complexe à lire et à modifier par un être humain.</p>
+<p class="pageBreakAfter">En effet, en tant qu’humains, nous sommes capables d’écrire du code directement compréhensible par l’ordinateur. Le désagrément d’écrire un tel programme est qu’il va être très complexe à lire et à modifier par une autre personne.</p>
 
 <div class="fileTitle">HelloWorld.exe</div>
 
@@ -67,7 +67,7 @@ Il s’agit d’une étape qui vise à transformer votre code source en un fichi
 6C 6C 6F 20 57 6F 72 6C 64 21 24
 ```
 
-Regardez le programme ci-dessus : il y a très peu de chances pour que vous compreniez quoi que ce soit. C’est la retranscription en hexadécimal d’un `Hello, World!` pour les systèmes DOS 32 bits. Vous voyez aisément que si l’on écrit dans la *«langue naturelle»* pour le système, il devient très difficile de comprendre ou de modifier ce message.
+Regardez le programme ci-dessus : il y a très peu de chances pour que vous compreniez quoi que ce soit. C’est la retranscription en hexadécimal d’un `Hello, World!` pour les systèmes DOS 32 bits. Vous voyez aisément que si l’on écrit dans la *«langue naturelle»* du système, il devient très difficile de comprendre ou de modifier ce message.
 
 Le rôle du compilateur va donc être de générer un fichier plus facilement compréhensible par votre système, à partir d’un ou plusieurs fichiers facilement compréhensibles par un être humain.
 
@@ -79,7 +79,7 @@ Le principal avantage de cet environnement d’exécution dédié est que vous p
 
 Par exemple, un fichier exécutable `.exe` pourra être exécuté sous Windows, mais si vous tentez de l’exécuter sous macOS, cela ne fonctionnera pas.
 
-Cependant, un fichier exécutable Java ou Kotlin, qui se matérialise par un fichier `.class`, pourra être exécuté aussi bien sous Windows, que macOS ou encore Android.
+Par contre, un fichier exécutable Java ou Kotlin, qui se matérialise par un fichier `.class`, pourra être exécuté aussi bien sous Windows, que macOS ou encore Android.
 
 #### L’exécution
 
@@ -107,7 +107,7 @@ Félicitations, vous venez d’écrire le code source, de compiler, et d’exéc
 
 ## Explications du code source
 
-Revenons un peu sur notre code source, et nous allons chercher à savoir ce qu’il fait exactement.
+Revenons un peu sur notre code source. Nous allons maintenant chercher à savoir ce qu’il fait exactement.
 
 <div class="fileTitle">HelloWorld.kt</div>
 
@@ -121,7 +121,7 @@ fun main(args: Array<String>) {
 
 Le mot-clé `fun` indique à Kotlin que nous allons définir une fonction. En programmation, on désigne par fonction un groupe contenant une ou plusieurs instructions à exécuter dans un ordre défini.
 
-Une instruction étant un appel à une action de la part de l’ordinateur, cette action peut soit être une action exécutée par le système (créer un fichier, afficher du texte à l’écran, etc.), soit un appel à une fonction.
+Une instruction étant un appel à une action de la part de l’ordinateur, cette action peut être soit une action exécutée par le système (créer un fichier, afficher du texte à l’écran, etc.), soit un appel à une fonction.
 
 Juste après ce mot-clé `fun`, on trouve le nom donné à la fonction, dans notre cas, `main`. Le fait d’appeler cette fonction `main` permet d’indiquer à Kotlin que c’est cette fonction qui doit être exécutée lorsque l’on appelle le programme `HelloWorldKt`. En effet, nous aurions pu écrire un programme contenant plusieurs fonctions, et si tel avait été le cas, il aurait bien fallu indiquer à Kotlin quelle fonction exécuter en premier.
 
@@ -139,7 +139,7 @@ Et voilà, nous avons vu comment écrire un code source en Kotlin, comment le co
 
 Juste une petite note pour vous rassurer : le début de cet livre contient beaucoup de définitions, qui peuvent vous paraitre abstraites, et que vous pouvez avoir du mal à comprendre. Cela est tout à fait normal, et ne doit pas vous décourager.
 
-Autant il est nécessaire que tous ces termes soient définis lors de leur premier usage, autant il n’est pas nécessaire d’en connaitre la définition par cœur pour appréhender la suite du livre.
+Autant il est indispensable que tous ces termes soient définis lors de leur premier usage, autant il n’est pas nécessaire d’en connaitre la définition par cœur pour appréhender la suite du livre.
 
 <p class="pageBreakAfter">Afin de vous rassurer sur ce point, j’ai été contraint d’aller sur Wikipédia pour définir ces notions, afin d’avoir une idée de la définition qu’il donnait de ces mots. Une fois que vous aurez développé quelques programmes, vous verrez rapidement que vous saurez ce qu’est une fonction, sans forcément savoir définir ce que c’est précisément. Vous aurez une idée très claire de ce que c’est et de ce que ce n’est pas.</p>
 
@@ -151,7 +151,7 @@ Chaque chapitre se terminera par un ou plusieurs exercices, avec une mention à 
 * **Moyen** : Vous pouvez compléter cet exercice avec ce qui est dit dans le chapitre, mais vous aurez besoin pour cela d’expérimenter, de tenter des choses, de vous tromper, car tout n’est pas forcément indiqué.
 * **Difficile** : Le seul contenu de ce livre ne vous permettra pas de compléter l’exercice. Vous aurez besoin de chercher comment faire sur Internet, ou bien sur d’autres sources.
 
-Bien sûr, j’aurais pu écrire un livre exhaustif dont le contenu puisse directement vous permettre de compléter les exercices. Mais c’est une volonté que de vous mettre face à de telles épreuves. Encore une fois, le but de ce livre est de faire de vous des développeurs débutants. Or, un développeur passe ses journées à essayer à tâtons, à aider ses collègues et à se faire aider par ses collègues, et à chercher sur Internet des solutions aux problèmes qu’il rencontre. Autant vous y habituer tout de suite…
+Bien sûr, j’aurais pu écrire un livre exhaustif dont le contenu puisse directement vous permettre de compléter les exercices. Mais c’est une volonté que de vous mettre face à de telles épreuves. Encore une fois, le but de ce livre est de faire de vous des développeurs débutants. Or, un développeur passe ses journées à essayer à tâtons, à aider ses collègues et à se faire aider par ces derniers, et à chercher sur Internet des solutions aux problèmes qu’il rencontre. Autant vous y habituer tout de suite…
 
 ### Exercice 1 - Moyen
 

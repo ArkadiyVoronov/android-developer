@@ -156,6 +156,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    5. Hello Android !
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -210,11 +223,11 @@
 <li>Dans le panneau de configuration, choisissez <em>Afficher par : Petites ic&#xF4;nes</em> en haut &#xE0; droite&#x2005;;</li>
 <li>Cliquez sur <em>Syst&#xE8;me</em>&#x2005;;</li>
 <li>&#xC0; gauche, cliquez sur <em>Param&#xE8;tres Syst&#xE8;mes Avanc&#xE9;s</em>&#x2005;;</li>
-<li>Dans la bo&#xEE;te de dialogue, cliquez sur le bouton <code>Variables d&#x2019;environnement&#x2026;</code>&#x2005;;</li>
+<li>Dans la boite de dialogue, cliquez sur le bouton <code>Variables d&#x2019;environnement&#x2026;</code>&#x2005;;</li>
 <li>Dans le cadre du bas, cliquez sur la ligne dont la valeur pour la colonne Variable vaut <code>Path</code>&#x2005;;</li>
 <li>Cliquez sur le bouton <code>Modifier&#x2026;</code>&#x2005;;</li>
 <li>Ajoutez le chemin vers le dossier <code>bin</code> dans une nouvelle ligne&#x2005;;</li>
-<li>Cliquez sur <code>OK</code> afin de fermer chacune des trois bo&#xEE;tes de dialogue.</li>
+<li>Cliquez sur <code>OK</code> afin de fermer chacune des trois boites de dialogue.</li>
 </ul>
 <h3 id="macos">macOS</h3>
 <ul>
@@ -239,10 +252,10 @@
 <h3 id="du-code-source-&#xE0;-lex&#xE9;cution">Du code source &#xE0; l&#x2019;ex&#xE9;cution</h3>
 <p>Pour ex&#xE9;cuter un programme en Kotlin, nous devons passer par trois &#xE9;tapes.</p>
 <h4 id="l&#xE9;criture-du-code-source">L&#x2019;&#xE9;criture du code source</h4>
-<p>C&#x2019;est ce que nous venons de faire. Il s&#x2019;agit d&#x2019;&#xE9;crire un programme dans un langage lisible par un d&#xE9;veloppeur. Ce que vous avez &#xE9;crit, n&#x2019;importe quel d&#xE9;veloppeur est capable de le lire et de le modifier assez facilement pour modifier le comportement du programme.</p>
+<p>C&#x2019;est ce que nous venons de faire. Il s&#x2019;agit d&#x2019;&#xE9;crire un programme dans un langage lisible par un d&#xE9;veloppeur. Ce que vous avez &#xE9;crit, n&#x2019;importe quel d&#xE9;veloppeur est capable de le lire et de l&#x2019;&#xE9;diter assez facilement pour modifier le comportement du programme.</p>
 <h4 id="la-compilation">La compilation</h4>
 <p>Il s&#x2019;agit d&#x2019;une &#xE9;tape qui vise &#xE0; transformer votre code source en un fichier compr&#xE9;hensible par la machine. Pour certains langages, comme le PHP ou le JavaScript, il n&#x2019;est pas n&#xE9;cessaire de compiler le code source. Le syst&#xE8;me va &#xEA;tre capable de lire et d&#x2019;interpr&#xE9;ter directement votre programme. Toutefois, l&#x2019;inconv&#xE9;nient de ce syst&#xE8;me est qu&#x2019;il pr&#xE9;sente des lacunes en termes de performances.</p>
-<p class="pageBreakAfter">En effet, en tant qu&#x2019;humains, nous sommes capables d&#x2019;&#xE9;crire du code directement compr&#xE9;hensible par l&#x2019;ordinateur. Le d&#xE9;sagr&#xE9;ment d&#x2019;&#xE9;crire un tel programme est qu&#x2019;il va &#xEA;tre tr&#xE8;s complexe &#xE0; lire et &#xE0; modifier par un &#xEA;tre humain.</p>
+<p class="pageBreakAfter">En effet, en tant qu&#x2019;humains, nous sommes capables d&#x2019;&#xE9;crire du code directement compr&#xE9;hensible par l&#x2019;ordinateur. Le d&#xE9;sagr&#xE9;ment d&#x2019;&#xE9;crire un tel programme est qu&#x2019;il va &#xEA;tre tr&#xE8;s complexe &#xE0; lire et &#xE0; modifier par une autre personne.</p>
 
 <div class="fileTitle">HelloWorld.exe</div>
 
@@ -250,13 +263,13 @@
 00 10 00 00 00 00 00 00 1C 00 00 00 00 00 00 00
 0E 1F B4 09 BA 0E 00 CD 21 B8 00 4C CD 21 48 65
 6C 6C 6F 20 57 6F 72 6C 64 21 24
-</code></pre><p>Regardez le programme ci-dessus : il y a tr&#xE8;s peu de chances pour que vous compreniez quoi que ce soit. C&#x2019;est la retranscription en hexad&#xE9;cimal d&#x2019;un <code>Hello, World!</code> pour les syst&#xE8;mes DOS 32 bits. Vous voyez ais&#xE9;ment que si l&#x2019;on &#xE9;crit dans la <em>&#xAB;langue naturelle&#xBB;</em> pour le syst&#xE8;me, il devient tr&#xE8;s difficile de comprendre ou de modifier ce message.</p>
+</code></pre><p>Regardez le programme ci-dessus : il y a tr&#xE8;s peu de chances pour que vous compreniez quoi que ce soit. C&#x2019;est la retranscription en hexad&#xE9;cimal d&#x2019;un <code>Hello, World!</code> pour les syst&#xE8;mes DOS 32 bits. Vous voyez ais&#xE9;ment que si l&#x2019;on &#xE9;crit dans la <em>&#xAB;langue naturelle&#xBB;</em> du syst&#xE8;me, il devient tr&#xE8;s difficile de comprendre ou de modifier ce message.</p>
 <p>Le r&#xF4;le du compilateur va donc &#xEA;tre de g&#xE9;n&#xE9;rer un fichier plus facilement compr&#xE9;hensible par votre syst&#xE8;me, &#xE0; partir d&#x2019;un ou plusieurs fichiers facilement compr&#xE9;hensibles par un &#xEA;tre humain.</p>
 <h5 id="syst&#xE8;me-et-environnement-dex&#xE9;cution">Syst&#xE8;me et environnement d&#x2019;ex&#xE9;cution</h5>
 <p>Je viens de parler de codes plus facilement compr&#xE9;hensibles par le syst&#xE8;me. En fait, le syst&#xE8;me d&#xE9;crit l&#x2019;environnement dans lequel s&#x2019;ex&#xE9;cute le programme. Il peut s&#x2019;agir par exemple de votre syst&#xE8;me d&#x2019;exploitation, ou bien encore, comme c&#x2019;est le cas en Java (et donc en Kotlin qui se base sur Java), d&#x2019;un environnement d&#x2019;ex&#xE9;cution d&#xE9;di&#xE9;.</p>
 <p>Le principal avantage de cet environnement d&#x2019;ex&#xE9;cution d&#xE9;di&#xE9; est que vous pouvez &#xE9;crire des programmes et partager les binaires sans vous soucier du syst&#xE8;me d&#x2019;exploitation sur lequel il sera ex&#xE9;cut&#xE9;.</p>
 <p>Par exemple, un fichier ex&#xE9;cutable <code>.exe</code> pourra &#xEA;tre ex&#xE9;cut&#xE9; sous Windows, mais si vous tentez de l&#x2019;ex&#xE9;cuter sous macOS, cela ne fonctionnera pas.</p>
-<p>Cependant, un fichier ex&#xE9;cutable Java ou Kotlin, qui se mat&#xE9;rialise par un fichier <code>.class</code>, pourra &#xEA;tre ex&#xE9;cut&#xE9; aussi bien sous Windows, que macOS ou encore Android.</p>
+<p>Par contre, un fichier ex&#xE9;cutable Java ou Kotlin, qui se mat&#xE9;rialise par un fichier <code>.class</code>, pourra &#xEA;tre ex&#xE9;cut&#xE9; aussi bien sous Windows, que macOS ou encore Android.</p>
 <h4 id="lex&#xE9;cution">L&#x2019;ex&#xE9;cution</h4>
 <p>Enfin, vient l&#x2019;&#xE9;tape de l&#x2019;ex&#xE9;cution du programme. C&#x2019;est cette &#xE9;tape qui produit le r&#xE9;sultat final.</p>
 <h3 id="compilation-kotlin">Compilation Kotlin</h3>
@@ -273,7 +286,7 @@
 
 <p>F&#xE9;licitations, vous venez d&#x2019;&#xE9;crire le code source, de compiler, et d&#x2019;ex&#xE9;cuter votre premi&#xE8;re application Kotlin.</p>
 <h2 id="explications-du-code-source">Explications du code source</h2>
-<p>Revenons un peu sur notre code source, et nous allons chercher &#xE0; savoir ce qu&#x2019;il fait exactement.</p>
+<p>Revenons un peu sur notre code source. Nous allons maintenant chercher &#xE0; savoir ce qu&#x2019;il fait exactement.</p>
 <div class="fileTitle">HelloWorld.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
@@ -282,7 +295,7 @@
 </code></pre>
 <h3 id="fonctions-instructions">Fonctions, instructions</h3>
 <p>Le mot-cl&#xE9; <code>fun</code> indique &#xE0; Kotlin que nous allons d&#xE9;finir une fonction. En programmation, on d&#xE9;signe par fonction un groupe contenant une ou plusieurs instructions &#xE0; ex&#xE9;cuter dans un ordre d&#xE9;fini.</p>
-<p>Une instruction &#xE9;tant un appel &#xE0; une action de la part de l&#x2019;ordinateur, cette action peut soit &#xEA;tre une action ex&#xE9;cut&#xE9;e par le syst&#xE8;me (cr&#xE9;er un fichier, afficher du texte &#xE0; l&#x2019;&#xE9;cran, etc.), soit un appel &#xE0; une fonction.</p>
+<p>Une instruction &#xE9;tant un appel &#xE0; une action de la part de l&#x2019;ordinateur, cette action peut &#xEA;tre soit une action ex&#xE9;cut&#xE9;e par le syst&#xE8;me (cr&#xE9;er un fichier, afficher du texte &#xE0; l&#x2019;&#xE9;cran, etc.), soit un appel &#xE0; une fonction.</p>
 <p>Juste apr&#xE8;s ce mot-cl&#xE9; <code>fun</code>, on trouve le nom donn&#xE9; &#xE0; la fonction, dans notre cas, <code>main</code>. Le fait d&#x2019;appeler cette fonction <code>main</code> permet d&#x2019;indiquer &#xE0; Kotlin que c&#x2019;est cette fonction qui doit &#xEA;tre ex&#xE9;cut&#xE9;e lorsque l&#x2019;on appelle le programme <code>HelloWorldKt</code>. En effet, nous aurions pu &#xE9;crire un programme contenant plusieurs fonctions, et si tel avait &#xE9;t&#xE9; le cas, il aurait bien fallu indiquer &#xE0; Kotlin quelle fonction ex&#xE9;cuter en premier.</p>
 <p>Entre parenth&#xE8;ses, nous retrouvons les arguments de notre fonction, ici <code>args: Array&lt;String&gt;</code>. Les arguments, ce sont les donn&#xE9;es avec lesquelles notre fonction va interagir. Ici, ces donn&#xE9;es ne servent pas, donc nous n&#x2019;allons pas entrer plus en d&#xE9;tails sur l&#x2019;argument de cette fonction <code>main</code>, mais cet argument est obligatoire. Si nous avions &#xE9;crit notre fonction <code>main</code> comme ceci : <code>fun main()</code>, cela aurait provoqu&#xE9; un bug lors de l&#x2019;ex&#xE9;cution, m&#xEA;me si la notation &#xE9;crite ici correspond &#xE0; une fonction <code>main</code> sans argument, ce qui est tout &#xE0; fait valide. Il s&#x2019;agit plus d&#x2019;un bug d&#xFB; &#xE0; la sp&#xE9;cificit&#xE9; de la fonction <code>main</code>, qui est celle appel&#xE9;e lors de l&#x2019;ex&#xE9;cution d&#x2019;un programme.</p>
 <p>Ensuite, nous retrouvons une accolade ouvrante et une accolade fermante &#xE0; la fin du fichier. Ces accolades servent &#xE0; d&#xE9;limiter les instructions d&#x2019;une fonction. Ainsi, toutes les instructions comprises entre ces accolades sont les instructions de la fonction main.</p>
@@ -291,7 +304,7 @@
 <h2 id="conclusion">Conclusion</h2>
 <p>Et voil&#xE0;, nous avons vu comment &#xE9;crire un code source en Kotlin, comment le compiler et l&#x2019;ex&#xE9;cuter. Nous en avons profit&#xE9; pour voir ce que sont que les fonctions, les instructions et les arguments.</p>
 <p>Juste une petite note pour vous rassurer : le d&#xE9;but de cet livre contient beaucoup de d&#xE9;finitions, qui peuvent vous paraitre abstraites, et que vous pouvez avoir du mal &#xE0; comprendre. Cela est tout &#xE0; fait normal, et ne doit pas vous d&#xE9;courager.</p>
-<p>Autant il est n&#xE9;cessaire que tous ces termes soient d&#xE9;finis lors de leur premier usage, autant il n&#x2019;est pas n&#xE9;cessaire d&#x2019;en connaitre la d&#xE9;finition par c&#x153;ur pour appr&#xE9;hender la suite du livre.</p>
+<p>Autant il est indispensable que tous ces termes soient d&#xE9;finis lors de leur premier usage, autant il n&#x2019;est pas n&#xE9;cessaire d&#x2019;en connaitre la d&#xE9;finition par c&#x153;ur pour appr&#xE9;hender la suite du livre.</p>
 <p class="pageBreakAfter">Afin de vous rassurer sur ce point, j&#x2019;ai &#xE9;t&#xE9; contraint d&#x2019;aller sur Wikip&#xE9;dia pour d&#xE9;finir ces notions, afin d&#x2019;avoir une id&#xE9;e de la d&#xE9;finition qu&#x2019;il donnait de ces mots. Une fois que vous aurez d&#xE9;velopp&#xE9; quelques programmes, vous verrez rapidement que vous saurez ce qu&#x2019;est une fonction, sans forc&#xE9;ment savoir d&#xE9;finir ce que c&#x2019;est pr&#xE9;cis&#xE9;ment. Vous aurez une id&#xE9;e tr&#xE8;s claire de ce que c&#x2019;est et de ce que ce n&#x2019;est pas.</p>
 
 <h2 id="exercices">Exercices</h2>
@@ -301,7 +314,7 @@
 <li><strong>Moyen</strong> : Vous pouvez compl&#xE9;ter cet exercice avec ce qui est dit dans le chapitre, mais vous aurez besoin pour cela d&#x2019;exp&#xE9;rimenter, de tenter des choses, de vous tromper, car tout n&#x2019;est pas forc&#xE9;ment indiqu&#xE9;.</li>
 <li><strong>Difficile</strong> : Le seul contenu de ce livre ne vous permettra pas de compl&#xE9;ter l&#x2019;exercice. Vous aurez besoin de chercher comment faire sur Internet, ou bien sur d&#x2019;autres sources.</li>
 </ul>
-<p>Bien s&#xFB;r, j&#x2019;aurais pu &#xE9;crire un livre exhaustif dont le contenu puisse directement vous permettre de compl&#xE9;ter les exercices. Mais c&#x2019;est une volont&#xE9; que de vous mettre face &#xE0; de telles &#xE9;preuves. Encore une fois, le but de ce livre est de faire de vous des d&#xE9;veloppeurs d&#xE9;butants. Or, un d&#xE9;veloppeur passe ses journ&#xE9;es &#xE0; essayer &#xE0; t&#xE2;tons, &#xE0; aider ses coll&#xE8;gues et &#xE0; se faire aider par ses coll&#xE8;gues, et &#xE0; chercher sur Internet des solutions aux probl&#xE8;mes qu&#x2019;il rencontre. Autant vous y habituer tout de suite&#x2026;</p>
+<p>Bien s&#xFB;r, j&#x2019;aurais pu &#xE9;crire un livre exhaustif dont le contenu puisse directement vous permettre de compl&#xE9;ter les exercices. Mais c&#x2019;est une volont&#xE9; que de vous mettre face &#xE0; de telles &#xE9;preuves. Encore une fois, le but de ce livre est de faire de vous des d&#xE9;veloppeurs d&#xE9;butants. Or, un d&#xE9;veloppeur passe ses journ&#xE9;es &#xE0; essayer &#xE0; t&#xE2;tons, &#xE0; aider ses coll&#xE8;gues et &#xE0; se faire aider par ces derniers, et &#xE0; chercher sur Internet des solutions aux probl&#xE8;mes qu&#x2019;il rencontre. Autant vous y habituer tout de suite&#x2026;</p>
 <h3 id="exercice-1---moyen">Exercice 1 - Moyen</h3>
 <p>Reprenez le programme <code>HelloWorld.kt</code>, et modifiez-le de sorte que :</p>
 <ul>
@@ -356,7 +369,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"next":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"preface.md","ref":"preface.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter1.md","mtime":"2017-11-02T16:01:07.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T19:18:07.943Z"},"basePath":".","book":{"language":"fr"}});
+            gitbook.page.hasChanged({"page":{"title":"1. Premier programme Kotlin","level":"1.2","depth":1,"next":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"preface.md","ref":"preface.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter1.md","mtime":"2017-11-07T14:59:24.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T16:02:38.104Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>

@@ -204,7 +204,7 @@ Square.kt:6:1: error: conflicting overloads: public fun perimeter(sideLength: Do
 fun perimeter(sideLength: Double): Double{
 ^</code></pre>
 
-En fait, cette erreur nous indique que la fonction `perimeter(Double)` est définie deux fois. Et ce serait une erreur que de vouloir appeler nos méthodes différemment, elles comportent un nom clair.
+En fait, cette erreur nous indique que la fonction `perimeter(Double)` est définie deux fois. Et ce serait une erreur que de vouloir appeler nos fonctions différemment, elles comportent un nom clair.
 
 Pour résoudre cette problématique, Kotlin nous permet de séparer nos différents fichiers sources en paquets. Et si une même fonction est définie dans deux paquets différents, Kotlin va les considérer comme deux fonctions différentes.
 
@@ -413,7 +413,7 @@ Du coup, la convention très répandue et appliquée par tous les développeurs 
 
 Ce qui donne pour nos fichiers sources l’arborescence suivante :
 
-<p><div class="package_folders"><img src="images/package_folders.png" style="width:229px;height:283px;display:block;margin:0 auto;" /></div></p>
+<p><img class="ebook_only" src="../images/package_folders.png" style="width:229px;height:283px;margin:0 auto;display:block;"/><img class="web_light_only" src="../images/package_folders.png" style="margin:0 auto;display:none;"/><img class="web_dark_only" src="../images/package_folders_night.png" style="margin:0 auto;display:none;"/></p>
 
 La commande reste la même pour compiler le projet :
 
@@ -429,7 +429,7 @@ Nous l’avons vu dans le fichier `Geometry.kt`, désormais, pour calculer la ci
 
 D’une manière générale, on essaie de garder le code aussi simple et concis que possible. Imaginez qu’à plusieurs endroits, vous ayez besoin d’appeler cette fonction, écrire `geometry.circle.circumference()` à chaque fois n’est ni simple, ni concis.
 
-Pour palier ce problème, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de spécifier le chemin complet d’une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.
+Pour pallier ce problème, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de spécifier le chemin complet d’une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.
 
 <div class="fileTitle">Geometry.kt</div>
 
@@ -465,7 +465,7 @@ Mais il existe en Kotlin un moyen pour importer la totalité d’un paquet, il s
 import geometry.angles.*
 ```
 
-Ainsi, les deux méthodes pourront être appelées sous leur forme courte dans le code.
+Ainsi, les deux fonctions pourront être appelées sous leur forme courte dans le code.
 
 Bien que cela soit possible, nous vous déconseillons fortement d’utiliser cette notation, pour deux raisons principales :
 
@@ -477,7 +477,7 @@ Ainsi, dans la majorité des cas, il est préférable d’utiliser un import par
 
 ### Limitations
 
-Toutefois, il n’est pas possible d’importer deux paquets contenant une méthode ayant le même nom. Ainsi, il ne sera pas permis d’effectuer les deux imports suivants :
+Toutefois, il n’est pas possible d’importer deux paquets contenant une fonction ayant le même nom. Ainsi, il ne sera pas permis d’effectuer les deux imports suivants :
 
 ```kotlin
 import geometry.quadrilateral.square

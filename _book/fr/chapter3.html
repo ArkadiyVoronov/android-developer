@@ -156,6 +156,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    5. Hello Android !
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -374,7 +387,7 @@ Square.kt:6:1: error: conflicting overloads: public fun perimeter(sideLength: Do
 fun perimeter(sideLength: Double): Double{
 ^</code></pre>
 
-<p>En fait, cette erreur nous indique que la fonction <code>perimeter(Double)</code> est d&#xE9;finie deux fois. Et ce serait une erreur que de vouloir appeler nos m&#xE9;thodes diff&#xE9;remment, elles comportent un nom clair.</p>
+<p>En fait, cette erreur nous indique que la fonction <code>perimeter(Double)</code> est d&#xE9;finie deux fois. Et ce serait une erreur que de vouloir appeler nos fonctions diff&#xE9;remment, elles comportent un nom clair.</p>
 <p>Pour r&#xE9;soudre cette probl&#xE9;matique, Kotlin nous permet de s&#xE9;parer nos diff&#xE9;rents fichiers sources en paquets. Et si une m&#xEA;me fonction est d&#xE9;finie dans deux paquets diff&#xE9;rents, Kotlin va les consid&#xE9;rer comme deux fonctions diff&#xE9;rentes.</p>
 <p>Pour d&#xE9;finir un fichier source comme appartenant &#xE0; un paquet, il suffit d&#x2019;indiquer le nom du paquet que l&#x2019;on souhaite affecter pr&#xE9;fix&#xE9; par le mot cl&#xE9; <code>package</code> sur la premi&#xE8;re ligne du fichier.</p>
 <p>De plus, pour permettre de hi&#xE9;rarchiser les paquets, chaque paquet peut &#xEA;tre d&#xE9;fini dans un sous-paquet, il suffit juste de les s&#xE9;parer par un point. Ainsi, <code>geometry.angles</code> et <code>geometry.circle</code> seront deux paquets, <code>angles</code> et <code>circle</code>, appartenant chacun au paquet <code>geometry</code>.</p>
@@ -544,7 +557,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_
 <p>De plus, on peut facilement &#xE9;tablir un parall&#xE8;le entre les paquets qui peuvent s&#x2019;imbriquer les uns dans les autres, et les dossiers avec lesquels on peut faire de m&#xEA;me.</p>
 <p>Du coup, la convention tr&#xE8;s r&#xE9;pandue et appliqu&#xE9;e par tous les d&#xE9;veloppeurs est d&#x2019;organiser les fichiers sources d&#x2019;un projet, de sorte qu&#x2019;&#xE0; chaque paquet corresponde un dossier, et que chaque fichier source soit dans le dossier correspondant &#xE0; son paquet.</p>
 <p>Ce qui donne pour nos fichiers sources l&#x2019;arborescence suivante :</p>
-<p><div class="package_folders"><img src="images/package_folders.png" style="width:229px;height:283px;display:block;margin:0 auto;"></div></p>
+<p><img class="ebook_only" src="../images/package_folders.png" style="width:229px;height:283px;margin:0 auto;display:block;"><img class="web_light_only" src="../images/package_folders.png" style="margin:0 auto;display:none;"><img class="web_dark_only" src="../images/package_folders_night.png" style="margin:0 auto;display:none;"></p>
 
 <p>La commande reste la m&#xEA;me pour compiler le projet :</p>
 <p><em>macOS et Linux :</em></p>
@@ -556,7 +569,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_
 <h2 id="imports">Imports</h2>
 <p>Nous l&#x2019;avons vu dans le fichier <code>Geometry.kt</code>, d&#xE9;sormais, pour calculer la circonf&#xE9;rence d&#x2019;un cercle, nous devons appeler la fonction <code>geometry.circle.circumference()</code>.</p>
 <p>D&#x2019;une mani&#xE8;re g&#xE9;n&#xE9;rale, on essaie de garder le code aussi simple et concis que possible. Imaginez qu&#x2019;&#xE0; plusieurs endroits, vous ayez besoin d&#x2019;appeler cette fonction, &#xE9;crire <code>geometry.circle.circumference()</code> &#xE0; chaque fois n&#x2019;est ni simple, ni concis.</p>
-<p>Pour palier ce probl&#xE8;me, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de sp&#xE9;cifier le chemin complet d&#x2019;une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.</p>
+<p>Pour pallier ce probl&#xE8;me, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de sp&#xE9;cifier le chemin complet d&#x2019;une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.</p>
 <div class="fileTitle">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
@@ -581,13 +594,13 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_
 <p>Mais il existe en Kotlin un moyen pour importer la totalit&#xE9; d&#x2019;un paquet, il s&#x2019;agit de la notation&#x2005;<code>*</code>. Ainsi, pour importer la totalit&#xE9; des fonctions contenues dans le paquet&#x2005;<code>geometry.angles</code>, on peut noter :</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> geometry.angles.*
 </code></pre>
-<p>Ainsi, les deux m&#xE9;thodes pourront &#xEA;tre appel&#xE9;es sous leur forme courte dans le code.</p>
+<p>Ainsi, les deux fonctions pourront &#xEA;tre appel&#xE9;es sous leur forme courte dans le code.</p>
 <p>Bien que cela soit possible, nous vous d&#xE9;conseillons fortement d&#x2019;utiliser cette notation, pour deux raisons principales :</p>
 <p>M&#xEA;me si vous vous servez de l&#x2019;int&#xE9;gralit&#xE9; du paquet aujourd&#x2019;hui, il se peut que vous ajoutiez des fonctions au paquet par la suite. Cela impliquerait donc un import inutile, donc une perte en termes de performances.</p>
 <p>Il est tr&#xE8;s compliqu&#xE9; de savoir tout de suite la liste de ce qui est import&#xE9; et pourquoi, ce qui rend le code moins lisible.</p>
 <p>Ainsi, dans la majorit&#xE9; des cas, il est pr&#xE9;f&#xE9;rable d&#x2019;utiliser un import par utilisation et d&#x2019;&#xE9;viter les imports avec &#xE9;toile.</p>
 <h3 id="limitations">Limitations</h3>
-<p>Toutefois, il n&#x2019;est pas possible d&#x2019;importer deux paquets contenant une m&#xE9;thode ayant le m&#xEA;me nom. Ainsi, il ne sera pas permis d&#x2019;effectuer les deux imports suivants :</p>
+<p>Toutefois, il n&#x2019;est pas possible d&#x2019;importer deux paquets contenant une fonction ayant le m&#xEA;me nom. Ainsi, il ne sera pas permis d&#x2019;effectuer les deux imports suivants :</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> geometry.quadrilateral.square
 <span class="hljs-keyword">import</span> geometry.triangle.equilateral
 </code></pre>
@@ -640,7 +653,7 @@ const <span class="hljs-variable"><span class="hljs-keyword">val</span> RADIANS_
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"next":{"title":"4. Programmation orientée objet","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"previous":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter3.md","mtime":"2017-11-02T19:17:55.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T19:18:07.943Z"},"basePath":".","book":{"language":"fr"}});
+            gitbook.page.hasChanged({"page":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"next":{"title":"4. Programmation orientée objet","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"previous":{"title":"2. Variables, Types, Constantes et Opérateurs","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter3.md","mtime":"2017-11-08T10:26:19.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T16:02:38.104Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>

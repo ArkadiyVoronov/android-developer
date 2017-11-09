@@ -81,7 +81,7 @@ Afin de produire un code plus clair, il est d’usage d’utiliser pour une vale
 * S’il n’est pas possible d’utiliser une valeur invariante, alors une variable.
 
 ### Notation
-Pour définir une constante en Kotlin, la notation est la même que pour une valeur invariante, sauf que l’on fait précéder le mot clé val par le mot clé const.
+Pour définir une constante en Kotlin, la notation est la même que pour une valeur invariante, sauf que l’on fait précéder le mot clé `val` par le mot clé `const`.
 
 <pre class="pageBreakAfter"><code class="lang-kotlin">const val PI: Double = 3.14</code></pre>
 
@@ -109,7 +109,7 @@ fun rectanglePerimeter(width: Double, height: Double){
 
 ## Valeur de retour d’une fonction
 
-Une fonction peut retourner une valeur. Certes, dans notre premier exemple Hello World, la fonction `main` ne retournait aucune valeur. Mais dans le cas d’une fonction calculant la circonférence d’un cercle, nous pourrions souhaiter que la fonction retourne la valeur de ladite circonférence. Pour indiquer une valeur de retour, après la parenthèse fermante, nous ajoutons deux points, suivi du type de la valeur de retour. Ainsi, pour la fonction calculant la circonférence d’un cercle, cela donne :
+Une fonction peut retourner une valeur. Certes, dans notre premier exemple **Hello, World!**, la fonction `main` ne retournait aucune valeur. Mais dans le cas d’une fonction calculant la circonférence d’un cercle, nous pourrions souhaiter que la fonction retourne la valeur de ladite circonférence. Pour indiquer une valeur de retour, après la parenthèse fermante, nous ajoutons deux points, suivi du type de la valeur de retour. Ainsi, pour la fonction calculant la circonférence d’un cercle, cela donne :
 
 ```kotlin
 fun circumference(diameter: Double): Double{
@@ -164,7 +164,7 @@ Mais du coup, quel type par défaut est donné à une variable quand on ne spéc
 
 On peut le savoir en écrivant un petit programme en Kotlin :
 
-<div class="fileTitle">VarTpes.kt</div>
+<div class="fileTitle">VarTypes.kt</div>
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -192,7 +192,7 @@ Mais comment faire alors pour assigner à une variable le type `Float` ou bien `
 
 On peut utiliser un caractère, à la fin de la valeur, pour spécifier le type de cette valeur :
 
-<div class="fileTitle">VarTpesFull.kt</div>
+<div class="fileTitle">VarTypesFull.kt</div>
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -277,13 +277,13 @@ Il est possible d’effectuer des opérations mathématiques entre deux valeurs 
 fun main(args: Array<String>) {
    val add = 2_000_000_000+2_000_000_000
    val multiply = 3*7
-   val substract = 7-4
+   val subtract = 7-4
    val divide = 7/3
    val modulo = 7%3
 
    println(add)
    println(multiply)
-   println(substract)
+   println(subtract)
    println(divide)
    println(modulo)
 }
@@ -314,7 +314,7 @@ fun main(args: Array<String>) {
 
    val add = 2_000_000_000+2_000_000_000L
    val multiply = 3*7
-   val substract = 7-4
+   val subtract = 7-4
    val divide = 7/3.0
    val modulo = 7%3
    val add2 = byte+2_000_000_000
@@ -323,7 +323,7 @@ fun main(args: Array<String>) {
 
    println(add)
    println(multiply)
-   println(substract)
+   println(subtract)
    println(divide)
    println(modulo)
    println(add2)
@@ -334,7 +334,7 @@ fun main(args: Array<String>) {
 
 En compilant puis en exécutant le programme, on obtient le résultat suivant :
 
-<pre class="terminal pageBreakAfter"><code class="terminal">4000000000
+<pre class="terminal pageBreakBefore"><code class="terminal">4000000000
 21
 3
 2.3333333333333335
@@ -434,6 +434,7 @@ circumference = circumference(diameter)
 ```
 
 #### KDoc
+
 KDoc est une forme particulière de commentaire, que l’on dispose avant un bloc, et qui permet d’expliquer ce bloc. L’avantage de KDoc est qu’étant donné qu’il est connu et utilisé par tous, sa lecture, son accès, et même la génération de documentation sont simplifiés.
 
 On pourrait consacrer un chapitre entier à KDoc, mais je préfère simplement vous en montrer un exemple, et que vous vous imprégniez de son usage au fur et à mesure de la lecture de ce livre.
@@ -451,7 +452,7 @@ fun circumference(diameter: Double): Double{
 
 Le bloc KDoc ici permet d’indiquer clairement ce que fait la fonction, et comment sont utilisés les arguments.
 
-<p><div class="kdoc"><img src="images/kdoc.png" style="width:362px;height:177px;display:block;margin:0 auto;"/></div></p>
+<p><img class="ebook_only" src="../images/kdoc.png" style="width:362px;height:177px;margin:0 auto;display:block;"/><img class="web_light_only" src="../images/kdoc.png" style="margin:0 auto;display:none;"/><img class="web_dark_only" src="../images/kdoc_night.png" style="margin:0 auto;display:none;"/></p>
 
 <p class="pageBreakAfter" style="text-align:center"><i>Exemple d’affichage d’une boîte d’aide sur le rôle d’une fonction pour laquelle une documentation au format KDoc a été rédigée dans Android Studio.</i></p>
 

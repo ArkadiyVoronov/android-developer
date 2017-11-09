@@ -59,6 +59,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="chapter5.html" />
+    
     
     <link rel="prev" href="chapter3.html" />
     
@@ -147,6 +149,19 @@
             
                     
                     4. Programmation orientée objet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    5. Hello Android !
             
                 </a>
             
@@ -270,8 +285,8 @@
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
 
 <span class="hljs-comment">/**
-* This class represent what a triangle is
-*/</span>
+ * This class represent what a triangle is
+ */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span></span>{
    <span class="hljs-comment">// Content of the class triangle</span>
 }
@@ -283,8 +298,8 @@
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
 
 <span class="hljs-comment">/**
-* This class represent what a triangle is
-*/</span>
+ * This class represent what a triangle is
+ */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span></span>{
    <span class="hljs-comment">/** First side of the triangle */</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> side1</span>:<span class="hljs-keyword">Int</span>
@@ -295,14 +310,15 @@
 }
 </code></pre>
 <h3 id="m&#xE9;thodes">M&#xE9;thodes</h3>
-<p>Nous pouvons maintenant d&#xE9;finir une m&#xE9;thode. Les m&#xE9;thodes ne sont rien d&#x2019;autre que des fonctions de la classe. Nous allons donc d&#xE9;finir une m&#xE9;thode pour calculer le p&#xE9;rim&#xE8;tre du triangle :</p>
+<p class="pageBreakAfter">Nous pouvons maintenant d&#xE9;finir une m&#xE9;thode. Les m&#xE9;thodes ne sont rien d&#x2019;autre que des fonctions de la classe. Nous allons donc d&#xE9;finir une m&#xE9;thode pour calculer le p&#xE9;rim&#xE8;tre du triangle :</p>
+
 <div class="fileTitle">Triangle.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
 
 <span class="hljs-comment">/**
-* This class represent what a triangle is
-*/</span>
+ * This class represent what a triangle is
+ */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span></span>{
    <span class="hljs-comment">/** Length of the first side of the triangle */</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> side1Length</span>:<span class="hljs-keyword">Double</span>
@@ -326,16 +342,20 @@
    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">area</span><span class="hljs-params">()</span>:<span class="hljs-keyword">Double</span>{</span>
       <span class="hljs-variable"><span class="hljs-keyword">val</span> halfPerimeter</span> = perimeter()/<span class="hljs-number">2.0</span>
       <span class="hljs-comment">// Using area formula square of area is p(p-a)(p-b)(p-c) when p is half of the perimeter</span>
-      <span class="hljs-variable"><span class="hljs-keyword">val</span> squareArea</span> = halfPerimeter*(halfPerimeter-side1Length)*(halfPerimeter-side2Length)*(halfPerimeter-side3Length)
+      <span class="hljs-variable"><span class="hljs-keyword">val</span> squareArea</span> = halfPerimeter*
+                       (halfPerimeter-side1Length)*
+                       (halfPerimeter-side2Length)*
+                       (halfPerimeter-side3Length)
       <span class="hljs-keyword">return</span> Math.sqrt(squareArea)
    }
 }
 </code></pre>
 <h3 id="instances-et-appel-aux-m&#xE9;thodes">Instances et appel aux m&#xE9;thodes</h3>
-<p>Nous allons maintenant cr&#xE9;er notre programme principal dans un fichier nomm&#xE9; <code>Geometry.kt</code>. Ce programme se contentera de cr&#xE9;er une instance de la classe <code>Triangle</code> et d&#x2019;afficher le p&#xE9;rim&#xE8;tre d&#x2019;un triangle.
-En Kotlin, pour cr&#xE9;er une instance d&#x2019;une classe, on utilise le nom de la classe suivi de parenth&#xE8;ses.</p>
-<p>Pour appeler une m&#xE9;thode, on utilise le point <code>.</code> entre le nom de la variable, et le nom de la m&#xE9;thode que l&#x2019;on souhaite appeler.
-Ainsi, le code de notre fichier <code>Geometry.kt</code> est :</p>
+<p>Nous allons maintenant cr&#xE9;er notre programme principal dans un fichier nomm&#xE9; <code>Geometry.kt</code>. Ce programme se contentera de cr&#xE9;er une instance de la classe <code>Triangle</code> et d&#x2019;afficher le p&#xE9;rim&#xE8;tre d&#x2019;un triangle.</p>
+<p>En Kotlin, pour cr&#xE9;er une instance d&#x2019;une classe, on utilise le nom de la classe suivi de parenth&#xE8;ses.</p>
+<p>Pour appeler une m&#xE9;thode, on utilise le point <code>.</code> entre le nom de la variable, et le nom de la m&#xE9;thode que l&#x2019;on souhaite appeler.</p>
+<p class="pageBreakAfter">Ainsi, le code de notre fichier <code>Geometry.kt</code> est :</p>
+
 <div class="fileTitle">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
@@ -343,8 +363,8 @@ Ainsi, le code de notre fichier <code>Geometry.kt</code> est :</p>
 <span class="hljs-keyword">import</span> geometry.triangle.Triangle
 
 <span class="hljs-comment">/**
-* Main function of the program.
-*/</span>
+ * Main function of the program.
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> triangle</span> = Triangle()
    println(<span class="hljs-string">&quot;Perimeter of the triangle is: &quot;</span>+triangle.perimeter())
@@ -366,7 +386,8 @@ geometry\triangle\Triangle.kt:12:5: error: property must be initialized or be ab
 <h3 id="constructeur">Constructeur</h3>
 <p>Observez &#xE0; nouveau comment nous avons cr&#xE9;&#xE9; une instance de <code>Triangle</code> : en &#xE9;crivant <code>Triangle()</code>. Cette notation ne vous rappelle rien ? Elle ressemble &#xE9;trangement &#xE0; un appel &#xE0; une fonction. C&#x2019;est justement parce que la cr&#xE9;ation d&#x2019;une instance est une fonction ; une fonction qu&#x2019;il n&#x2019;est pas indispensable de d&#xE9;finir, c&#x2019;est pourquoi cet appel est correct. Mais nous pouvons, si nous le souhaitons, d&#xE9;finir cette fonction.</p>
 <p>En fait, cette fonction s&#x2019;appelle un constructeur.</p>
-<p>Ce que nous souhaitons, c&#x2019;est pouvoir donner au constructeur trois arguments, &#xE0; savoir les longueurs des trois c&#xF4;t&#xE9;s du triangle. Pour ce faire, nous allons d&#xE9;finir ces trois arguments juste apr&#xE8;s le nom de la classe :</p>
+<p class="pageBreakAfter">Ce que nous souhaitons, c&#x2019;est pouvoir donner au constructeur trois arguments, &#xE0; savoir les longueurs des trois c&#xF4;t&#xE9;s du triangle. Pour ce faire, nous allons d&#xE9;finir ces trois arguments juste apr&#xE8;s le nom de la classe :</p>
+
 <div class="fileTitle">Triangle.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
@@ -430,8 +451,8 @@ geometry\triangle\Triangle.kt:12:5: error: property must be initialized or be ab
 <span class="hljs-keyword">import</span> geometry.triangle.Triangle
 
 <span class="hljs-comment">/**
-* Main function of the program.
-*/</span>
+ * Main function of the program.
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> triangle</span> = Triangle(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>, <span class="hljs-number">5.0</span>)
    println(<span class="hljs-string">&quot;Perimeter of the triangle is: &quot;</span>+triangle.perimeter())
@@ -439,7 +460,7 @@ geometry\triangle\Triangle.kt:12:5: error: property must be initialized or be ab
 }
 </code></pre>
 <p>Vous pouvez d&#xE9;sormais compiler le programme, et l&#x2019;ex&#xE9;cuter pour observer un r&#xE9;sultat semblable &#xE0; nos attentes :</p>
-<pre class="terminal"><code class="terminal">Perimeter of the triangle is: 12.0
+<pre class="terminal pageBreakAfter"><code class="terminal">Perimeter of the triangle is: 12.0
 Area of the triangle is: 6.0</code></pre>
 
 <h3 id="h&#xE9;ritage">H&#xE9;ritage</h3>
@@ -458,8 +479,8 @@ Area of the triangle is: 6.0</code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
 
 <span class="hljs-comment">/**
-* This class represent what a right triangle is
-*/</span>
+ * This class represent what a right triangle is
+ */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RightTriangle</span>:<span class="hljs-type">Triangle{</span></span>
 
 }
@@ -473,12 +494,13 @@ Area of the triangle is: 6.0</code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
 
 <span class="hljs-comment">/**
-* This class represent what a right triangle is
-*/</span>
+ * This class represent what a right triangle is
+ */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RightTriangle</span> <span class="hljs-title">constructor</span></span>(side1Length:<span class="hljs-keyword">Double</span>, side2Length:<span class="hljs-keyword">Double</span>):
        Triangle(side1Length,
                 side2Length,
-                <span class="hljs-comment">// Third length is square root of the sum of square of lengths of both other sides</span>
+                <span class="hljs-comment">// Third length is square root of the sum of square of lengths</span>
+                <span class="hljs-comment">// of both other sides</span>
                 Math.sqrt(Math.pow(side1Length, <span class="hljs-number">2.0</span>)+Math.pow(side2Length, <span class="hljs-number">2.0</span>))
                ){
 
@@ -497,7 +519,8 @@ Notez bien l&#x2019;int&#xE9;r&#xEA;t d&#x2019;a&#xE9;rer votre code et d&#x2019
    <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>Dans la classe &#xAB;enfant&#xBB;, pour surcharger une m&#xE9;thode, on se contente de d&#xE9;finir une m&#xE9;thode comportant le m&#xEA;me identifiant, la m&#xEA;me valeur de retour et des arguments de m&#xEA;me type dans le m&#xEA;me ordre, en faisant pr&#xE9;c&#xE9;der la d&#xE9;finition du mot cl&#xE9; <code>override</code> :</p>
+<p class="pageBreakAfter">Dans la classe &#xAB;enfant&#xBB;, pour surcharger une m&#xE9;thode, on se contente de d&#xE9;finir une m&#xE9;thode comportant le m&#xEA;me identifiant, la m&#xEA;me valeur de retour et des arguments de m&#xEA;me type dans le m&#xEA;me ordre, en faisant pr&#xE9;c&#xE9;der la d&#xE9;finition du mot cl&#xE9; <code>override</code> :</p>
+
 <div class="fileTitle">RightTriangle.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
@@ -514,9 +537,9 @@ Notez bien l&#x2019;int&#xE9;r&#xEA;t d&#x2019;a&#xE9;rer votre code et d&#x2019
 <div class="fileTitle">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
-* Displays the perimeter and the area of [triangle]
-* <span class="hljs-doctag">@param</span> triangle the triangle for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [triangle]
+ * <span class="hljs-doctag">@param</span> triangle the triangle for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayTriangleData</span><span class="hljs-params">(triangle:<span class="hljs-type">Triangle</span>)</span>{</span>
    println(<span class="hljs-string">&quot;Perimeter of the triangle is: &quot;</span>+triangle.perimeter())
    println(<span class="hljs-string">&quot;Area of the triangle is: &quot;</span>+triangle.area())
@@ -538,7 +561,8 @@ Notez bien l&#x2019;int&#xE9;r&#xEA;t d&#x2019;a&#xE9;rer votre code et d&#x2019
    displayTriangleData(rightTriangle)
 }
 </code></pre>
-<p>On peut compiler ce programme, et le r&#xE9;sultat produit lors de l&#x2019;ex&#xE9;cution sera celui attendu :</p>
+<p class="pageBreakAfter">On peut compiler ce programme, et le r&#xE9;sultat produit lors de l&#x2019;ex&#xE9;cution sera celui attendu :</p>
+
 <pre class="terminal"><code class="terminal">Perimeter of the triangle is: 13.0
 Area of the triangle is: 5.332682251925386
 Perimeter of the triangle is: 12.0
@@ -553,8 +577,8 @@ Area of the triangle is: 6.0</code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
 
 <span class="hljs-comment">/**
-* Interface describing a geometrical plane shape.
-*/</span>
+ * Interface describing a geometrical plane shape.
+ */</span>
 interface PlaneShape{
    <span class="hljs-comment">/**
     * Returns the perimeter of the shape.
@@ -569,7 +593,8 @@ interface PlaneShape{
    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">area</span><span class="hljs-params">()</span>:<span class="hljs-keyword">Double</span></span>
 }
 </code></pre>
-<p>Nous pouvons maintenant d&#xE9;clarer que la classe <code>Triangle</code> impl&#xE9;mente l&#x2019;interface <code>PlaneShape</code>, tout comme pour l&#x2019;h&#xE9;ritage, en ajoutant : suivi du nom de l&#x2019;interface qu&#x2019;il impl&#xE9;mente.</p>
+<p class="pageBreakAfter">Nous pouvons maintenant d&#xE9;clarer que la classe <code>Triangle</code> impl&#xE9;mente l&#x2019;interface <code>PlaneShape</code>, tout comme pour l&#x2019;h&#xE9;ritage, en ajoutant : suivi du nom de l&#x2019;interface qu&#x2019;il impl&#xE9;mente.</p>
+
 <div class="fileTitle">Triangle.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.triangle
@@ -577,11 +602,11 @@ interface PlaneShape{
 <span class="hljs-keyword">import</span> geometry.PlaneShape
 
 <span class="hljs-comment">/**
-* This class represent what a triangle is
-* <span class="hljs-doctag">@param</span> side1Length the length of the first side of the triangle to set
-* <span class="hljs-doctag">@param</span> side2Length the length of the second side of the triangle to set
-* <span class="hljs-doctag">@param</span> side3Length the length of the third side of the triangle to set
-*/</span>
+ * This class represent what a triangle is
+ * <span class="hljs-doctag">@param</span> side1Length the length of the first side of the triangle to set
+ * <span class="hljs-doctag">@param</span> side2Length the length of the second side of the triangle to set
+ * <span class="hljs-doctag">@param</span> side3Length the length of the third side of the triangle to set
+ */</span>
 <span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span></span>(side1Length:<span class="hljs-keyword">Double</span>, side2Length:<span class="hljs-keyword">Double</span>, side3Length:<span class="hljs-keyword">Double</span>):PlaneShape{
 <span class="hljs-comment">// ...</span>
 }
@@ -590,16 +615,16 @@ interface PlaneShape{
 <p>Il ne nous reste plus qu&#x2019;&#xE0; ajouter le mot cl&#xE9; <code>override</code> devant les m&#xE9;thodes <code>perimeter()</code> et <code>area()</code> pour pr&#xE9;ciser qu&#x2019;elles surchargent les m&#xE9;thodes de l&#x2019;interface, et l&#x2019;impl&#xE9;mentation est termin&#xE9;e.</p>
 <h4 id="petite-parenth&#xE8;se-technique">Petite parenth&#xE8;se technique</h4>
 <p>Tr&#xE8;s bien, notre classe <code>Triangle</code> impl&#xE9;mente <code>PlaneShape</code>, mais quelle est l&#x2019;utilit&#xE9; d&#x2019;une telle impl&#xE9;mentation ? Ajoutons une classe <code>Circle</code> impl&#xE9;mentant <code>PlaneShape</code> et d&#xE9;finissant la m&#xE9;thode <code>perimeter()</code> pour en comprendre l&#x2019;utilit&#xE9;.</p>
-<div class="fileTitle">Circle.kt</div>
+<div class="fileTitle pageBreakBefore">Circle.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry.circle
 
 <span class="hljs-keyword">import</span> geometry.PlaneShape
 
 <span class="hljs-comment">/**
-* This class represent what a circle is
-* <span class="hljs-doctag">@param</span> diameter the length of the diameter of the circle to set
-*/</span>
+ * This class represent what a circle is
+ * <span class="hljs-doctag">@param</span> diameter the length of the diameter of the circle to set
+ */</span>
 <span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>(diameter:<span class="hljs-keyword">Double</span>):PlaneShape{
    <span class="hljs-comment">/** Length of the diameter of the circle */</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> diameter</span>:<span class="hljs-keyword">Double</span>
@@ -627,7 +652,7 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 <p>&#xC0; partir de l&#xE0;, je vais supprimer de ce message d&#x2019;erreur tout ce qui est propre au programme que j&#x2019;ai d&#xE9;velopp&#xE9;, comme les noms des classes, des m&#xE9;thodes et des interfaces :</p>
 <p><em><strong>error: class &apos;&apos; is not abstract and does not implement abstract member public abstract fun(): defined in </strong></em></p>
 <p>Tr&#xE8;s bien, maintenant, il ne reste plus qu&#x2019;&#xE0; copier/coller ce message dans Google :</p>
-<p><div class="google_search_error"><img src="images/google_search_error.png" style="width:377px;height:393px;display:block;margin:0 auto;"></div></p>
+<p><img class="ebook_only" src="../images/google_search_error.png" style="width:377px;height:393px;margin:0 auto;display:block;"><img class="web_light_only" src="../images/google_search_error.png" style="margin:0 auto;display:none;"><img class="web_dark_only" src="../images/google_search_error.png" style="margin:0 auto;display:none;"></p>
 
 <p>Regardons dans l&#x2019;ordre :</p>
 <ul>
@@ -639,7 +664,7 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 </ul>
 <p>Je clique donc sur le cinqui&#xE8;me lien. Il s&#x2019;agit d&#x2019;une question sur StackOverflow. Si vous vous mettez s&#xE9;rieusement au d&#xE9;veloppement, le site StackOverflow va devenir tr&#xE8;s rapidement votre meilleur ami. Il s&#x2019;agit d&#x2019;un site de questions/r&#xE9;ponses &#xE0; propos de d&#xE9;veloppement.</p>
 <p>On va passer sur la question, car rien que le titre m&#x2019;indique que la personne ayant pos&#xE9; la question a exactement le m&#xEA;me probl&#xE8;me que moi, je vais donc directement passer &#xE0; la r&#xE9;ponse :</p>
-<p><div class="stack_overflow_answer"><img src="images/stack_overflow_answer.png" style="width:382px;height:296px;display:block;margin:0 auto;"></div></p>
+<p><img class="ebook_only" src="../images/stack_overflow_answer.png" style="width:382px;height:296px;margin:0 auto;display:block;"><img class="web_light_only" src="../images/stack_overflow_answer.png" style="margin:0 auto;display:none;"><img class="web_dark_only" src="../images/stack_overflow_answer.png" style="margin:0 auto;display:none;"></p>
 
 <p>On va s&#x2019;int&#xE9;resser &#xE0; une partie seulement de la r&#xE9;ponse :</p>
 <blockquote>
@@ -667,9 +692,9 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 <span class="hljs-keyword">import</span> geometry.PlaneShape
 
 <span class="hljs-comment">/**
-* This class represent what a circle is
-* <span class="hljs-doctag">@param</span> diameter the length of the diameter of the circle to set
-*/</span>
+ * This class represent what a circle is
+ * <span class="hljs-doctag">@param</span> diameter the length of the diameter of the circle to set
+ */</span>
 <span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>(diameter:<span class="hljs-keyword">Double</span>):PlaneShape{
    <span class="hljs-comment">/** Length of the diameter of the circle */</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> diameter</span>:<span class="hljs-keyword">Double</span>
@@ -699,12 +724,12 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 <p>Nous avons donc impl&#xE9;menter notre interface dans deux classes distinctes. Mais quelle en est l&#x2019;utilit&#xE9; ?</p>
 <p>De la m&#xEA;me fa&#xE7;on que nous avons pu utiliser une variable de type <code>Triangle</code> dans <code>Geometry.kt</code> pour calculer l&#x2019;aire et le p&#xE9;rim&#xE8;tre aussi bien d&#x2019;un <code>RightTriangle</code> que d&#x2019;un <code>Triangle</code>, nous pourrions avoir envie de faire la m&#xEA;me chose avec <code>PlaneShape</code>.</p>
 <p>Dans <code>Geometry.kt</code>, remplacez la fonction <code>displayTriangleData</code> par la fonction suivante :</p>
-<div class="fileTitle">Geometry.kt</div>
+<div class="fileTitle pageBreakBefore">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
-* Displays the perimeter and the area of [planeShape]
-* <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [planeShape]
+ * <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayPlaneShapeData</span><span class="hljs-params">(planeShape:<span class="hljs-type">PlaneShape</span>)</span>{</span>
    println(<span class="hljs-string">&quot;Perimeter of the plane shape is: &quot;</span>+planeShape.perimeter())
    println(<span class="hljs-string">&quot;Area of the plane shape is: &quot;</span>+planeShape.area())
@@ -722,8 +747,8 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 <span class="hljs-keyword">import</span> java.util.Date
 
 <span class="hljs-comment">/**
-* Main function of the program.
-*/</span>
+ * Main function of the program.
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> triangle</span> = Triangle(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>, <span class="hljs-number">6.0</span>)
    <span class="hljs-variable"><span class="hljs-keyword">val</span> rightTriangle</span> = RightTriangle(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>)
@@ -735,15 +760,16 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 }
 
 <span class="hljs-comment">/**
-* Displays the perimeter and the area of [planeShape]
-* <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [planeShape]
+ * <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayPlaneShapeData</span><span class="hljs-params">(planeShape:<span class="hljs-type">PlaneShape</span>)</span>{</span>
    println(<span class="hljs-string">&quot;Perimeter of the plane shape is: &quot;</span>+planeShape.perimeter())
    println(<span class="hljs-string">&quot;Area of the plane shape is: &quot;</span>+planeShape.area())
 }
 </code></pre>
-<h3 id="null-et-nullables">Null et Nullables</h3>
+<h3 class="pageBreakBefore" id="null-et-nullables">Null et Nullables</h3>
+
 <p>Imaginons maintenant que la fonction <code>displayPlaneShapeData()</code> soit appel&#xE9;e &#xE0; partir d&#x2019;une forme dessin&#xE9;e sur une feuille blanche. Il se peut alors qu&#x2019;il n&#x2019;y ait rien de dessin&#xE9; sur cette feuille, auquel cas, on aurait une &#xAB;absence de forme&#xBB;.</p>
 <p>En cas d&#x2019;absence de forme, il semble logique que l&#x2019;on ne puisse ni calculer le p&#xE9;rim&#xE8;tre, ni calculer l&#x2019;aire.</p>
 <p>En Kotlin, pour d&#xE9;finir qu&#x2019;une variable contient une &#xAB;absence d&#x2019;instance de classe&#xBB;, on utilise le mot <code>null</code>. &#xC9;tant donn&#xE9; que <code>null</code> s&#x2019;utilise pour n&#x2019;importe quel type de variable, nous serons oblig&#xE9; d&#x2019;utiliser le typage de variable, et ne pourrons pas nous contenter d&#x2019;un type implicite.</p>
@@ -757,9 +783,9 @@ open class Circle(diameter:Double):PlaneShape{</code></pre>
 <div class="fileTitle">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
-* Displays the perimeter and the area of [planeShape]
-* <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [planeShape]
+ * <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayPlaneShapeData</span><span class="hljs-params">(planeShape:<span class="hljs-type">PlaneShape?</span>)</span>{</span>
    println(<span class="hljs-string">&quot;Perimeter of the plane shape is: &quot;</span>+planeShape.perimeter())
    println(<span class="hljs-string">&quot;Area of the plane shape is: &quot;</span>+planeShape.area())
@@ -770,9 +796,9 @@ Les conditions feront l&#x2019;objet d&#x2019;un prochain chapitre, mais nous po
 <div class="fileTitle">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-comment">/**
-* Displays the perimeter and the area of [planeShape]
-* <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [planeShape]
+ * <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayPlaneShapeData</span><span class="hljs-params">(planeShape:<span class="hljs-type">PlaneShape?</span>)</span>{</span>
    <span class="hljs-keyword">if</span>(planeShape == <span class="hljs-literal">null</span>){
        println(<span class="hljs-string">&quot;No shape, so no perimeter and no area&quot;</span>);
@@ -785,8 +811,8 @@ Les conditions feront l&#x2019;objet d&#x2019;un prochain chapitre, mais nous po
 </code></pre>
 <p>Ici, nous indiquons que si <code>planeShape</code> est null, alors nous affichons <code>&quot;No shape, so no perimeter and no area&quot;</code>, sinon, nous gardons le m&#xEA;me comportement qu&#x2019;avant.
 Encore une fois, cette notation <code>if ... else</code> sera vue au cours d&#x2019;un prochain chapitre. Ne vous en faites pas si vous ne comprenez pas tout pour le moment.</p>
-<p>Ainsi, voici le code final du fichier Geometry.kt :</p>
-<div class="fileTitle">Geometry.kt</div>
+<p>Ainsi, voici le code final du fichier <code>Geometry.kt</code> :</p>
+<div class="fileTitle pageBreakBefore">Geometry.kt</div>
 
 <pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> geometry
 
@@ -797,8 +823,8 @@ Encore une fois, cette notation <code>if ... else</code> sera vue au cours d&#x2
 <span class="hljs-keyword">import</span> java.util.Date
 
 <span class="hljs-comment">/**
-* Main function of the program.
-*/</span>
+ * Main function of the program.
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
    <span class="hljs-variable"><span class="hljs-keyword">val</span> triangle</span> = Triangle(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>, <span class="hljs-number">6.0</span>)
    <span class="hljs-variable"><span class="hljs-keyword">val</span> rightTriangle</span> = RightTriangle(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>)
@@ -812,9 +838,9 @@ Encore une fois, cette notation <code>if ... else</code> sera vue au cours d&#x2
 }
 
 <span class="hljs-comment">/**
-* Displays the perimeter and the area of [planeShape]
-* <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
-*/</span>
+ * Displays the perimeter and the area of [planeShape]
+ * <span class="hljs-doctag">@param</span> planeShape the plane shape for which to display the perimeter and the area
+ */</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">displayPlaneShapeData</span><span class="hljs-params">(planeShape:<span class="hljs-type">PlaneShape?</span>)</span>{</span>
    <span class="hljs-keyword">if</span>(planeShape == <span class="hljs-literal">null</span>){
        println(<span class="hljs-string">&quot;No shape, so no perimeter and no area&quot;</span>);
@@ -826,7 +852,7 @@ Encore une fois, cette notation <code>if ... else</code> sera vue au cours d&#x2
 }
 </code></pre>
 <p>Une fois compil&#xE9;, puis ex&#xE9;cut&#xE9;, on obtient bien le r&#xE9;sultat attendu :</p>
-<pre class="terminal"><code class="terminal">Perimeter of the plane shape is: 13.0
+<pre class="terminal pageBreakAfter"><code class="terminal">Perimeter of the plane shape is: 13.0
 Area of the plane shape is: 5.332682251925386
 Perimeter of the plane shape is: 12.0
 Area of the plane shape is: 6.0
@@ -872,10 +898,14 @@ No shape, so no perimeter and no area</code></pre>
 
             
                 
-                <a href="chapter3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3. Sources multiples, paquets et imports">
+                <a href="chapter3.html" class="navigation navigation-prev " aria-label="Previous page: 3. Sources multiples, paquets et imports">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="chapter5.html" class="navigation navigation-next " aria-label="Next page: 5. Hello Android !">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -884,7 +914,7 @@ No shape, so no perimeter and no area</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4. Programmation orientée objet","level":"1.5","depth":1,"previous":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter4.md","mtime":"2017-11-02T19:17:50.671Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T19:18:07.943Z"},"basePath":".","book":{"language":"fr"}});
+            gitbook.page.hasChanged({"page":{"title":"4. Programmation orientée objet","level":"1.5","depth":1,"next":{"title":"5. Hello Android !","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"previous":{"title":"3. Sources multiples, paquets et imports","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gaëtan HERFRAY","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Le développeur Android 2018","language":"fr","gitbook":"*"},"file":{"path":"chapter4.md","mtime":"2017-11-08T10:51:16.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T16:02:38.104Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>

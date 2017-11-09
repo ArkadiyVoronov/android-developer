@@ -539,7 +539,7 @@ _**error: class '' is not abstract and does not implement abstract member public
 
 Très bien, maintenant, il ne reste plus qu’à copier/coller ce message dans Google :
 
-<p><div class="google_search_error"><img src="images/google_search_error.png" style="width:377px;height:393px;display:block;margin:0 auto;"/></div></p>
+<p><img class="ebook_only" src="../images/google_search_error.png" style="width:377px;height:393px;margin:0 auto;display:block;"/><img class="web_light_only" src="../images/google_search_error.png" style="margin:0 auto;display:none;"/><img class="web_dark_only" src="../images/google_search_error.png" style="margin:0 auto;display:none;"/></p>
 
 Regardons dans l’ordre :
 
@@ -553,7 +553,7 @@ Je clique donc sur le cinquième lien. Il s’agit d’une question sur StackOve
 
 On va passer sur la question, car rien que le titre m’indique que la personne ayant posé la question a exactement le même problème que moi, je vais donc directement passer à la réponse :
 
-<p><div class="stack_overflow_answer"><img src="images/stack_overflow_answer.png" style="width:382px;height:296px;display:block;margin:0 auto;"/></div></p>
+<p><img class="ebook_only" src="../images/stack_overflow_answer.png" style="width:382px;height:296px;margin:0 auto;display:block;"/><img class="web_light_only" src="../images/stack_overflow_answer.png" style="margin:0 auto;display:none;"/><img class="web_dark_only" src="../images/stack_overflow_answer.png" style="margin:0 auto;display:none;"/></p>
 
 On va s’intéresser à une partie seulement de la réponse :
 
