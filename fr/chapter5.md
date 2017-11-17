@@ -135,7 +135,7 @@ class MainActivity : Activity() {
 
 Nous avons appelé la méthode `setText()` de `TextView`, qui permet de définir le texte de notre `TextView`.
 
-<p class="pageBreakAfter">Et ensuite, nous avons appelé la méthode `setContentView()`, définie dans `Activity`, qui sert à définir le contenu affiché par l’`Activity`.</p>
+Et ensuite, nous avons appelé la méthode `setContentView()`, définie dans `Activity`, qui sert à définir le contenu affiché par l’`Activity`.
 
 ## Exécution d’une application Android
 

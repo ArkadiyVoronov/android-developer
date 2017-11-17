@@ -67,9 +67,9 @@ Pour exécuter le programme, il suffit d’exécuter la commande suivante :
 
 <pre class="terminal"><code class="terminal">kotlin -cp ./build GeometryKt</code></pre>
 
-<span class="highlightDefinition">L’argument `-cp` permet d’indiquer au l’exécuteur kotlin dans quel répertoire chercher nos fichiers exécutables.</span>
+<span class="highlightDefinition">L’argument <code>-cp</code> permet d’indiquer au l’exécuteur kotlin dans quel répertoire chercher nos fichiers exécutables.</span>
 
-Vous pourrez observer dans le dossier build, que deux fichiers exécutables .class ont été créés. <span class="highlightDefinition">Ainsi, nous pouvons en déduire que le compilateur Kotlin a bien séparé nos fichiers source.</span>
+Vous pourrez observer dans le dossier `build`, que deux fichiers exécutables `.class` ont été créés. <span class="highlightDefinition">Ainsi, nous pouvons en déduire que le compilateur Kotlin a bien séparé nos fichiers source.</span>
 
 ## Paquets
 
@@ -206,7 +206,7 @@ fun perimeter(sideLength: Double): Double{
 
 En fait, cette erreur nous indique que la fonction `perimeter(Double)` est définie deux fois. Et ce serait une erreur que de vouloir appeler nos fonctions différemment, elles comportent un nom clair.
 
-Pour résoudre cette problématique, Kotlin nous permet de séparer nos différents fichiers sources en paquets. Et si une même fonction est définie dans deux paquets différents, Kotlin va les considérer comme deux fonctions différentes.
+<span class="highlightDefinition">Pour résoudre cette problématique, Kotlin nous permet de séparer nos différents fichiers sources en paquets.</span> Et si une même fonction est définie dans deux paquets différents, Kotlin va les considérer comme deux fonctions différentes.
 
 Pour définir un fichier source comme appartenant à un paquet, il suffit d’indiquer le nom du paquet que l’on souhaite affecter préfixé par le mot clé `package` sur la première ligne du fichier.
 
@@ -350,7 +350,7 @@ Cette fois, c’est l’exécution qui provoque une erreur :
 
 <pre class="terminal"><code class="terminal">error: could not find or load main class GeometryKt</code></pre>
 
-En fait, comme c’était le cas dans nos fichiers sources, lorsque nous appelons `GeometryKt`, <span class="highlightDefinition">Kotlin cherche le fichier exécutable `GeometryKt`</span> situé dans le paquet racine. Or, nous avons spécifié un paquet pour notre fichier : `geometry`. Il suffit simplement d’indiquer à Kotlin le paquet dans lequel se trouve l’exécutable `GeometryKt` pour que cela fonctionne :
+En fait, comme c’était le cas dans nos fichiers sources, lorsque nous appelons `GeometryKt`, <span class="highlightDefinition">Kotlin cherche le fichier exécutable <code>GeometryKt</code></span> situé dans le paquet racine. Or, nous avons spécifié un paquet pour notre fichier : `geometry`. Il suffit simplement d’indiquer à Kotlin le paquet dans lequel se trouve l’exécutable `GeometryKt` pour que cela fonctionne :
 
 <pre class="terminal"><code class="terminal">kotlin -cp build geometry.GeometryKt</code></pre>
 
@@ -395,7 +395,7 @@ fun printEquilateralTrianglePerimeter(sideLength: Double){
 }
 
 /**
- * Prints the perimeter of an square when the length of a side is [sideLength]
+ * Prints the perimeter of a square when the length of a side is [sideLength]
  * @param sideLength the length of a side of the square
  */
 fun printSquarePerimeter(sideLength: Double){
@@ -429,7 +429,7 @@ Nous l’avons vu dans le fichier `Geometry.kt`, désormais, pour calculer la ci
 
 D’une manière générale, on essaie de garder le code aussi simple et concis que possible. Imaginez qu’à plusieurs endroits, vous ayez besoin d’appeler cette fonction, écrire `geometry.circle.circumference()` à chaque fois n’est ni simple, ni concis.
 
-Pour pallier ce problème, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de spécifier le chemin complet d’une fonction que nous appellerons dans un fichier. Voici un exemple avec Geometry.kt.
+Pour pallier ce problème, en Kotlin, nous pouvons utiliser les imports. Un import nous permet de spécifier le chemin complet d’une fonction que nous appellerons dans un fichier. Voici un exemple avec `Geometry.kt`.
 
 <div class="fileTitle">Geometry.kt</div>
 
@@ -469,9 +469,8 @@ Ainsi, les deux fonctions pourront être appelées sous leur forme courte dans l
 
 Bien que cela soit possible, nous vous déconseillons fortement d’utiliser cette notation, pour deux raisons principales :
 
-Même si vous vous servez de l’intégralité du paquet aujourd’hui, il se peut que vous ajoutiez des fonctions au paquet par la suite. Cela impliquerait donc un import inutile, donc une perte en termes de performances.
-
-Il est très compliqué de savoir tout de suite la liste de ce qui est importé et pourquoi, ce qui rend le code moins lisible.
+* Même si vous vous servez de l’intégralité du paquet aujourd’hui, il se peut que vous ajoutiez des fonctions au paquet par la suite. Cela impliquerait donc un import inutile, donc une perte en termes de performances.
+* Il est très compliqué de savoir tout de suite la liste de ce qui est importé et pourquoi, ce qui rend le code moins lisible.
 
 Ainsi, dans la majorité des cas, il est préférable d’utiliser un import par utilisation et d’éviter les imports avec étoile.
 
@@ -480,8 +479,8 @@ Ainsi, dans la majorité des cas, il est préférable d’utiliser un import par
 Toutefois, il n’est pas possible d’importer deux paquets contenant une fonction ayant le même nom. Ainsi, il ne sera pas permis d’effectuer les deux imports suivants :
 
 ```kotlin
-import geometry.quadrilateral.square
-import geometry.triangle.equilateral
+import geometry.quadrilateral.square.perimeter
+import geometry.triangle.equilateral.perimeter
 ```
 
 Et ce, pour la même raison que celle qui nous a poussée à nous intéresser aux paquets. En utilisant ces deux imports, lorsque vous utiliserez la fonction `perimeter`, le compilateur ne saura pas déterminer laquelle des deux fonctions il doit utiliser.

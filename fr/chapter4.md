@@ -1,6 +1,6 @@
 # Chapitre 4<br />Programmation orientée objet
 
-La programmation orientée objet est le fondement de tout développement haut niveau moderne. On pourrait consacrer un livre entier à la programmation orientée objet tellement le sujet est vaste. Le but de ce chapitre n’est donc pas de vous présenter l’intégralité de ce concept, mais seulement de vous donner les connaissances indispensables à la poursuite de cet ouvrage.
+La programmation orientée objet est le fondement de tout développement haut niveau moderne. On pourrait consacrer un livre entier à la programmation orientée objet tellement le sujet est vaste. Le but de ce chapitre n’est donc pas de vous présenter l’intégralité de ce concept, mais seulement de vous donner les connaissances indispensables à la poursuite de ce livre.
 
 Attention, ce chapitre peut paraitre long, et rempli de définitions ; cependant, assurez-vous de bien comprendre l’intégralité de ce qui est dit ici, car c’est la base de toute la suite de ce livre.
 
@@ -17,7 +17,7 @@ Un objet, c’est une entité régie par des propriétés et des comportements. 
     * **<u>État</u>** : comme neuve
     * **<u>Propriétaire</u>** : Monsieur Dupont
     * **<u>Essence restante</u>** : 33 L
-  * Comportement
+  * Comportements
     * **<u>Démarrer en trombe</u>** : Appuyer sur l’accélérateur à fond
     * **<u>Acheter</u>** : Changer le nom du propriétaire
     * **<u>Faire le plein</u>** : L'essence restante passe à 50 L
@@ -28,7 +28,7 @@ Un objet, c’est une entité régie par des propriétés et des comportements. 
     * **<u>État</u>** : cabossée
     * **<u>Propriétaire</u>** : Monsieur Durant
     * **<u>Essence restante</u>** : 43 L
-  * Comportement
+  * Comportements
     * **<u>Démarrer en trombe</u>** : Appuyer sur l’accélérateur à fond
     * **<u>Acheter</u>** : Changer le nom du propriétaire
     * **<u>Faire le plein</u>** : L'essence restante passe à 50 L
@@ -63,7 +63,7 @@ Par contre, une classe ne peut avoir qu’une seule classe parente directe. Si `
 
 ### Interfaces et implémentations
 
-Une **interface**, c’est un groupe contenant plusieurs méthodes, sans définir ce que font ces méthodes.
+Une **interface**, c’est un groupe contenant plusieurs méthodes, mais qui peut ne pas définir ce que font ces méthodes.
 
 Pour reprendre l’exemple utilisé précédemment, on peut définir une **interface** `Objet Roulant`. La seule chose que l’on puisse dire d’un `Objet Roulant`, c’est qu’il possède la méthode `rouler`. Par contre, il est impossible de définir ce que `rouler` veut dire pour un `Objet Roulant`. Imaginons deux objets aussi variés qu’une bille et une voiture…
 

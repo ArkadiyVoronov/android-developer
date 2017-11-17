@@ -6,3 +6,4 @@
 * [3. Sources multiples, paquets et imports](chapter3.md)
 * [4. Programmation orientée objet](chapter4.md)
 * [5. Hello Android !](chapter5.md)
+* [6. Avant de développer](chapter6.md)
